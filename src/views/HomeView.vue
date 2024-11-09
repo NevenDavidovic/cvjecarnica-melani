@@ -168,18 +168,18 @@
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
         <h1
-          class="px-4 text-3xl sm:text-7xl text-left w-full md:text-6xl font-serif mb-4"
+          class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl font-serif mb-4"
         >
           CVJEĆARNICA I
         </h1>
         <h2
-          class="text-3xl sm:text-7xl px-4 text-left w-full md:text-6xl font-serif mb-8"
+          class="text-3xl sm:text-5xl px-4 text-left w-full md:text-6xl font-serif mb-8"
         >
           POGREBNE USLUGE
         </h2>
         <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
           <svg
-            class="w-full md:w-[600px]"
+            class="w-full md:w-[500px]"
             viewBox="0 0 600 153"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -667,7 +667,7 @@ export default {
 
 <style scoped>
 /* Add custom font family for the script text */
-@import url("https://fonts.googleapis.com/css2?family=Jacques+François&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 .font-script {
   font-family: "Jacques Francois", cursive;

@@ -21,7 +21,7 @@ module.exports = {
         container: "1440px",
       },
       fontFamily: {
-        jacques: ['"Jacques François"', "cursive"],
+        jacques: ['"Roboto"', "sans-serif"],
       },
     },
   },
