@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #6fdcf6;
+  --secundary-color: #fbca00;
+  --font-size-40px: 40px;
+  --bg-primary: #353638;
+}
+
+.gray {
+  background: transparent;
+  transition: all 1s ease-in-out;
+}
