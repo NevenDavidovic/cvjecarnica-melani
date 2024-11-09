@@ -213,7 +213,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 py-52">
+    <div class="container mx-auto px-4 py-20 xl:py-52">
       <!-- Section Header -->
       <div class="text-center mb-20">
         <h2 class="text-custom-40px font-serif mb-4 font-jacques">
@@ -347,7 +347,9 @@
     </div>
 
     <div class="bg-bg_primary">
-      <div class="container mx-auto px-4 lg:py-0 py-[50px] sm:py-unset">
+      <div
+        class="container mx-auto px-4 lg:py-0 pt-[40px] pb-[100px] sm:py-unset"
+      >
         <!-- First Block -->
         <div class="lg:flex lg:gap-52 pt-12 pb-12 px-4 flex-col lg:flex-row">
           <div class="lg:flex-1 lg:mt-[-100px] order-2 lg:order-1 mb-8 lg:mb-0">
@@ -385,7 +387,7 @@
 
         <!-- Second Block -->
         <div
-          class="lg:flex-row-reverse lg:flex pt-12 xl:pb-12 px-4 sm:pb-12 lg:gap-52 flex-col lg:flex-row mt-12"
+          class="lg:flex-row-reverse lg:flex pt-0 lg:pt-12 xl:pb-12 px-4 sm:pb-12 lg:gap-52 flex-col lg:flex-row mt-0 lg:mt-12"
         >
           <div
             class="lg:flex-1 flex flex-col items-center lg:items-start sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
@@ -421,9 +423,9 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 py-52">
+    <div class="container mx-auto px-4 py-20 lg:py-52">
       <!-- Header -->
-      <div class="text-left pb-[50px] mb-[100px]">
+      <div class="text-left pb-[50px] mb-0 lg:mb-[90px]">
         <h2 class="font-jacques text-custom-40px font-serif mb-6">
           PROVJERITE ŠTO SE NUDI U IZLOGU
         </h2>
@@ -547,7 +549,7 @@
     </div>
 
     <!-- Additional Services Section -->
-    <section class="bg-bg_primary py-16 px-4">
+    <section class="bg-bg_primary py-20 lg:py-52 px-4">
       <!-- Container -->
       <div class="container mx-auto">
         <!-- Heading -->
@@ -566,7 +568,7 @@
         </p>
 
         <!-- Cards Container -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-[50px] lg:gap-20">
           <!-- Card 1 -->
           <div
             class="bg-blue-50 rounded-lg p-12 flex flex-col items-center text-center"
