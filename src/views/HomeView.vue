@@ -15,7 +15,8 @@
           <img
             src="../assets/images/logo_melani.png"
             alt="Logo"
-            class="h-24 w-24"
+            :class="{ resize: !isSectionVisible }"
+            class="h-24 w-24 transition-all duration-1000 ease-in-out"
           />
         </div>
 
@@ -30,7 +31,7 @@
             >Pogrebne Usluge</a
           >
           <button
-            class="font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
+            class="font-jacques uppercase w-[200px] px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
           >
             Kontakt Podaci
           </button>
@@ -143,7 +144,7 @@
             >Pogrebne Usluge</a
           >
           <button
-            class="font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
+            class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
           >
             Kontakt Podaci
           </button>
@@ -240,7 +241,7 @@
             Usluga od 24h dnevno za uslugu prijevoza pokojnika.
           </p>
           <button
-            class="font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
+            class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
           >
             SAZNAJ VIŠE
           </button>
@@ -259,7 +260,7 @@
             dekoracija prilagođenih vašim potrebama.
           </p>
           <button
-            class="font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
+            class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
             POGLEDAJ PONUDU
           </button>
@@ -278,7 +279,7 @@
             Stojimo Vam na raspolaganju za sve Vaše upite.
           </p>
           <button
-            class="font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
+            class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
           >
             POGLEDAJ PONUDU
           </button>
@@ -296,7 +297,7 @@
             Usluga od 24h dnevno za uslugu prijevoza pokojnika.
           </p>
           <button
-            class="font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
+            class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
             SAZNAJ VIŠE
           </button>
@@ -319,7 +320,7 @@
             Stojimo Vam na raspolaganju za sve Vaše upite.
           </p>
           <button
-            class="font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
+            class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
           >
             POGLEDAJ PONUDU
           </button>
@@ -338,7 +339,7 @@
             dekoracija prilagođenih vašim potrebama.
           </p>
           <button
-            class="font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
+            class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
             POGLEDAJ PONUDU
           </button>
@@ -378,7 +379,7 @@
               kao i dekoriranje posebna za sve prigode.
             </p>
             <button
-              class="font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
+              class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
             >
               POGLEDAJ PONUDU
             </button>
@@ -406,7 +407,7 @@
               pokojnika.
             </p>
             <button
-              class="font-jacques bg-secundary text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
+              class="w-[200px] font-jacques bg-secundary text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
             >
               POGLEDAJ PONUDU
             </button>
@@ -580,7 +581,7 @@
               Usluga od organiziranja glazbe za potrebe priredba.
             </p>
             <button
-              class="font-jacques bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-md font-medium"
+              class="w-[200px] font-jacques bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-md font-medium"
             >
               KONTAKTIRAJ NAS
             </button>
@@ -598,7 +599,7 @@
               dekoracija prilagođenih vašim potrebama.
             </p>
             <button
-              class="bg-cyan-300 hover:bg-cyan-400 text-gray-800 px-6 py-2 rounded-md font-medium"
+              class="w-[200px] bg-cyan-300 hover:bg-cyan-400 text-gray-800 px-6 py-2 rounded-md font-medium"
             >
               POGLEDAJ PONUDU
             </button>
@@ -616,7 +617,7 @@
               Stojimo Vam na raspolaganju za sve Vaše upite.
             </p>
             <button
-              class="bg-cyan-300 hover:bg-cyan-400 text-gray-800 px-6 py-2 rounded-md font-medium"
+              class="w-[200px] bg-cyan-300 hover:bg-cyan-400 text-gray-800 px-6 py-2 rounded-md font-medium"
             >
               POGLEDAJ PONUDU
             </button>
@@ -666,12 +667,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Add custom font family for the script text */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
-.font-script {
-  font-family: "Jacques Francois", cursive;
-}
-</style>
