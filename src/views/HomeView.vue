@@ -67,7 +67,7 @@
       >
         <!-- Mobile Menu Header -->
         <div
-          class="flex h-[137px] justify-between items-center p-6 border-b border-gray-700/50"
+          class="nav-background-mobile flex h-[137px] justify-between items-center p-6 border-b border-gray-700/50"
         >
           <span class="text-white font-jacques text-xl"
             ><svg

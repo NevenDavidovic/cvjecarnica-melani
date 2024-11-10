@@ -19,3 +19,9 @@
   height: 50px;
   transition: all 1s ease-in-out;
 }
+
+.nav-background-mobile {
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/025/188/607/small/abstract-elegance-in-nature-bouquet-of-multi-colored-flowers-and-leaves-generated-by-ai-free-photo.jpg");
+  background-size: 100%;
+  border-bottom: 1px solid #22d3ee;
+}

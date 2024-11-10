@@ -12,6 +12,6 @@
 }
 
 nav {
-  padding: 20px;
+  padding: 8px 16px;
 }
 </style>
