@@ -7,7 +7,7 @@
     ></div>
     <nav
       :class="{ gray: isSectionVisible }"
-      class="navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50 shadow-sm"
+      class="py-[8px] navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50 shadow-sm"
     >
       <div class="container mx-auto px-4 flex items-center justify-between">
         <!-- Logo -->
