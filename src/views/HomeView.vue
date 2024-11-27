@@ -22,18 +22,30 @@
 
         <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex space-x-8 text-gray-700 items-center">
-          <a href="#" class="font-jacques uppercase text-white">Naslovnica</a>
-          <a href="#" class="font-jacques uppercase text-white">O Nama</a>
-          <a href="#" class="font-jacques uppercase text-primary"
-            >Cvjećarnica</a
+          <RouterLink to="/" class="font-jacques uppercase text-white">
+            Naslovnica
+          </RouterLink>
+          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+            Ponuda
+          </RouterLink>
+          <RouterLink
+            to="/cvjecarnica-melani"
+            class="font-jacques uppercase text-primary"
           >
-          <a href="#" class="font-jacques uppercase text-[#FBCA00]"
-            >Pogrebne Usluge</a
+            Cvjećarnica
+          </RouterLink>
+          <RouterLink
+            to="/pogrebne-usluge"
+            class="font-jacques uppercase text-[#FBCA00]"
           >
+            Pogrebne Usluge
+          </RouterLink>
+
           <button
+            @click="redirectToContact"
             class="font-jacques uppercase w-[200px] px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
 
@@ -123,30 +135,36 @@
         <div
           class="flex flex-col p-6 space-y-6 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
         >
-          <a
-            href="#"
+          <RouterLink
+            to="/"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-            >Naslovnica</a
           >
-          <a
-            href="#"
+            Naslovnica
+          </RouterLink>
+          <RouterLink
+            to="/ponuda"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-            >O Nama</a
           >
-          <a
-            href="#"
+            Ponuda
+          </RouterLink>
+          <RouterLink
+            to="/cvjecarnica-melani"
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
-            >Cvjećarnica</a
           >
-          <a
-            href="#"
+            Cvjećarnica
+          </RouterLink>
+          <RouterLink
+            to="/pogrebne-usluge"
             class="font-jacques uppercase text-[#FBCA00] text-lg hover:text-cyan-400 transition-colors"
-            >Pogrebne Usluge</a
           >
+            Pogrebne Usluge
+          </RouterLink>
+
           <button
+            @click="redirectToContact"
             class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
       </div>
@@ -663,6 +681,10 @@ export default {
     },
     beforeDestroy() {
       document.body.style.overflow = "";
+    },
+    redirectToContact() {
+      // Use this.$router to navigate
+      this.$router.push("/contact-melani");
     },
   },
 };

@@ -1,17 +1,19 @@
 <template>
-  <div class="w-full">
+  <div class="min-h-screen">
     <!-- Navigation -->
     <div
       :class="{ hidden: !isMobileMenuOpen }"
       class="fixed inset-0 bg-[#353638]/80 backdrop-blur-md z-40 h-screen w-screen"
     ></div>
     <nav
-      class="py-[20px] navigation w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50 shadow-sm"
+      :class="{ gray: isSectionVisible }"
+      class="py-[20px] navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50 shadow-sm"
     >
       <div class="container mx-auto px-4 flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
           <svg
+            :class="{ resized: !isSectionVisible }"
             class="w-[150px] md:w-[250px] transition-all duration-1000 ease-in-out"
             viewBox="0 0 600 153"
             fill="none"
@@ -46,18 +48,30 @@
 
         <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex space-x-8 text-gray-700 items-center">
-          <a href="#" class="font-jacques uppercase text-white">Naslovnica</a>
-          <a href="#" class="font-jacques uppercase text-white">O Nama</a>
-          <a href="#" class="font-jacques uppercase text-primary"
-            >Cvjećarnica</a
+          <RouterLink to="/" class="font-jacques uppercase text-white">
+            Naslovnica
+          </RouterLink>
+          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+            Ponuda
+          </RouterLink>
+          <RouterLink
+            to="/cvjecarnica-melani"
+            class="font-jacques uppercase text-primary"
           >
-          <a href="#" class="font-jacques uppercase text-[#FBCA00]"
-            >Pogrebne Usluge</a
+            Cvjećarnica
+          </RouterLink>
+          <RouterLink
+            to="/pogrebne-usluge"
+            class="font-jacques uppercase text-[#FBCA00]"
           >
+            Pogrebne Usluge
+          </RouterLink>
+
           <button
+            @click="redirectToContact"
             class="font-jacques uppercase w-[200px] px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
 
@@ -147,26 +161,31 @@
         <div
           class="flex flex-col p-6 space-y-6 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
         >
-          <a
-            href="#"
+          <RouterLink
+            to="/"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-            >Naslovnica</a
           >
-          <a
-            href="#"
+            Naslovnica
+          </RouterLink>
+          <RouterLink
+            to="/o-nama"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-            >O Nama</a
           >
-          <a
-            href="#"
+            Ponuda
+          </RouterLink>
+          <RouterLink
+            to="/cvjecarnica"
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
-            >Cvjećarnica</a
           >
-          <a
-            href="#"
+            Cvjećarnica
+          </RouterLink>
+          <RouterLink
+            to="/pogrebne-usluge"
             class="font-jacques uppercase text-[#FBCA00] text-lg hover:text-cyan-400 transition-colors"
-            >Pogrebne Usluge</a
           >
+            Pogrebne Usluge
+          </RouterLink>
+
           <button
             class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
           >
@@ -177,7 +196,7 @@
     </nav>
 
     <!-- Hero Banner -->
-    <div class="relative h-48 bg-gray-900">
+    <div class="relative h-[500px] bg-gray-900">
       <img
         src="../assets/images/telefon-banner.jpg"
         alt="Vintage phone background"
@@ -330,13 +349,19 @@
         </div>
       </div>
     </div>
+
+    <FooterComponent />
   </div>
 </template>
 
 <script>
+import FooterComponent from "../components/FooterComponent.vue";
+
 export default {
-  name: "ContactView",
-  components: {},
+  name: "HomeView",
+  components: {
+    FooterComponent,
+  },
   data() {
     return {
       isSectionVisible: false,
@@ -347,26 +372,63 @@ export default {
         phone: "",
         message: "",
       },
+      owlOptions: {
+        items: 1,
+        nav: true,
+        dots: true,
+        loop: true,
+        margin: 20,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        navText: [
+          '<i class="custom-prev-icon">←</i>',
+          '<i class="custom-next-icon">→</i>',
+        ],
+        responsive: {
+          0: { items: 2 },
+          600: { items: 3 },
+          1000: { items: 5 },
+        },
+      },
     };
   },
   mounted() {},
   methods: {
+    initIntersectionObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.isSectionVisible = entry.isIntersecting;
+        });
+      });
+
+      observer.observe(this.$refs.section1);
+    },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "";
     },
-
-    handleSubmit() {
-      // Handle form submission logic here
-      console.log("Form submitted:", this.formData);
-      // Reset form
-      this.formData = {
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      };
+    beforeDestroy() {
+      document.body.style.overflow = "";
+    },
+    redirectToContact() {
+      // Use this.$router to navigate
+      this.$router.push("/contact-melani");
     },
   },
 };
 </script>
+<style scoped>
+/* Optional: Custom styling for navigation */
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.owl-prev {
+  left: -20px;
+}
+.owl-next {
+  right: -20px;
+}
+</style>

@@ -48,18 +48,30 @@
 
         <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex space-x-8 text-gray-700 items-center">
-          <a href="#" class="font-jacques uppercase text-white">Naslovnica</a>
-          <a href="#" class="font-jacques uppercase text-white">O Nama</a>
-          <a href="#" class="font-jacques uppercase text-primary"
-            >Cvjećarnica</a
+          <RouterLink to="/" class="font-jacques uppercase text-white">
+            Naslovnica
+          </RouterLink>
+          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+            Ponuda
+          </RouterLink>
+          <RouterLink
+            to="/cvjecarnica"
+            class="font-jacques uppercase text-primary"
           >
-          <a href="#" class="font-jacques uppercase text-[#FBCA00]"
-            >Pogrebne Usluge</a
+            Cvjećarnica
+          </RouterLink>
+          <RouterLink
+            to="/pogrebne-usluge"
+            class="font-jacques uppercase text-[#FBCA00]"
           >
+            Pogrebne Usluge
+          </RouterLink>
+
           <button
+            @click="redirectToContact"
             class="font-jacques uppercase w-[200px] px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
 
@@ -149,30 +161,35 @@
         <div
           class="flex flex-col p-6 space-y-6 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
         >
-          <a
-            href="#"
+          <RouterLink
+            to="/"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-            >Naslovnica</a
           >
-          <a
-            href="#"
+            Naslovnica
+          </RouterLink>
+          <RouterLink
+            to="/o-nama"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-            >O Nama</a
           >
-          <a
-            href="#"
+            Ponuda
+          </RouterLink>
+          <RouterLink
+            to="/cvjecarnica"
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
-            >Cvjećarnica</a
           >
-          <a
-            href="#"
+            Cvjećarnica
+          </RouterLink>
+          <RouterLink
+            to="/pogrebne-usluge"
             class="font-jacques uppercase text-[#FBCA00] text-lg hover:text-cyan-400 transition-colors"
-            >Pogrebne Usluge</a
           >
+            Pogrebne Usluge
+          </RouterLink>
           <button
+            @click="redirectToContact"
             class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
       </div>
@@ -641,15 +658,12 @@
                 GDJE JE SVE POČELO
               </h2>
               <p class="text-gray-600 text-left text-2xl leading-relaxed mb-8">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Delectus, repellat voluptatem fuga dolorum numquam a at porro.
-                Hic veniam nemo dolorum eum magnam suscipit natus numquam
-                debitis dicta. Quo, ducimus? Corrupti mollitia perspiciatis
-                repellat autem, quisquam cumque ipsa fugit totam et laboriosam
-                non modi tenetur, nam expedita maxime cupiditate ratione soluta
-                nisi maiores magnam dolore eaque ab! Corrupti in exercitationem
-                harum? Culpa distinctio laudantium quia nesciunt numquam ut,
-                libero quisquam!
+                Dobrodošli u našu cvjećarnu u Supetru! Smještena u srcu Supetra
+                na prekrasnom otoku Braču, naša cvjećarna je mjesto gdje
+                prirodna ljepota i kreativnost dolaze do izražaja. Bilo da
+                slavite posebne trenutke, želite izraziti svoje osjećaje ili
+                unijeti dašak svježine u svoj dom, kod nas ćete pronaći savršene
+                cvjetne aranžmane za svaku priliku.
               </p>
               <p class="italic text-left text-gray-800 text-2xl">
                 "If you choose to see the beauty in life, you'll find that every
@@ -862,6 +876,10 @@ export default {
       });
 
       observer.observe(this.$refs.section1);
+    },
+    redirectToContact() {
+      // Use this.$router to navigate
+      this.$router.push("/contact-melani");
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
