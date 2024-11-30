@@ -174,13 +174,13 @@
             Ponuda
           </RouterLink>
           <RouterLink
-            to="/cvjecarnica"
+            to="/"
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
           >
             Cvjećarnica
           </RouterLink>
           <RouterLink
-            to="/pogrebne-usluge"
+            to="/cvjecarnica-melani"
             class="font-jacques uppercase text-[#FBCA00] text-lg hover:text-cyan-400 transition-colors"
           >
             Pogrebne Usluge

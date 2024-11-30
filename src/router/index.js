@@ -14,6 +14,12 @@ const routes = [
     component: () => import("../views/CvjecarnicaView.vue"),
   },
   {
+    path: "/pogrebne-usluge",
+    name: "pogrebne-usluge",
+
+    component: () => import("../views/PogrebnoView.vue"),
+  },
+  {
     path: "/contact-melani",
     name: "contact-melani",
 
