@@ -3,13 +3,15 @@
     <!-- Container -->
     <div class="container mx-auto">
       <!-- Heading -->
-      <h2 class="text-cyan-300 text-custom-40px text-center mb-8 font-jacques">
+      <h2
+        class="text-cyan-300 text-[28px] sm:text-[40px] text-center mb-8 font-jacques"
+      >
         DODATNA PONUDA
       </h2>
 
       <!-- Description -->
       <p
-        class="text-white text-center mb-12 max-w-3xl mx-auto text-2xl font-jacques"
+        class="text-white text-center mb-12 max-w-3xl mx-auto text-[18px] sm:text-[28px] font-jacques"
       >
         Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
         aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.

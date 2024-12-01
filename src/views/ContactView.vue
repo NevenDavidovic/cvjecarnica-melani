@@ -51,7 +51,7 @@
           <RouterLink to="/" class="font-jacques uppercase text-white">
             Naslovnica
           </RouterLink>
-          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+          <RouterLink to="/ponuda" class="font-jacques uppercase text-white">
             Ponuda
           </RouterLink>
           <RouterLink
@@ -168,13 +168,13 @@
             Naslovnica
           </RouterLink>
           <RouterLink
-            to="/o-nama"
+            to="/ponuda"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             Ponuda
           </RouterLink>
           <RouterLink
-            to="/cvjecarnica"
+            to="/cvjecarnica-melani"
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
           >
             Cvjećarnica
@@ -393,6 +393,9 @@ export default {
     };
   },
   mounted() {},
+  beforeUnmount() {
+    document.body.style.overflow = "auto";
+  },
   methods: {
     initIntersectionObserver() {
       const observer = new IntersectionObserver((entries) => {
@@ -405,11 +408,9 @@ export default {
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "";
+      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
     },
-    beforeDestroy() {
-      document.body.style.overflow = "";
-    },
+
     redirectToContact() {
       // Use this.$router to navigate
       this.$router.push("/contact-melani");

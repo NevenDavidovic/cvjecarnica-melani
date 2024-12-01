@@ -25,7 +25,7 @@
           <RouterLink to="/" class="font-jacques uppercase text-white">
             Naslovnica
           </RouterLink>
-          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+          <RouterLink to="/ponuda" class="font-jacques uppercase text-white">
             Ponuda
           </RouterLink>
           <RouterLink
@@ -186,14 +186,10 @@
       <div
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
-        <h1
-          class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl font-serif mb-4"
-        >
+        <h1 class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl mb-4">
           CVJEĆARNICA I
         </h1>
-        <h2
-          class="text-3xl sm:text-5xl px-4 text-left w-full md:text-6xl font-serif mb-8"
-        >
+        <h2 class="text-3xl sm:text-5xl px-4 text-left w-full md:text-6xl mb-8">
           POGREBNE USLUGE
         </h2>
         <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
@@ -235,10 +231,12 @@
     <div class="container mx-auto px-4 py-20 xl:py-52">
       <!-- Section Header -->
       <div class="text-center mb-20">
-        <h2 class="text-custom-40px font-serif mb-4 font-jacques">
+        <h2 class="text-[28px] sm:text-[40px] mb-4 font-jacques">
           NAŠE USLUGE
         </h2>
-        <p class="text-gray-600 max-w-3xl mx-auto text-2xl font-jacques">
+        <p
+          class="text-gray-600 max-w-3xl mx-auto text-[18px] sm:text-[28px] font-jacques"
+        >
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an
@@ -246,7 +244,7 @@
       </div>
 
       <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-20">
         <!-- 24/7 Service -->
         <div class="text-center">
           <div class="flex justify-center mb-4">
@@ -254,7 +252,7 @@
               <img src="../assets/images/24_sata.png" alt="" />
             </div>
           </div>
-          <h3 class="font-serif text-xl mb-5 font-jacques">USLUGA 0 - 24</h3>
+          <h3 class="text-xl mb-5 font-jacques">USLUGA 0 - 24</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Usluga od 24h dnevno za uslugu prijevoza pokojnika.
           </p>
@@ -272,7 +270,7 @@
               <img src="../assets/images/izrada_buketa.png" alt="" />
             </div>
           </div>
-          <h3 class="font-serif text-xl mb-5 font-jacques">IZRADA BUKETA</h3>
+          <h3 class="text-xl mb-5 font-jacques">IZRADA BUKETA</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
             dekoracija prilagođenih vašim potrebama.
@@ -291,7 +289,7 @@
               <img src="../assets/images/ponuda_lijesova.png" alt="" />
             </div>
           </div>
-          <h3 class="font-serif text-xl mb-5 font-jacques">PONUDA LJESOVA</h3>
+          <h3 class="text-xl mb-5 font-jacques">PONUDA LJESOVA</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
             Stojimo Vam na raspolaganju za sve Vaše upite.
@@ -310,7 +308,7 @@
               <img src="../assets/images/izrada_vijenaca.svg" alt="" />
             </div>
           </div>
-          <h3 class="font-serif text-xl mb-5 font-jacques">IZRADA VIJENACA</h3>
+          <h3 class="text-xl mb-5 font-jacques">IZRADA VIJENACA</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Usluga od 24h dnevno za uslugu prijevoza pokojnika.
           </p>
@@ -332,7 +330,7 @@
               />
             </div>
           </div>
-          <h3 class="font-serif text-xl mb-5 font-jacques">PONUDA URNI</h3>
+          <h3 class="text-xl mb-5 font-jacques">PONUDA URNI</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
             Stojimo Vam na raspolaganju za sve Vaše upite.
@@ -351,7 +349,7 @@
               <img src="../assets/images/dodatna_ponuda.png" alt="" />
             </div>
           </div>
-          <h3 class="font-serif text-xl mb-5 font-jacques">DODATNA PONUDA</h3>
+          <h3 class="text-xl mb-5 font-jacques">DODATNA PONUDA</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
             dekoracija prilagođenih vašim potrebama.
@@ -383,14 +381,18 @@
             class="lg:flex-1 flex flex-col items-center lg:items-start sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
           >
             <h2
-              class="text-cyan-400 text-4xl font-serif mb-8 font-jacques w-full"
+              class="text-cyan-400 text-[28px] sm:text-[40px] mb-8 font-jacques w-full"
             >
               CVJEĆARNICA
             </h2>
-            <p class="text-gray-300 mb-8 text-2xl font-jacques">
+            <p
+              class="text-gray-300 mb-8 text-[18px] sm:text-[28px] font-jacques"
+            >
               Veliki izbor svih vrsta cvjetnih aranžmana, buketa i vijenaca.
             </p>
-            <p class="text-gray-300 mb-8 text-2xl font-jacques">
+            <p
+              class="text-gray-300 mb-8 text-[18px] sm:text-[28px] font-jacques"
+            >
               U našoj cvjećarnici možete naručiti sve vrste cvjetnih aranžmana,
               buketa i vijenaca. Vršimo dostavu na kućnu adresu i dostavu na
               grobove Vaših najmilijih. Po Vašoj želji radimo i svečane grobnice
@@ -412,11 +414,13 @@
             class="lg:flex-1 flex flex-col items-center lg:items-start sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
           >
             <h2
-              class="font-jacques text-secundary text-4xl font-serif mb-8 w-full"
+              class="font-jacques text-secundary text-[28px] sm:text-[40px] mb-8 w-full"
             >
               POGREBNE USLUGE
             </h2>
-            <p class="text-gray-300 mb-12 text-2xl font-jacques">
+            <p
+              class="text-gray-300 mb-12 text-[18px] sm:text-[28px] font-jacques"
+            >
               Naša ponuda uključuje širok izbor kvalitetno izrađenih ljesova,
               prilagođenih sadašnjim financijskim mogućnostima naših klijenata.
               Cijene variraju od 2000.00 € do 3000.00 €, uz mogućnost dogovora
@@ -445,7 +449,7 @@
     <div class="container mx-auto px-4 py-20 lg:py-52">
       <!-- Header -->
       <div class="text-left pb-[50px] mb-0 lg:mb-[90px]">
-        <h2 class="font-jacques text-custom-40px font-serif mb-6">
+        <h2 class="font-jacques text-[28px] sm:text-[40px] mb-6">
           PROVJERITE ŠTO SE NUDI U IZLOGU
         </h2>
         <p class="font-jacques text-gray-600 mx-auto">
@@ -459,7 +463,7 @@
         <!-- Wedding Bouquets -->
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="md:w-1/2">
-            <h3 class="text-xl font-serif mb-4 font-jacques text-left">
+            <h3 class="text-xl mb-4 font-jacques text-left">
               VJENČANI BUKETI I ARANŽMANI
             </h3>
             <p class="text-gray-600 font-jacques text-left">
@@ -482,7 +486,7 @@
         <!-- Grave Arrangements -->
         <div class="flex flex-col md:flex-row-reverse items-center gap-8">
           <div class="md:w-1/2">
-            <h3 class="text-xl font-serif mb-4 font-jacques text-left">
+            <h3 class="text-xl mb-4 font-jacques text-left">
               GROBNI VIJENCI, BUKETI I GROBNI ARANŽMANI
             </h3>
             <p class="text-gray-600 font-jacques text-left">
@@ -506,7 +510,7 @@
         <!-- Special Occasions -->
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="md:w-1/2">
-            <h3 class="text-xl font-serif mb-4 font-jacques text-left">
+            <h3 class="text-xl mb-4 font-jacques text-left">
               PRIGODNO CVIJEĆE ZA POSEBNE PRIGODE
             </h3>
             <p class="text-gray-600 font-jacques text-left">
@@ -531,7 +535,7 @@
         <!-- Other Occasions -->
         <div class="flex flex-col md:flex-row-reverse items-center gap-8">
           <div class="md:w-1/2">
-            <h3 class="text-xl font-serif mb-4 font-jacques text-left">
+            <h3 class="text-xl mb-4 font-jacques text-left">
               CVIJEĆE ZA OSTALE PRIGODE
             </h3>
             <p class="text-gray-600 font-jacques text-left">
@@ -592,6 +596,9 @@ export default {
   mounted() {
     this.initIntersectionObserver();
   },
+  beforeUnmount() {
+    document.body.style.overflow = "";
+  },
   methods: {
     initIntersectionObserver() {
       const observer = new IntersectionObserver((entries) => {
@@ -604,10 +611,7 @@ export default {
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "";
-    },
-    beforeDestroy() {
-      document.body.style.overflow = "";
+      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
     },
     redirectToContact() {
       // Use this.$router to navigate

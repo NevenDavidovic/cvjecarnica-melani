@@ -25,6 +25,13 @@ const routes = [
 
     component: () => import("../views/ContactView.vue"),
   },
+
+  {
+    path: "/ponuda",
+    name: "ponuda",
+
+    component: () => import("../views/PonudaView.vue"),
+  },
 ];
 
 const router = createRouter({

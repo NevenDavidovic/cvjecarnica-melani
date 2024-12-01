@@ -25,7 +25,7 @@
           <RouterLink to="/" class="font-jacques uppercase text-white">
             Naslovnica
           </RouterLink>
-          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+          <RouterLink to="/ponuda" class="font-jacques uppercase text-white">
             Ponuda
           </RouterLink>
           <RouterLink
@@ -186,9 +186,7 @@
       <div
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
-        <h1
-          class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl font-serif mb-4"
-        >
+        <h1 class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl mb-4">
           POGREBNE USLUGE
         </h1>
 
@@ -233,7 +231,7 @@
         <!-- Section Header -->
         <div class="text-center mb-20">
           <h2
-            class="text-custom-40px text-secundary font-serif mb-4 font-jacques"
+            class="text-[28px] sm:text-[40px] text-secundary mb-4 font-jacques"
           >
             NAŠE USLUGE
           </h2>
@@ -248,7 +246,7 @@
                 <img src="../assets/images/24_sata.png" alt="" />
               </div>
             </div>
-            <h3 class="font-serif text-xl mb-5 font-jacques text-secundary">
+            <h3 class="text-xl mb-5 font-jacques text-secundary">
               USLUGA 0 - 24
             </h3>
             <p class="text-white mb-5 font-jacques">
@@ -269,7 +267,7 @@
                 <img src="../assets/images/ponuda_lijesova.png" alt="" />
               </div>
             </div>
-            <h3 class="font-serif text-xl mb-5 font-jacques text-secundary">
+            <h3 class="text-xl mb-5 font-jacques text-secundary">
               PONUDA LJESOVA
             </h3>
             <p class="text-white mb-5 font-jacques">
@@ -294,7 +292,7 @@
                 />
               </div>
             </div>
-            <h3 class="font-serif text-xl mb-5 font-jacques text-secundary">
+            <h3 class="text-xl mb-5 font-jacques text-secundary">
               PONUDA URNI
             </h3>
             <p class="text-white mb-5 font-jacques">
@@ -314,13 +312,13 @@
     </div>
 
     <div
-      class="Carousel px-[16px] py-[50px] lg:py-[150px] flex flex-col gap-14"
+      class="Carousel px-[16px] py-[50px] lg:py-[150px] flex flex-col gap-6 sm:gap-14"
     >
-      <h2 class="text-custom-40px text-bg_primary font-serif mb-4 font-jacques">
+      <h2 class="text-[28px] sm:text-[40px] text-bg_primary mb-4 font-jacques">
         PONUDA LIJESOVA
       </h2>
       <p
-        class="text-gray-600 text-left text-2xl leading-relaxed mb-8 max-w-[90%] lg:max-w-[80%] mx-auto text-center"
+        class="text-gray-600 text-left text-[18px] sm:text-[28px] leading-relaxed mb-8 max-w-[90%] lg:max-w-[80%] mx-auto text-center"
       >
         Naša ponuda obuhvaća širok izbor kvalitetno izrađenih lijesova,
         prilagođenih različitim financijskim mogućnostima naših klijenata.
@@ -352,14 +350,18 @@
       </button>
     </div>
 
-    <div class="lampioni bg-bg_primary">
+    <div class="lampioni bg-bg_primary py-[50px] lg:py-[80px] xl:py-[150px]">
       <div class="container text-white py-8 mx-auto px-[16px]">
         <div class="flex flex-col md:flex-row gap-4 mb-4">
           <div class="flex-1 flex flex-col gap-4 justify-center">
-            <h2 class="text-yellow-500 text-[40px] font-bold text-left">
+            <h2
+              class="text-yellow-500 text-[28px] sm:text-[40px] font-bold text-left"
+            >
               PONUDA LAMPIONA I SVIJEĆA
             </h2>
-            <p class="text-gray-400 text-2xl text-white text-left max-w-[80%]">
+            <p
+              class="text-gray-400 text-[18px] sm:text-[28px] text-white text-left max-w-[80%]"
+            >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
@@ -407,17 +409,23 @@
       </div>
     </div>
 
-    <div class="pogrebno-odvoz container mx-auto">
+    <div
+      class="pogrebno-odvoz container mx-auto py-[50px] lg:py-[80px] xl:py-[150px]"
+    >
       <div
         class="lg:flex-row-reverse lg:flex pt-0 lg:pt-12 xl:pb-12 px-4 sm:pb-12 lg:gap-52 flex-col lg:flex-row mt-0 lg:mt-12"
       >
         <div
           class="lg:flex-1 flex flex-col items-center lg:items-start sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
         >
-          <h2 class="font-jacques text-secundary text-[40px] mb-8 w-full">
+          <h2
+            class="font-jacques text-secundary text-[28px] sm:text-[40px] mb-8 w-full"
+          >
             POGREBNE USLUGE
           </h2>
-          <p class="text-gray-600 mb-12 text-2xl font-jacques">
+          <p
+            class="text-gray-600 mb-12 text-[18px] sm:text-[28px] font-jacques"
+          >
             Naša ponuda uključuje širok izbor kvalitetno izrađenih ljesova,
             prilagođenih sadašnjim financijskim mogućnostima naših klijenata.
             Cijene variraju od 2000.00 € do 3000.00 €, uz mogućnost dogovora
@@ -476,7 +484,7 @@ export default {
           '<i class="fas fa-chevron-right"></i>',
         ],
         responsive: {
-          0: { items: 2 },
+          0: { items: 1 },
           600: { items: 3 },
           1000: { items: 5 },
         },
@@ -498,6 +506,9 @@ export default {
   mounted() {
     this.initIntersectionObserver();
   },
+  beforeUnmount() {
+    document.body.style.overflow = "";
+  },
   methods: {
     initIntersectionObserver() {
       const observer = new IntersectionObserver((entries) => {
@@ -510,11 +521,12 @@ export default {
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "";
+      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
     },
-    beforeDestroy() {
-      document.body.style.overflow = "";
+    beforeUnmount() {
+      document.body.style.overflow = "auto";
     },
+
     redirectToContact() {
       // Use this.$router to navigate
       this.$router.push("/contact-melani");

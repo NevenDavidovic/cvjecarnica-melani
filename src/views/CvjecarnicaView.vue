@@ -51,7 +51,7 @@
           <RouterLink to="/" class="font-jacques uppercase text-white">
             Naslovnica
           </RouterLink>
-          <RouterLink to="/o-nama" class="font-jacques uppercase text-white">
+          <RouterLink to="/ponuda" class="font-jacques uppercase text-white">
             Ponuda
           </RouterLink>
           <RouterLink
@@ -168,7 +168,7 @@
             Naslovnica
           </RouterLink>
           <RouterLink
-            to="/o-nama"
+            to="/ponuda"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             Ponuda
@@ -857,7 +857,7 @@ export default {
           '<i class="custom-next-icon">→</i>',
         ],
         responsive: {
-          0: { items: 2 },
+          0: { items: 1 },
           600: { items: 3 },
           1000: { items: 5 },
         },
@@ -866,6 +866,9 @@ export default {
   },
   mounted() {
     this.initIntersectionObserver();
+  },
+  beforeUnmount() {
+    document.body.style.overflow = "auto";
   },
   methods: {
     initIntersectionObserver() {
@@ -883,10 +886,13 @@ export default {
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "";
-    },
-    beforeDestroy() {
-      document.body.style.overflow = "";
+
+      // Use a more robust method to control body overflow
+      if (this.isMobileMenuOpen) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
     },
   },
 };
