@@ -298,6 +298,18 @@ export default {
       },
     };
   },
+  created() {
+    const lijesovImages = require.context(
+      "@/assets/images/lijesovi",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.lijesovImages = lijesovImages.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+  },
   mounted() {
     this.initIntersectionObserver();
   },
