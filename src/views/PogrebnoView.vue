@@ -523,9 +523,6 @@ export default {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
     },
-    beforeUnmount() {
-      document.body.style.overflow = "auto";
-    },
 
     redirectToContact() {
       // Use this.$router to navigate

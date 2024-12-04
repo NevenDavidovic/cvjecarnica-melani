@@ -209,45 +209,78 @@
       </h1>
     </div>
 
-    <div class="bg-gray-800 text-white py-4">
-      <div class="container mx-auto flex justify-center">
-        <div class="flex space-x-6">
+    <div class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <h1 class="text-2xl font-bold mb-4">Kategorije cvijeća</h1>
+        <div class="flex flex-wrap justify-center mb-8">
           <button
-            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Sve
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Buketi i aranžmani
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Vjenčani buketi
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            @click="filteringTheProducts('bozic')"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Umjetno cvijeće
+            Božić
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            @click="filteringTheProducts('rezano_cvijece')"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Rezano cvijeće
           </button>
         </div>
-      </div>
-      <div class="container mx-auto mt-4">
-        <div class="bg-white text-gray-800 rounded-md shadow-md p-4">
-          <p>Sortiraj po</p>
-          <!-- Add sorting functionality here -->
+
+        <div class="flex justify-end mb-4">
+          <select class="bg-gray-600 text-white py-2 px-4 rounded">
+            <option>Sort by</option>
+            <option>Title (A-Z)</option>
+            <option>Title (Z-A)</option>
+          </select>
+        </div>
+
+        <div
+          v-if="filteri.rezano_cvijece"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <div v-for="image in rezanoCvijece" :key="image.filename">
+            <img
+              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="
+                require(`@/assets/ponuda_cvijeca/rezano_cvijece/${image.filename}`)
+              "
+              alt=""
+            />
+            <h3>{{ image.title }}</h3>
+          </div>
+        </div>
+
+        <div
+          v-if="filteri.bozic"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <div v-for="bozic in bozicCvijece" :key="bozic.filename">
+            <img
+              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="require(`@/assets/ponuda_cvijeca/bozic/${bozic.filename}`)"
+              alt=""
+            />
+            <h3>{{ bozic.title }}</h3>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Contact Content -->
 
     <FooterComponent />
   </div>
@@ -271,47 +304,44 @@ export default {
         phone: "",
         message: "",
       },
-      selectedCategories: [], // Track selected categories
-      flowerCategories: [
-        // Example categories
-        { id: 1, name: "Roses" },
-        { id: 2, name: "Tulips" },
-        { id: 3, name: "Lilies" },
-      ],
-      owlOptions: {
-        items: 1,
-        nav: true,
-        dots: true,
-        loop: true,
-        margin: 20,
-        autoplay: true,
-        autoplayTimeout: 1000,
-        navText: [
-          '<i class="custom-prev-icon">←</i>',
-          '<i class="custom-next-icon">→</i>',
-        ],
-        responsive: {
-          0: { items: 2 },
-          600: { items: 3 },
-          1000: { items: 5 },
-        },
+      rezanoCvijeće: [],
+      bozicCvijece: [],
+      filteri: {
+        bozic: true,
+        rezano_cvijece: true,
+        valentinovo: true,
+        umjetno_cvijece: true,
+        buketi: true,
       },
     };
   },
+
+  mounted() {
+    this.initIntersectionObserver();
+  },
   created() {
-    const lijesovImages = require.context(
-      "@/assets/images/lijesovi",
+    const rezanoCvijece = require.context(
+      "@/assets/ponuda_cvijeca/rezano_cvijece",
       false,
       /\.(png|jpe?g|svg)$/
     );
-    this.lijesovImages = lijesovImages.keys().map((filename) => ({
+    this.rezanoCvijece = rezanoCvijece.keys().map((filename) => ({
       filename: filename.slice(2),
       title: filename.slice(2, -4),
       alt: filename.slice(2, -4),
     }));
-  },
-  mounted() {
-    this.initIntersectionObserver();
+
+    const bozicCvijece = require.context(
+      "@/assets/ponuda_cvijeca/bozic",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+
+    this.bozicCvijece = bozicCvijece.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
   },
 
   beforeUnmount() {
@@ -331,17 +361,18 @@ export default {
         console.warn("No section1 ref found");
       }
     },
-    toggleCategory(categoryId) {
-      const index = this.selectedCategories.indexOf(categoryId);
-      if (index > -1) {
-        this.selectedCategories.splice(index, 1);
-      } else {
-        this.selectedCategories.push(categoryId);
-      }
+    filteringTheProducts(filterArgument) {
+      console.log(filterArgument);
+      Object.entries(this.filteri).forEach(([key]) => {
+        console.log(this.filteri[key]);
+        if (key === filterArgument) {
+          this.filteri[key] = true;
+        } else {
+          this.filteri[key] = false;
+        }
+      });
     },
-    clearFilters() {
-      this.selectedCategories = [];
-    },
+
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
