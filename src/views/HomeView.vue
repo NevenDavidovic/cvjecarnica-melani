@@ -237,9 +237,7 @@
         <p
           class="text-gray-600 max-w-3xl mx-auto text-[18px] sm:text-[28px] font-jacques"
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an
+          Pouzdane i profesionalne usluge koje pružamo s pažnjom i poštovanjem.
         </p>
       </div>
 
@@ -378,20 +376,20 @@
           </div>
 
           <div
-            class="lg:flex-1 flex flex-col items-center lg:items-start sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
+            class="lg:flex-1 flex flex-col items-center lg:items-center sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
           >
             <h2
-              class="text-cyan-400 text-[28px] sm:text-[40px] mb-8 font-jacques w-full"
+              class="text-cyan-400 text-[28px] text-left sm:text-center sm:text-[40px] mb-8 font-jacques w-full"
             >
               CVJEĆARNICA
             </h2>
             <p
-              class="text-gray-300 mb-8 text-[18px] sm:text-[28px] font-jacques"
+              class="text-gray-300 mb-8 text-[18px] text-left sm:text-center sm:text-[28px] font-jacques"
             >
               Veliki izbor svih vrsta cvjetnih aranžmana, buketa i vijenaca.
             </p>
             <p
-              class="text-gray-300 mb-8 text-[18px] sm:text-[28px] font-jacques"
+              class="text-gray-300 mb-8 text-[18px] text-left sm:text-center sm:text-[28px] font-jacques"
             >
               U našoj cvjećarnici možete naručiti sve vrste cvjetnih aranžmana,
               buketa i vijenaca. Vršimo dostavu na kućnu adresu i dostavu na
@@ -399,6 +397,7 @@
               kao i dekoriranje posebna za sve prigode.
             </p>
             <button
+              @click="redirectToCvjecarnica"
               class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
             >
               POGLEDAJ PONUDU
@@ -411,15 +410,16 @@
           class="lg:flex-row-reverse lg:flex pt-0 lg:pt-12 xl:pb-12 px-4 sm:pb-12 lg:gap-52 flex-col lg:flex-row mt-0 lg:mt-12"
         >
           <div
-            class="lg:flex-1 flex flex-col items-center lg:items-start sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
+            class="lg:flex-1 flex flex-col items-center lg:items-center sm:text-center lg:text-left justify-center order-1 lg:order-2 mb-12"
           >
             <h2
-              class="font-jacques text-secundary text-[28px] sm:text-[40px] mb-8 w-full"
+              @click="redirectToPogrebno"
+              class="font-jacques text-secundary text-[28px] text-left sm:text-center sm:text-[40px] mb-8 w-full"
             >
               POGREBNE USLUGE
             </h2>
             <p
-              class="text-gray-300 mb-12 text-[18px] sm:text-[28px] font-jacques"
+              class="text-gray-300 mb-12 text-[18px] text-left sm:text-center sm:text-[28px] font-jacques"
             >
               Naša ponuda uključuje širok izbor kvalitetno izrađenih ljesova,
               prilagođenih sadašnjim financijskim mogućnostima naših klijenata.
@@ -562,7 +562,7 @@
         <p class="text-gray-600 font-jacques">
           Veći dio našeg asortimana (vjenčani buketi, aranžmani, grobni vijenci
           i prigodno cvijeće) možete pogledati u
-          <a href="#" class="text-cyan-400 hover:text-cyan-500">galeriji</a>
+          <a href="#" class="text-cyan-400 hover:text-cyan-500">ponudi</a>
         </p>
         <p class="text-gray-600 font-jacques">
           Nudimo uslugu pakiranja i aranžiranja cvijeća uz poklone. Po dogovoru,
@@ -616,6 +616,12 @@ export default {
     redirectToContact() {
       // Use this.$router to navigate
       this.$router.push("/contact-melani");
+    },
+    redirectToCvjecarnica() {
+      this.$router.push("/cvjecarnica-melani");
+    },
+    redirectToPogrebno() {
+      this.$router.push("//pogrebne-usluge");
     },
   },
 };

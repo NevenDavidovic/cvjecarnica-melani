@@ -30,6 +30,7 @@
             Usluga od organiziranja glazbe za potrebe priredba.
           </p>
           <button
+            @click="redirectToContact"
             class="w-[200px] font-jacques bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-md font-medium"
           >
             KONTAKTIRAJ NAS
@@ -76,4 +77,28 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "DodatnaPonuda",
+  components: {},
+  data() {
+    return {
+      isSectionVisible: false,
+      isMobileMenuOpen: false,
+    };
+  },
+
+  methods: {
+    redirectToContact() {
+      // Use this.$router to navigate
+      this.$router.push("/contact-melani");
+    },
+    redirectToCvjecarnica() {
+      this.$router.push("/cvjecarnica-melani");
+    },
+    redirectToPogrebno() {
+      this.$router.push("/pogrebne-usluge");
+    },
+  },
+};
+</script>

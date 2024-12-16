@@ -214,19 +214,28 @@
         <h1 class="text-2xl font-bold mb-4">Kategorije cvijeća</h1>
         <div class="flex flex-wrap justify-center mb-8">
           <button
+            @click="resetingAllFilters"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Sve
           </button>
           <button
+            @click="filteringTheProducts('buketi')"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Buketi i aranžmani
           </button>
           <button
+            @click="filteringTheProducts('valentinovo')"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Vjenčani buketi
+            Valentinovo
+          </button>
+          <button
+            @click="filteringTheProducts('umjetno_cvijece')"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
+          >
+            Umjetno cvijeće
           </button>
           <button
             @click="filteringTheProducts('bozic')"
@@ -252,6 +261,7 @@
 
         <div
           v-if="filteri.rezano_cvijece"
+          :class="{ 'animate-fade-in': filteri.rezano_cvijece }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           <div v-for="image in rezanoCvijece" :key="image.filename">
@@ -262,12 +272,13 @@
               "
               alt=""
             />
-            <h3>{{ image.title }}</h3>
+            <!-- <h3>{{ image.title }}</h3> -->
           </div>
         </div>
 
         <div
           v-if="filteri.bozic"
+          :class="{ 'animate-fade-in': filteri.bozic }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           <div v-for="bozic in bozicCvijece" :key="bozic.filename">
@@ -276,7 +287,61 @@
               :src="require(`@/assets/ponuda_cvijeca/bozic/${bozic.filename}`)"
               alt=""
             />
-            <h3>{{ bozic.title }}</h3>
+            <!-- <h3>{{ bozic.title }}</h3> -->
+          </div>
+        </div>
+
+        <div
+          v-if="filteri.valentinovo"
+          :class="{ 'animate-fade-in': filteri.valentinovo }"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <div
+            v-for="valentinovo in valentinovoCvijece"
+            :key="valentinovo.filename"
+          >
+            <img
+              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="
+                require(`@/assets/ponuda_cvijeca/valentinovo/${valentinovo.filename}`)
+              "
+              alt=""
+            />
+            <!-- <h3>{{ valentinovo.title }}</h3> -->
+          </div>
+        </div>
+
+        <div
+          v-if="filteri.umjetno_cvijece"
+          :class="{ 'animate-fade-in': filteri.umjetno_cvijece }"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <div v-for="umjetno in umjetnoCvijece" :key="umjetno.filename">
+            <img
+              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="
+                require(`@/assets/ponuda_cvijeca/umjetno_cvijece/${umjetno.filename}`)
+              "
+              alt=""
+            />
+            <!-- <h3>{{ valentinovo.title }}</h3> -->
+          </div>
+        </div>
+
+        <div
+          v-if="filteri.buketi"
+          :class="{ 'animate-fade-in': filteri.buketi }"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <div v-for="buketi in buketiAranzmani" :key="buketi.filename">
+            <img
+              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="
+                require(`@/assets/ponuda_cvijeca/buketi_i_aranzmani/${buketi.filename}`)
+              "
+              alt=""
+            />
+            <!-- <h3>{{ buketi.title }}</h3> -->
           </div>
         </div>
       </div>
@@ -306,6 +371,10 @@ export default {
       },
       rezanoCvijeće: [],
       bozicCvijece: [],
+      valentinovoCvijece: [],
+      umjetnoCvijece: [],
+      buketiAranzmani: [],
+
       filteri: {
         bozic: true,
         rezano_cvijece: true,
@@ -318,8 +387,49 @@ export default {
 
   mounted() {
     this.initIntersectionObserver();
+    const filter = this.$route.query.filter;
+
+    if (filter) {
+      // Set the filter state based on the query parameter
+      Object.entries(this.filteri).forEach(([key]) => {
+        this.filteri[key] = key === filter;
+      });
+    }
   },
   created() {
+    const buketiAranzmani = require.context(
+      "@/assets/ponuda_cvijeca/buketi_i_aranzmani",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.buketiAranzmani = buketiAranzmani.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
+    const umjetnoCvijece = require.context(
+      "@/assets/ponuda_cvijeca/umjetno_cvijece",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.umjetnoCvijece = umjetnoCvijece.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
+    const valentinovoCvijece = require.context(
+      "@/assets/ponuda_cvijeca/valentinovo",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.valentinovoCvijece = valentinovoCvijece.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
     const rezanoCvijece = require.context(
       "@/assets/ponuda_cvijeca/rezano_cvijece",
       false,
@@ -361,10 +471,13 @@ export default {
         console.warn("No section1 ref found");
       }
     },
-    filteringTheProducts(filterArgument) {
-      console.log(filterArgument);
+    resetingAllFilters() {
       Object.entries(this.filteri).forEach(([key]) => {
-        console.log(this.filteri[key]);
+        this.filteri[key] = true;
+      });
+    },
+    filteringTheProducts(filterArgument) {
+      Object.entries(this.filteri).forEach(([key]) => {
         if (key === filterArgument) {
           this.filteri[key] = true;
         } else {
@@ -385,6 +498,21 @@ export default {
 </script>
 
 <style scoped>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation class */
+.animate-fade-in {
+  animation: fadeIn 2s ease-out;
+}
 /* Optional: Custom styling for navigation */
 .owl-prev,
 .owl-next {

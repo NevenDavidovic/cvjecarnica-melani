@@ -480,7 +480,7 @@
           <div class="text-cyan-400 mb-4 flex align-center justify-center">
             <svg
               width="50"
-              height="42"
+              height="50"
               viewBox="0 0 50 42"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -731,7 +731,7 @@
         <!-- Main Gallery Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <!-- Large Image 1 -->
-          <div class="rounded-2xl overflow-hidden">
+          <div class="overflow-hidden">
             <img
               src="../assets/images/buket-valentinovo.png"
               alt="Valentine's Day Roses"
@@ -750,32 +750,32 @@
 
         <!-- Small Images Grid -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="rounded-2xl overflow-hidden aspect-square">
+          <div class="overflow-hidden aspect-square">
             <img
               src="../assets/images/c-1-valentinovo.png"
               alt="Valentine's Arrangement 1"
-              class="w-full h-full object-cover"
+              class="w-full h-full"
             />
           </div>
-          <div class="rounded-2xl overflow-hidden aspect-square">
+          <div class="overflow-hidden aspect-square">
             <img
               src="../assets/images/c-2-valentinovo.png"
               alt="Valentine's Arrangement 2"
-              class="w-full h-full object-cover"
+              class="w-full h-full"
             />
           </div>
-          <div class="rounded-2xl overflow-hidden aspect-square">
+          <div class="overflow-hidden aspect-square">
             <img
               src="../assets/images/c-3-valentinovo.png"
               alt="Valentine's Arrangement 3"
-              class="w-full h-full object-cover"
+              class="w-full h-full"
             />
           </div>
-          <div class="rounded-2xl overflow-hidden aspect-square">
+          <div class="overflow-hidden aspect-square">
             <img
               src="../assets/images/c-4-valentinovo.png"
               alt="Valentine's Arrangement 4"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cov"
             />
           </div>
         </div>
