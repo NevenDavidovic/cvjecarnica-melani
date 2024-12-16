@@ -300,6 +300,7 @@ export default {
   },
   mounted() {
     this.initIntersectionObserver();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 
   beforeUnmount() {
