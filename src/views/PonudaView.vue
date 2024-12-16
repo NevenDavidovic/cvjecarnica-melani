@@ -387,7 +387,6 @@ export default {
 
   mounted() {
     this.initIntersectionObserver();
-    window.scrollTo({ top: 0, behavior: "smooth" });
     const filter = this.$route.query.filter;
 
     if (filter) {
