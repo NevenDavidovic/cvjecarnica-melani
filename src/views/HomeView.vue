@@ -228,7 +228,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 py-20 xl:py-52">
+    <div class="container mx-auto px-4 py-20 xl:py-32">
       <!-- Section Header -->
       <div class="text-center mb-20">
         <h2 class="text-[28px] sm:text-[40px] mb-4 font-jacques">
