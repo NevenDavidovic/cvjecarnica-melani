@@ -180,7 +180,7 @@
             Cvjećarnica
           </RouterLink>
           <RouterLink
-            to="/cvjecarnica-melani"
+            to="/pogrebne-usluge"
             class="font-jacques uppercase text-[#FBCA00] text-lg hover:text-cyan-400 transition-colors"
           >
             Pogrebne Usluge
@@ -791,8 +791,7 @@
         <!-- Address Text -->
         <div class="text-center text-2xl mb-8 text-gray-300">
           <p>
-            Cvjećarnica Melanie - Ulica Mladena Vodanovića 4b, Supetar,
-            Hrvatska.
+            Cvjećarnica Melani - Ulica Mladena Vodanovića 4b, Supetar, Hrvatska.
           </p>
           <p class="mt-2">
             U trenutku kada su vam potrebni cvjetni aranžmani i podrška, stojimo
