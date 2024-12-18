@@ -202,151 +202,205 @@
         alt="Vintage phone background"
         class="w-full h-full object-cover opacity-40"
       />
-      <h1
+      <!-- <h1
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-semibold"
       >
         KONTAKTIRAJTE NAS
-      </h1>
+      </h1> -->
     </div>
 
     <!-- Contact Content -->
-    <div class="max-w-6xl mx-auto px-4 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Contact Information -->
-        <div>
-          <h2 class="text-2xl font-semibold mb-6 text-left">
-            Informacije o kontaktu
-          </h2>
-          <p class="text-gray-600 mb-8 text-left">
-            Pitanja su dobrodošla, tu smo da Vam pomognemo. Kontaktirajte nas!
-          </p>
-
-          <div class="space-y-4">
-            <div class="flex items-center">
-              <div
-                class="w-8 h-8 rounded-full bg-bg_primary flex items-center justify-center mr-3"
+    <div class="relative isolate bg-white">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <div
+          class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48"
+        >
+          <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+            <div
+              class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2"
+            >
+              <svg
+                class="absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                aria-hidden="true"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
+                <defs>
+                  <pattern
+                    id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+                    width="200"
+                    height="200"
+                    x="100%"
+                    y="-1"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path d="M130 200V.5M.5 .5H200" fill="none" />
+                  </pattern>
+                </defs>
+                <rect
+                  width="100%"
+                  height="100%"
+                  stroke-width="0"
+                  fill="white"
+                />
+                <svg x="100%" y="-1" class="overflow-visible fill-gray-50">
+                  <path d="M-470.5 0h201v201h-201Z" stroke-width="0" />
                 </svg>
-              </div>
-              <div>
-                <p class="font-medium">
-                  Ulica Mladena Vodanovića 4b, 21400 Supetar
-                </p>
-              </div>
+                <rect
+                  width="100%"
+                  height="100%"
+                  stroke-width="0"
+                  fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+                />
+              </svg>
             </div>
-
-            <div class="flex items-center">
-              <div
-                class="w-8 h-8 rounded-full bg-bg_primary flex items-center justify-center mr-3"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+            <h2
+              class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+            >
+              Kontaktirajte nas
+            </h2>
+            <p class="mt-6 text-lg/8 text-gray-600">
+              Tu smo za vas u svakom trenutku - javite nam se s
+              povjerenjem.Kontaktirajte nas za sve informacije i narudžbe.
+              Brinemo o svakom detalju jer vaša pitanja i potrebe su nam
+              prioritet.
+            </p>
+            <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
+              <div class="flex gap-x-4">
+                <dt class="flex-none">
+                  <span class="sr-only">Adresa:</span>
+                  <BuildingOffice2Icon
+                    class="h-7 w-6 text-gray-400"
+                    aria-hidden="true"
                   />
-                </svg>
+                </dt>
+                <dd>Ulica Mladena Vodanovića 4b, 21400 Supetar</dd>
               </div>
-              <p class="font-medium">021/630 996</p>
-            </div>
-
-            <div class="flex items-center">
-              <div
-                class="w-8 h-8 rounded-full bg-bg_primary flex items-center justify-center mr-3"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              <div class="flex gap-x-4">
+                <dt class="flex-none">
+                  <span class="sr-only">Telefon: </span>
+                  <PhoneIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
+                </dt>
+                <dd>
+                  <a class="hover:text-gray-900" href="tel:+38521630996"
+                    >021/630 996</a
+                  >
+                </dd>
+              </div>
+              <div class="flex gap-x-4">
+                <dt class="flex-none">
+                  <span class="sr-only">Email</span>
+                  <EnvelopeIcon
+                    class="h-7 w-6 text-gray-400"
+                    aria-hidden="true"
                   />
-                </svg>
+                </dt>
+                <dd>
+                  <a
+                    class="hover:text-gray-900"
+                    href="mailto:cvjecarnica.melani@gmail.com"
+                    >cvjecarnica.melani@gmail.com</a
+                  >
+                </dd>
               </div>
-              <p class="font-medium">cvjecarnica.melani@gmail.com</p>
-            </div>
+            </dl>
           </div>
         </div>
-
-        <!-- Contact Form -->
-        <div class="bg-white rounded-lg shadow-lg p-6">
-          <form @submit.prevent="handleSubmit" class="space-y-4">
-            <div>
-              <input
-                type="text"
-                v-model="formData.name"
-                placeholder="Prezime*"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+        <form
+          action="#"
+          method="POST"
+          class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+        >
+          <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label
+                  for="first-name"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Ime</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    autocomplete="given-name"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="last-name"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Prezime</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    autocomplete="family-name"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="email"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Email</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="phone-number"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Broj telefona</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    type="tel"
+                    name="phone-number"
+                    id="phone-number"
+                    autocomplete="tel"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="message"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Poruka</label
+                >
+                <div class="mt-2.5">
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="4"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
             </div>
-
-            <div>
-              <input
-                type="email"
-                v-model="formData.email"
-                placeholder="Email*"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+            <div class="mt-8 flex justify-end">
+              <button
+                type="submit"
+                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Pošalji poruku
+              </button>
             </div>
-
-            <div>
-              <input
-                type="tel"
-                v-model="formData.phone"
-                placeholder="Telefonski broj*"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-
-            <div>
-              <textarea
-                v-model="formData.message"
-                placeholder="Tvoja poruka..."
-                rows="4"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primry"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full bg-bg_primary text-white py-2 px-4 rounded-md hover:bg-primary hover:text-black transition duration-300"
-            >
-              Pošalji poruku
-            </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -356,11 +410,19 @@
 
 <script>
 import FooterComponent from "../components/FooterComponent.vue";
+import {
+  BuildingOffice2Icon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/vue/24/outline";
 
 export default {
   name: "HomeView",
   components: {
     FooterComponent,
+    BuildingOffice2Icon,
+    EnvelopeIcon,
+    PhoneIcon,
   },
   data() {
     return {

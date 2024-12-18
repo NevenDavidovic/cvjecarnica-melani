@@ -6,12 +6,12 @@
       <h2
         class="text-cyan-300 text-[28px] sm:text-[40px] text-center mb-8 font-jacques"
       >
-        DODATNA PONUDA
+        Dodatna Ponuda
       </h2>
 
       <!-- Description -->
       <p
-        class="text-white text-center mb-12 max-w-3xl mx-auto text-[18px] sm:text-[28px] font-jacques"
+        class="text-white text-center mb-12 max-w-3xl mx-auto text-[18px] sm:text-[1.25rem] font-jacques"
       >
         Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
         aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.
@@ -24,7 +24,7 @@
           class="bg-blue-50 rounded-lg p-12 flex flex-col items-center text-center"
         >
           <h3 class="text-gray-800 text-xl font-semibold mb-4 font-jacques">
-            ORGANIZIRANJE GLAZBE
+            Organiziranje glazbe
           </h3>
           <p class="text-gray-600 mb-6 font-jacques">
             Usluga od organiziranja glazbe za potrebe priredba.
@@ -33,7 +33,7 @@
             @click="redirectToContact"
             class="w-[200px] font-jacques bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-md font-medium"
           >
-            KONTAKTIRAJ NAS
+            Kontaktiraj nas
           </button>
         </div>
 
@@ -42,16 +42,22 @@
           class="bg-blue-50 rounded-lg p-12 flex flex-col items-center text-center font-jacques"
         >
           <h3 class="text-gray-800 text-xl font-semibold mb-4">
-            CVIJEĆE ZA EVENTE
+            Cvijeće za evente
           </h3>
           <p class="text-gray-600 mb-6">
             Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
             dekoracija prilagođenih vašim potrebama.
           </p>
           <button
+            @click="
+              $router.push({
+                path: '/ponuda',
+                query: { filter: 'valentinovo' },
+              })
+            "
             class="w-[200px] bg-cyan-300 hover:bg-cyan-400 text-gray-800 px-6 py-2 rounded-md font-medium"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
 
@@ -60,7 +66,7 @@
           class="bg-blue-50 rounded-lg p-12 flex flex-col items-center text-center font-jacques"
         >
           <h3 class="text-gray-800 text-xl font-semibold mb-4">
-            PONUDA LIJESOVA
+            Ponuda lijesova
           </h3>
           <p class="text-gray-600 mb-6">
             Želite samo odrediti proizvod ili neku od naših pogrebnih usluga?
@@ -69,7 +75,7 @@
           <button
             class="w-[200px] bg-cyan-300 hover:bg-cyan-400 text-gray-800 px-6 py-2 rounded-md font-medium"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
       </div>
@@ -98,6 +104,9 @@ export default {
     },
     redirectToPogrebno() {
       this.$router.push("/pogrebne-usluge");
+    },
+    redirectToPonuda() {
+      this.$router.push("/ponuda");
     },
   },
 };

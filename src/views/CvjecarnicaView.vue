@@ -249,7 +249,7 @@
         class="title-usluge flex flex-col gap-[20px] justify-center align-center"
       >
         <p class="underline text-center text-primary">USLUGE</p>
-        <h2 class="text-4xl md:text-5xl text-center text-primary uppercase">
+        <h2 class="text-4xl md:text-5xl text-center text-primary">
           Ponuda cvijeća i usuga
         </h2>
       </div>
@@ -639,7 +639,7 @@
           >
             <img
               src="../assets/images/about-us-section.jpg"
-              alt="Cvjećarna Nelan"
+              alt="Cvjećarna Melani"
               class="w-full h-full object-cover rounded-lg"
             />
           </div>
@@ -655,9 +655,11 @@
               <h2
                 class="font-playfair text-left text-4xl md:text-5xl font-medium mb-8"
               >
-                GDJE JE SVE POČELO
+                Gdje je sve počelo
               </h2>
-              <p class="text-gray-600 text-left text-2xl leading-relaxed mb-8">
+              <p
+                class="text-gray-600 text-left text-[1.25rem] leading-relaxed mb-8"
+              >
                 Dobrodošli u našu cvjećarnu u Supetru! Smještena u srcu Supetra
                 na prekrasnom otoku Braču, naša cvjećarna je mjesto gdje
                 prirodna ljepota i kreativnost dolaze do izražaja. Bilo da
@@ -705,13 +707,14 @@
       </div>
 
       <div class="flex flex-col gap-8 justify-center align-center">
-        <p class="text-[#6C6B71] max-w-[80%] mx-auto text-xl sm:text-3xl">
+        <p class="text-[#6C6B71] max-w-[80%] mx-auto text-xl sm:text-[1.25rem]">
           Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
           aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.
         </p>
         <router-link
+          to="/ponuda"
           class="bg-primary text-xl px-[20px] text-black text-xl py-[10px] max-w-[250px] rounded mx-auto"
-          >POGLEDAJ SVE</router-link
+          >Pogledaj</router-link
         >
       </div>
     </div>
@@ -721,7 +724,7 @@
         <!-- Header Section -->
         <div class="text-center mb-12">
           <h2 class="text-white font-playfair text-4xl md:text-5xl mb-4">
-            VALENTINOVO
+            Valentinovo
           </h2>
           <p class="text-white italic text-lg md:text-xl">
             "Love is like a flower, blooming with care and tenderness."
@@ -735,7 +738,7 @@
             <img
               src="../assets/images/buket-valentinovo.png"
               alt="Valentine's Day Roses"
-              class="w-full h-full object-cover"
+              class="w-full h-full"
             />
           </div>
           <!-- Large Image 2 -->
@@ -743,7 +746,7 @@
             <img
               src="../assets/images/izlog-valentinovo.png"
               alt="Valentine's Day Shop Display"
-              class="w-full h-full object-cover"
+              class="w-full h-full"
             />
           </div>
         </div>
@@ -781,15 +784,18 @@
         </div>
       </div>
     </div>
+
+    <UmjetnoComponent />
+
     <div class="bg-bg_primary text-cyan-300 py-16 px-4">
       <div class="max-w-6xl mx-auto">
         <!-- Header -->
         <h2 class="text-4xl md:text-5xl font-medium text-center mb-4">
-          KAKO DOĆI DO NAS?
+          Kako doći do nas?
         </h2>
 
         <!-- Address Text -->
-        <div class="text-center text-2xl mb-8 text-gray-300">
+        <div class="text-center text-[1.25rem] mb-8 text-gray-300">
           <p>
             Cvjećarnica Melani - Ulica Mladena Vodanovića 4b, Supetar, Hrvatska.
           </p>
@@ -832,12 +838,14 @@
 <script>
 import FooterComponent from "../components/FooterComponent.vue";
 import OwlCarousel from "../components/CarouselComponent.vue";
+import UmjetnoComponent from "@/components/UmjetnoComponent.vue";
 
 export default {
   name: "HomeView",
   components: {
     FooterComponent,
     OwlCarousel,
+    UmjetnoComponent,
   },
   data() {
     return {
@@ -866,9 +874,10 @@ export default {
   mounted() {
     this.initIntersectionObserver();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.body.style.overflow = "auto"; // Reset overflow
   },
   beforeUnmount() {
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "auto"; // Reset overflow
   },
   methods: {
     initIntersectionObserver() {

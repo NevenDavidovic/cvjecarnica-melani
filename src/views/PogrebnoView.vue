@@ -187,7 +187,7 @@
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
         <h1 class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl mb-4">
-          POGREBNE USLUGE
+          Pogrebne usluge
         </h1>
 
         <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
@@ -227,13 +227,13 @@
     </div>
 
     <div class="nase-usluge bg-bg_primary">
-      <div class="container mx-auto px-4 py-20 xl:py-[150px]">
+      <div class="container mx-auto px-4 py-20 xl:py-[100px]">
         <!-- Section Header -->
         <div class="text-center mb-20">
           <h2
             class="text-[28px] sm:text-[40px] text-secundary mb-4 font-jacques"
           >
-            NAŠE USLUGE
+            Naše usluge
           </h2>
         </div>
 
@@ -247,7 +247,7 @@
               </div>
             </div>
             <h3 class="text-xl mb-5 font-jacques text-secundary">
-              USLUGA 0 - 24
+              Usluga 0 - 24
             </h3>
             <p class="text-white mb-5 font-jacques">
               Usluga od 24h dnevno za uslugu <br />
@@ -256,7 +256,7 @@
             <button
               class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
             >
-              SAZNAJ VIŠE
+              Saznaj više
             </button>
           </div>
 
@@ -268,7 +268,7 @@
               </div>
             </div>
             <h3 class="text-xl mb-5 font-jacques text-secundary">
-              PONUDA LJESOVA
+              Ponuda ljesova
             </h3>
             <p class="text-white mb-5 font-jacques">
               Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
@@ -277,7 +277,7 @@
             <button
               class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
             >
-              POGLEDAJ PONUDU
+              Pogledaj ponudu
             </button>
           </div>
 
@@ -293,7 +293,7 @@
               </div>
             </div>
             <h3 class="text-xl mb-5 font-jacques text-secundary">
-              PONUDA URNI
+              Ponuda urni
             </h3>
             <p class="text-white mb-5 font-jacques">
               Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
@@ -302,7 +302,7 @@
             <button
               class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
             >
-              POGLEDAJ PONUDU
+              Pogledaj ponudu
             </button>
           </div>
 
@@ -312,13 +312,13 @@
     </div>
 
     <div
-      class="Carousel px-[16px] py-[50px] lg:py-[150px] flex flex-col gap-6 sm:gap-14"
+      class="Carousel px-[16px] py-[50px] lg:py-[100px] flex flex-col gap-6 sm:gap-8"
     >
-      <h2 class="text-[28px] sm:text-[40px] text-bg_primary mb-4 font-jacques">
-        PONUDA LIJESOVA
+      <h2 class="text-[28px] sm:text-[40px] text-bg_primary mb-0 font-jacques">
+        Ponuda lijesova
       </h2>
       <p
-        class="text-gray-600 text-left text-[18px] sm:text-[28px] leading-relaxed mb-8 max-w-[90%] lg:max-w-[80%] mx-auto text-center"
+        class="text-gray-600 text-left text-[18px] sm:text-[1.25rem] leading-relaxed mb-8 max-w-[90%] lg:max-w-[80%] mx-auto text-center"
       >
         Naša ponuda obuhvaća širok izbor kvalitetno izrađenih lijesova,
         prilagođenih različitim financijskim mogućnostima naših klijenata.
@@ -346,21 +346,21 @@
       <button
         class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors mx-auto"
       >
-        POGLEDAJ SVE
+        Pogledaj sve
       </button>
     </div>
 
-    <div class="lampioni bg-bg_primary py-[50px] lg:py-[80px] xl:py-[150px]">
+    <div class="lampioni bg-bg_primary py-[50px] lg:py-[80px] xl:py-[100px]">
       <div class="container text-white py-8 mx-auto px-[16px]">
         <div class="flex flex-col md:flex-row gap-4 mb-4">
           <div class="flex-1 flex flex-col gap-4 justify-center">
             <h2
               class="text-yellow-500 text-[28px] sm:text-[40px] font-bold text-left"
             >
-              PONUDA LAMPIONA I SVIJEĆA
+              Ponuda lampiona i svijeća
             </h2>
             <p
-              class="text-gray-400 text-[18px] sm:text-[28px] text-white text-left max-w-[80%]"
+              class="text-gray-400 text-[18px] sm:text-[1.25rem] text-white text-left max-w-[80%]"
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -368,7 +368,7 @@
             <button
               class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded mt-4 max-w-[200px]"
             >
-              POGLEDAJ SVE
+              Pogledaj sve
             </button>
           </div>
           <div class="flex-1 grid grid-cols-2 gap-4">
@@ -410,7 +410,7 @@
     </div>
 
     <div
-      class="pogrebno-odvoz container mx-auto py-[50px] lg:py-[80px] xl:py-[150px]"
+      class="pogrebno-odvoz container mx-auto py-[50px] lg:py-[80px] xl:py-[100px]"
     >
       <div
         class="lg:flex-row-reverse lg:flex pt-0 lg:pt-12 xl:pb-12 px-4 sm:pb-12 lg:gap-52 flex-col lg:flex-row mt-0 lg:mt-12"
@@ -421,10 +421,10 @@
           <h2
             class="font-jacques text-secundary text-[28px] sm:text-[40px] mb-8 w-full"
           >
-            POGREBNE USLUGE
+            Pogrebne usluge
           </h2>
           <p
-            class="text-gray-600 mb-12 text-[18px] sm:text-[28px] font-jacques"
+            class="text-gray-600 mb-12 text-[18px] sm:text-[1.25rem] font-jacques"
           >
             Naša ponuda uključuje širok izbor kvalitetno izrađenih ljesova,
             prilagođenih sadašnjim financijskim mogućnostima naših klijenata.
@@ -435,7 +435,7 @@
           <button
             class="w-[200px] font-jacques bg-secundary text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
 

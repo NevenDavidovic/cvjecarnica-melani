@@ -221,30 +221,45 @@
           </button>
           <button
             @click="filteringTheProducts('buketi')"
+            :class="{
+              'border border-white ': filteri.buketi,
+            }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Buketi i aranžmani
           </button>
           <button
             @click="filteringTheProducts('valentinovo')"
+            :class="{
+              'border border-white ': filteri.valentinovo,
+            }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Valentinovo
           </button>
           <button
             @click="filteringTheProducts('umjetno_cvijece')"
+            :class="{
+              'border border-white ': filteri.umjetno_cvijece,
+            }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Umjetno cvijeće
           </button>
           <button
             @click="filteringTheProducts('bozic')"
+            :class="{
+              'border border-white ': filteri.bozic,
+            }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Božić
           </button>
           <button
             @click="filteringTheProducts('rezano_cvijece')"
+            :class="{
+              'border border-white ': filteri.rezano_cvijece,
+            }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Rezano cvijeće
@@ -261,7 +276,9 @@
 
         <div
           v-if="filteri.rezano_cvijece"
-          :class="{ 'animate-fade-in': filteri.rezano_cvijece }"
+          :class="{
+            'animate-fade-in': filteri.rezano_cvijece,
+          }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           <div v-for="image in rezanoCvijece" :key="image.filename">
@@ -359,6 +376,12 @@ export default {
   components: {
     FooterComponent,
   },
+  props: {
+    filter: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     return {
       isSectionVisible: false,
@@ -387,13 +410,8 @@ export default {
 
   mounted() {
     this.initIntersectionObserver();
-    const filter = this.$route.query.filter;
-
-    if (filter) {
-      // Set the filter state based on the query parameter
-      Object.entries(this.filteri).forEach(([key]) => {
-        this.filteri[key] = key === filter;
-      });
+    if (this.filter) {
+      this.applyFilter(this.filter);
     }
   },
   created() {
@@ -470,6 +488,11 @@ export default {
       } else {
         console.warn("No section1 ref found");
       }
+    },
+    applyFilter(filterArgument) {
+      Object.entries(this.filteri).forEach(([key]) => {
+        this.filteri[key] = key === filterArgument;
+      });
     },
     resetingAllFilters() {
       Object.entries(this.filteri).forEach(([key]) => {

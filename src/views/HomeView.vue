@@ -187,10 +187,10 @@
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
         <h1 class="px-4 text-3xl sm:text-5xl text-left w-full md:text-6xl mb-4">
-          CVJEĆARNICA I
+          Cvjećarnica i
         </h1>
         <h2 class="text-3xl sm:text-5xl px-4 text-left w-full md:text-6xl mb-8">
-          POGREBNE USLUGE
+          pogrebne usluge
         </h2>
         <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
           <svg
@@ -232,10 +232,10 @@
       <!-- Section Header -->
       <div class="text-center mb-20">
         <h2 class="text-[28px] sm:text-[40px] mb-4 font-jacques">
-          NAŠE USLUGE
+          Naše usluge
         </h2>
         <p
-          class="text-gray-600 max-w-3xl mx-auto text-[18px] sm:text-[28px] font-jacques"
+          class="text-gray-600 max-w-3xl mx-auto text-[18px] sm:text-[1.25rem] font-jacques"
         >
           Pouzdane i profesionalne usluge koje pružamo s pažnjom i poštovanjem.
         </p>
@@ -250,14 +250,14 @@
               <img src="../assets/images/24_sata.png" alt="" />
             </div>
           </div>
-          <h3 class="text-xl mb-5 font-jacques">USLUGA 0 - 24</h3>
+          <h3 class="text-xl mb-5 font-jacques">Usluga 0 - 24</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Usluga od 24h dnevno za uslugu prijevoza pokojnika.
           </p>
           <button
             class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
           >
-            SAZNAJ VIŠE
+            Saznaj više
           </button>
         </div>
 
@@ -268,15 +268,18 @@
               <img src="../assets/images/izrada_buketa.png" alt="" />
             </div>
           </div>
-          <h3 class="text-xl mb-5 font-jacques">IZRADA BUKETA</h3>
+          <h3 class="text-xl mb-5 font-jacques">Izrada buketa</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
             dekoracija prilagođenih vašim potrebama.
           </p>
           <button
+            @click="
+              $router.push({ path: '/ponuda', query: { filter: 'buketi' } })
+            "
             class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
 
@@ -287,7 +290,7 @@
               <img src="../assets/images/ponuda_lijesova.png" alt="" />
             </div>
           </div>
-          <h3 class="text-xl mb-5 font-jacques">PONUDA LJESOVA</h3>
+          <h3 class="text-xl mb-5 font-jacques">Ponuda ljesova</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
             Stojimo Vam na raspolaganju za sve Vaše upite.
@@ -295,7 +298,7 @@
           <button
             class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
 
@@ -306,14 +309,21 @@
               <img src="../assets/images/izrada_vijenaca.svg" alt="" />
             </div>
           </div>
-          <h3 class="text-xl mb-5 font-jacques">IZRADA VIJENACA</h3>
+          <h3 class="text-xl mb-5 font-jacques">Izrada vijenaca</h3>
           <p class="text-gray-600 mb-5 font-jacques">
-            Usluga od 24h dnevno za uslugu prijevoza pokojnika.
+            Izrađujemo vijence prema zahtijevima te moguć odabir između
+            postojećih.
           </p>
           <button
+            @click="
+              $router.push({
+                path: '/ponuda',
+                query: { filter: 'umjetno_cvijece' },
+              })
+            "
             class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
-            SAZNAJ VIŠE
+            Saznaj više
           </button>
         </div>
 
@@ -328,7 +338,7 @@
               />
             </div>
           </div>
-          <h3 class="text-xl mb-5 font-jacques">PONUDA URNI</h3>
+          <h3 class="text-xl mb-5 font-jacques">Ponuda urni</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
             Stojimo Vam na raspolaganju za sve Vaše upite.
@@ -336,7 +346,7 @@
           <button
             class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
 
@@ -347,7 +357,7 @@
               <img src="../assets/images/dodatna_ponuda.png" alt="" />
             </div>
           </div>
-          <h3 class="text-xl mb-5 font-jacques">DODATNA PONUDA</h3>
+          <h3 class="text-xl mb-5 font-jacques">Dodatna ponuda</h3>
           <p class="text-gray-600 mb-5 font-jacques">
             Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
             dekoracija prilagođenih vašim potrebama.
@@ -355,7 +365,7 @@
           <button
             class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
           >
-            POGLEDAJ PONUDU
+            Pogledaj ponudu
           </button>
         </div>
       </div>
@@ -371,7 +381,7 @@
             <img
               src="../assets/images/cvjecarnica-pogledaj.png"
               alt="Colorful bouquet"
-              class="lg:w-full lg:max-w-full xl:h-full sm:max-w-[350px] sm:mx-auto"
+              class="lg:w-full lg:max-w-full xl:h-full sm:max-w-[300px] sm:mx-auto"
             />
           </div>
 
@@ -381,15 +391,15 @@
             <h2
               class="text-cyan-400 text-[28px] text-left sm:text-center sm:text-[40px] mb-8 font-jacques w-full"
             >
-              CVJEĆARNICA
+              Cvjećarnica
             </h2>
             <p
-              class="text-gray-300 mb-8 text-[18px] text-left sm:text-center sm:text-[28px] font-jacques"
+              class="text-gray-300 mb-8 text-[18px] text-left sm:text-center sm:text-[1.25rem] font-jacques"
             >
               Veliki izbor svih vrsta cvjetnih aranžmana, buketa i vijenaca.
             </p>
             <p
-              class="text-gray-300 mb-8 text-[18px] text-left sm:text-center sm:text-[28px] font-jacques"
+              class="text-gray-300 mb-8 text-[18px] text-left sm:text-center sm:text-[1.25rem] font-jacques"
             >
               U našoj cvjećarnici možete naručiti sve vrste cvjetnih aranžmana,
               buketa i vijenaca. Vršimo dostavu na kućnu adresu i dostavu na
@@ -400,7 +410,7 @@
               @click="redirectToCvjecarnica"
               class="w-[200px] font-jacques bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
             >
-              POGLEDAJ PONUDU
+              Pogledaj
             </button>
           </div>
         </div>
@@ -416,10 +426,10 @@
               @click="redirectToPogrebno"
               class="font-jacques text-secundary text-[28px] text-left sm:text-center sm:text-[40px] mb-8 w-full"
             >
-              POGREBNE USLUGE
+              Pogrebne usluge
             </h2>
             <p
-              class="text-gray-300 mb-12 text-[18px] text-left sm:text-center sm:text-[28px] font-jacques"
+              class="text-gray-300 mb-12 text-[18px] text-left sm:text-center sm:text-[1.25rem] font-jacques"
             >
               Naša ponuda uključuje širok izbor kvalitetno izrađenih ljesova,
               prilagođenih sadašnjim financijskim mogućnostima naših klijenata.
@@ -429,9 +439,10 @@
               pokojnika.
             </p>
             <button
+              @click="redirectToPogrebno"
               class="w-[200px] font-jacques bg-secundary text-black px-6 py-2 rounded hover:bg-cyan-500 transition-colors"
             >
-              POGLEDAJ PONUDU
+              Pogledaj
             </button>
           </div>
 
@@ -439,7 +450,7 @@
             <img
               src="../assets/images/pogrebno-pogledaj.png"
               alt="Colorful bouquet"
-              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[300px] sm:mx-auto"
             />
           </div>
         </div>
@@ -450,7 +461,7 @@
       <!-- Header -->
       <div class="text-left pb-[50px] mb-0 lg:mb-[90px]">
         <h2 class="font-jacques text-[28px] sm:text-[40px] mb-6">
-          PROVJERITE ŠTO SE NUDI U IZLOGU
+          Provjerite što se nudi u izlogu
         </h2>
         <p class="font-jacques text-gray-600 mx-auto">
           Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
@@ -622,7 +633,7 @@ export default {
       this.$router.push("/cvjecarnica-melani");
     },
     redirectToPogrebno() {
-      this.$router.push("//pogrebne-usluge");
+      this.$router.push("/pogrebne-usluge");
     },
   },
 };

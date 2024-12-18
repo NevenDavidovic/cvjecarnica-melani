@@ -31,6 +31,7 @@ const routes = [
     name: "ponuda",
 
     component: () => import("../views/PonudaView.vue"),
+    props: (route) => ({ filter: route.query.filter }),
   },
 ];
 
