@@ -22,7 +22,7 @@
           </p>
           <div class="mt-10 flex">
             <a
-              href="/ponuda"
+              href="/ponuda?filteri=umjetno_cvijece"
               class="rounded-md bg-primary text-xl px-[20px] text-black px-3.5 py-2.5 text-sm font-normal shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >Pogledaj <span aria-hidden="true">&rarr;</span></a
             >

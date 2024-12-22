@@ -37,11 +37,9 @@
               <h3 class="text-sm/6 font-semibold text-gray-900">Adresa</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li v-for="item in navigation.support" :key="item.name">
-                  <a
-                    :href="item.href"
-                    class="text-sm/6 text-gray-600 hover:text-gray-900"
-                    >{{ item.name }}</a
-                  >
+                  <a class="text-sm/6 text-gray-600 hover:text-gray-900">{{
+                    item.name
+                  }}</a>
                 </li>
               </ul>
             </div>
@@ -102,14 +100,14 @@ const navigation = {
     { name: "Telefon: 021/630 996", href: "#" },
   ],
   company: [
-    { name: "Ponuda lijesova", href: "/pogrebno" },
-    { name: "Ponuda urni", href: "/pogrebno" },
-    { name: "Ponuda lampiona", href: "/pogrebno" },
+    { name: "Ponuda lijesova", href: "/ponuda-pogrebno?filter=lijesovi" },
+    { name: "Ponuda urni", href: "/ponuda-pogrebno?filter=urne" },
+    { name: "Ponuda lampiona", href: "/ponuda-pogrebno?filter=lampioni" },
   ],
   legal: [
     { name: "Pitanje prijevoza", href: "#" },
     { name: "Organiziranje glazbe", href: "#" },
-    { name: "Cvijeće za Evente", href: "#" },
+    { name: "Cvijeće za Evente", href: "/ponuda" },
   ],
   social: [
     {

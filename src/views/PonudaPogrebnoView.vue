@@ -187,9 +187,10 @@
           </RouterLink>
 
           <button
+            @click="redirectToContact"
             class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
       </div>
@@ -198,56 +199,116 @@
     <!-- Hero Banner -->
     <div class="relative h-[500px] bg-gray-900">
       <img
-        src="../assets/images/ponuda-hero.png"
+        src="../assets/images/banner-ponuda-pogrebno.jpg"
         alt="Vintage phone background"
         class="w-full h-full object-cover opacity-40"
       />
       <h1
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-semibold"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-normal"
       >
-        PONUDA CVIJEĆA
+        Pogrebne usluge - ponuda
       </h1>
     </div>
 
-    <div class="bg-gray-800 text-white py-4">
-      <div class="container mx-auto flex justify-center">
-        <div class="flex space-x-6">
+    <div class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <h1 class="text-2xl font-normal mb-[50px]">Kategorije</h1>
+        <div class="flex flex-wrap justify-center mb-8">
           <button
-            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
+            @click="resetingAllFilters"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             Sve
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            @click="filteringTheProducts('lijesovi')"
+            :class="{
+              'border border-white ': filteri.lijesovi,
+            }"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Buketi i aranžmani
+            Lijesovi
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            @click="filteringTheProducts('lampioni')"
+            :class="{
+              'border border-white ': filteri.lampioni,
+            }"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Vjenčani buketi
+            Lampioni
           </button>
           <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
+            @click="filteringTheProducts('urne')"
+            :class="{
+              'border border-white ': filteri.urne,
+            }"
+            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Umjetno cvijeće
-          </button>
-          <button
-            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded"
-          >
-            Rezano cvijeće
+            Urne
           </button>
         </div>
-      </div>
-      <div class="container mx-auto mt-4">
-        <div class="bg-white text-gray-800 rounded-md shadow-md p-4">
-          <p>Sortiraj po</p>
-          <!-- Add sorting functionality here -->
+
+        <div class="flex justify-end mb-4">
+          <select class="bg-gray-600 text-white py-2 px-4 rounded">
+            <option>Sort by</option>
+            <option>Title (A-Z)</option>
+            <option>Title (Z-A)</option>
+          </select>
+        </div>
+
+        <div
+          v-if="filteri.lijesovi"
+          :class="{
+            'animate-fade-in': filteri.lijesovi,
+          }"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
+        >
+          <div v-for="image in lijesoviPonuda" :key="image.filename">
+            <img
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-xl"
+              :src="
+                require(`@/assets/ponuda_pogrebno/lijesovi/${image.filename}`)
+              "
+              alt=""
+            />
+            <!-- <h3>{{ image.title }}</h3> -->
+          </div>
+        </div>
+
+        <div
+          v-if="filteri.lampioni"
+          :class="{ 'animate-fade-in': filteri.lampioni }"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
+        >
+          <div v-for="image in lampioniPonuda" :key="image.filename">
+            <img
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="
+                require(`@/assets/ponuda_pogrebno/lampioni/${image.filename}`)
+              "
+              alt=""
+            />
+            <!-- <h3>{{ image.title }}</h3> -->
+          </div>
+        </div>
+
+        <div
+          v-if="filteri.urne"
+          :class="{ 'animate-fade-in': filteri.urne }"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
+        >
+          <div v-for="image in urnePonuda" :key="image.filename">
+            <img
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              :src="require(`@/assets/ponuda_pogrebno/urne/${image.filename}`)"
+              alt=""
+            />
+            <!-- <h3>{{ image.title }}</h3> -->
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Contact Content -->
 
     <FooterComponent />
   </div>
@@ -261,6 +322,12 @@ export default {
   components: {
     FooterComponent,
   },
+  props: {
+    filter: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     return {
       isSectionVisible: false,
@@ -271,36 +338,80 @@ export default {
         phone: "",
         message: "",
       },
-      selectedCategories: [], // Track selected categories
-      flowerCategories: [
-        // Example categories
-        { id: 1, name: "Roses" },
-        { id: 2, name: "Tulips" },
-        { id: 3, name: "Lilies" },
-      ],
-      owlOptions: {
-        items: 1,
-        nav: true,
-        dots: true,
-        loop: true,
-        margin: 20,
-        autoplay: true,
-        autoplayTimeout: 1000,
-        navText: [
-          '<i class="custom-prev-icon">←</i>',
-          '<i class="custom-next-icon">→</i>',
-        ],
-        responsive: {
-          0: { items: 2 },
-          600: { items: 3 },
-          1000: { items: 5 },
-        },
+      lijesoviPonuda: [],
+      urnePonuda: [],
+      lampioniPonuda: [],
+
+      filteri: {
+        lijesovi: true,
+        urne: true,
+        lampioni: true,
       },
     };
   },
+
   mounted() {
     this.initIntersectionObserver();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (this.filter) {
+      this.applyFilter(this.filter);
+    }
+  },
+  created() {
+    const lijesoviPonuda = require.context(
+      "@/assets/ponuda_pogrebno/lijesovi",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.lijesoviPonuda = lijesoviPonuda.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
+    const lampioniPonuda = require.context(
+      "@/assets/ponuda_pogrebno/lampioni",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.lampioniPonuda = lampioniPonuda.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
+    const urnePonuda = require.context(
+      "@/assets/ponuda_pogrebno/urne",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.urnePonuda = urnePonuda.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
+    const rezanoCvijece = require.context(
+      "@/assets/ponuda_cvijeca/rezano_cvijece",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.rezanoCvijece = rezanoCvijece.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
+    const bozicCvijece = require.context(
+      "@/assets/ponuda_cvijeca/bozic",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+
+    this.bozicCvijece = bozicCvijece.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
   },
 
   beforeUnmount() {
@@ -320,17 +431,26 @@ export default {
         console.warn("No section1 ref found");
       }
     },
-    toggleCategory(categoryId) {
-      const index = this.selectedCategories.indexOf(categoryId);
-      if (index > -1) {
-        this.selectedCategories.splice(index, 1);
-      } else {
-        this.selectedCategories.push(categoryId);
-      }
+    applyFilter(filterArgument) {
+      Object.entries(this.filteri).forEach(([key]) => {
+        this.filteri[key] = key === filterArgument;
+      });
     },
-    clearFilters() {
-      this.selectedCategories = [];
+    resetingAllFilters() {
+      Object.entries(this.filteri).forEach(([key]) => {
+        this.filteri[key] = true;
+      });
     },
+    filteringTheProducts(filterArgument) {
+      Object.entries(this.filteri).forEach(([key]) => {
+        if (key === filterArgument) {
+          this.filteri[key] = true;
+        } else {
+          this.filteri[key] = false;
+        }
+      });
+    },
+
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
@@ -343,6 +463,21 @@ export default {
 </script>
 
 <style scoped>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation class */
+.animate-fade-in {
+  animation: fadeIn 2s ease-out;
+}
 /* Optional: Custom styling for navigation */
 .owl-prev,
 .owl-next {

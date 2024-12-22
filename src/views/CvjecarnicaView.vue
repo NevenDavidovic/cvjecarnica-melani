@@ -682,26 +682,41 @@
     >
       <div class="carousel-container">
         <OwlCarousel :options="owlOptions">
-          <div class="item flex flex-col gap-4 cursor-pointer">
+          <div
+            class="item flex flex-col gap-4 cursor-pointer"
+            @click="$router.push('/ponuda?filter=buketi')"
+          >
             <img src="../assets/images/buketi-i-aranzmani.jpg" alt="Slide 1" />
-            <h3 class="text-xl">BUKETI I ARANŽMANI</h3>
+            <h3 class="text-xl">Buketi i aranžmani</h3>
           </div>
-          <div class="item flex flex-col gap-4 cursor-pointer">
+          <div
+            class="item flex flex-col gap-4 cursor-pointer"
+            @click="$router.push('/ponuda?filter=rezano_cvijece')"
+          >
             <img src="../assets/images/vjencani-buketi.jpg" alt="Slide 2" />
-            <h3 class="text-xl">VJENČANI BUKETI I ARANŽMANI</h3>
+            <h3 class="text-xl">Rezano cvijeće</h3>
           </div>
-          <div class="item flex flex-col gap-4 cursor-pointer">
+          <div
+            class="item flex flex-col gap-4 cursor-pointer"
+            @click="$router.push('/ponuda?filter=bozic')"
+          >
             <img src="../assets/images/prigoodni-aranzmani.jpg" alt="Slide 3" />
-            <h3 class="text-xl">PRIGODNI ARANŽMANI</h3>
+            <h3 class="text-xl">Prigodni aranžmani</h3>
           </div>
 
-          <div class="item flex flex-col gap-4 cursor-pointer">
+          <div
+            class="item flex flex-col gap-4 cursor-pointer"
+            @click="$router.push('/ponuda?filter=umjetno_cvijece')"
+          >
             <img src="../assets/images/grobni-vijenci.jpg" alt="Slide 3" />
-            <h3 class="text-xl">GROBNI VIJENCI, BUKETI I GROBNI ARANŽMANI</h3>
+            <h3 class="text-xl">Umjetno cvijeće</h3>
           </div>
-          <div class="item flex flex-col gap-4 cursor-pointer">
+          <div
+            class="item flex flex-col gap-4 cursor-pointer"
+            @click="$router.push('/ponuda?filter=valentinovo')"
+          >
             <img src="../assets/images/kutije.jpg" alt="Slide 3" />
-            <h3 class="text-xl">KUTIJE</h3>
+            <h3 class="text-xl">Valentinovo</h3>
           </div>
         </OwlCarousel>
       </div>
@@ -714,7 +729,7 @@
         <router-link
           to="/ponuda"
           class="bg-primary text-xl px-[20px] text-black text-xl py-[10px] max-w-[250px] rounded mx-auto"
-          >Pogledaj</router-link
+          >Pogledaj <span aria-hidden="true">&rarr;</span></router-link
         >
       </div>
     </div>

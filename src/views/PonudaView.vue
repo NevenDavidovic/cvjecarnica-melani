@@ -187,9 +187,10 @@
           </RouterLink>
 
           <button
+            @click="redirectToContact"
             class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
           >
-            Kontakt Podaci
+            Kontakt
           </button>
         </div>
       </div>
@@ -203,7 +204,7 @@
         class="w-full h-full object-cover opacity-40"
       />
       <h1
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-semibold"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-normal"
       >
         PONUDA CVIJEĆA
       </h1>
@@ -211,7 +212,7 @@
 
     <div class="bg-gray-800 text-white py-8">
       <div class="container mx-auto px-4">
-        <h1 class="text-2xl font-bold mb-4">Kategorije cvijeća</h1>
+        <h1 class="text-2xl font-normal mb-[50px]">Kategorije cvijeća</h1>
         <div class="flex flex-wrap justify-center mb-8">
           <button
             @click="resetingAllFilters"
@@ -279,11 +280,11 @@
           :class="{
             'animate-fade-in': filteri.rezano_cvijece,
           }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
           <div v-for="image in rezanoCvijece" :key="image.filename">
             <img
-              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="
                 require(`@/assets/ponuda_cvijeca/rezano_cvijece/${image.filename}`)
               "
@@ -296,11 +297,11 @@
         <div
           v-if="filteri.bozic"
           :class="{ 'animate-fade-in': filteri.bozic }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
           <div v-for="bozic in bozicCvijece" :key="bozic.filename">
             <img
-              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="require(`@/assets/ponuda_cvijeca/bozic/${bozic.filename}`)"
               alt=""
             />
@@ -311,14 +312,14 @@
         <div
           v-if="filteri.valentinovo"
           :class="{ 'animate-fade-in': filteri.valentinovo }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
           <div
             v-for="valentinovo in valentinovoCvijece"
             :key="valentinovo.filename"
           >
             <img
-              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="
                 require(`@/assets/ponuda_cvijeca/valentinovo/${valentinovo.filename}`)
               "
@@ -331,11 +332,11 @@
         <div
           v-if="filteri.umjetno_cvijece"
           :class="{ 'animate-fade-in': filteri.umjetno_cvijece }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
           <div v-for="umjetno in umjetnoCvijece" :key="umjetno.filename">
             <img
-              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="
                 require(`@/assets/ponuda_cvijeca/umjetno_cvijece/${umjetno.filename}`)
               "
@@ -348,11 +349,11 @@
         <div
           v-if="filteri.buketi"
           :class="{ 'animate-fade-in': filteri.buketi }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
           <div v-for="buketi in buketiAranzmani" :key="buketi.filename">
             <img
-              class="lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
+              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="
                 require(`@/assets/ponuda_cvijeca/buketi_i_aranzmani/${buketi.filename}`)
               "

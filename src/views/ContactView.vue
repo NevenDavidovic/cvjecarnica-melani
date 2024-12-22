@@ -202,11 +202,11 @@
         alt="Vintage phone background"
         class="w-full h-full object-cover opacity-40"
       />
-      <!-- <h1
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-semibold"
+      <h1
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-normal"
       >
         KONTAKTIRAJTE NAS
-      </h1> -->
+      </h1>
     </div>
 
     <!-- Contact Content -->
@@ -252,11 +252,11 @@
                 />
               </svg>
             </div>
-            <h2
+            <!-- <h2
               class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
             >
               Kontaktirajte nas
-            </h2>
+            </h2> -->
             <p class="mt-6 text-lg/8 text-gray-600">
               Tu smo za vas u svakom trenutku - javite nam se s
               povjerenjem.Kontaktirajte nas za sve informacije i narudžbe.
