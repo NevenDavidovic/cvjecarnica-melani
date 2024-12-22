@@ -302,7 +302,6 @@
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
               :src="require(`@/assets/ponuda_pogrebno/urne/${image.filename}`)"
-              alt=""
             />
             <!-- <h3>{{ image.title }}</h3> -->
           </div>
