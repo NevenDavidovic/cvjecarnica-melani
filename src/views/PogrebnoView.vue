@@ -7,7 +7,7 @@
     ></div>
     <nav
       :class="{ gray: isSectionVisible }"
-      class="py-[8px] navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50 shadow-sm"
+      class="py-[8px] navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50"
     >
       <div class="container mx-auto px-4 flex items-center justify-between">
         <!-- Logo -->
@@ -25,15 +25,79 @@
           <RouterLink to="/" class="font-jacques uppercase text-white">
             Naslovnica
           </RouterLink>
-          <RouterLink to="/ponuda" class="font-jacques uppercase text-white">
-            Ponuda
-          </RouterLink>
+
+          <div class="relative group">
+            <RouterLink
+              to="#"
+              class="font-jacques uppercase text-white hover:text-[#42E2EC] transition-colors duration-300 flex items-center gap-2"
+            >
+              Ponuda
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </RouterLink>
+
+            <!-- Added invisible padding to ensure no gap between trigger and menu -->
+            <div class="absolute w-full h-2 -bottom-2"></div>
+
+            <div
+              class="hidden group-hover:block absolute top-[calc(100%+8px)] left-0 min-w-[280px] z-50 transform opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(66,226,236,0.15)]"
+            >
+              <RouterLink
+                to="/ponuda-pogrebno"
+                class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
+              >
+                <span class="relative">
+                  Pogrebna ponuda
+                  <span
+                    class="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"
+                  ></span>
+                </span>
+              </RouterLink>
+
+              <RouterLink
+                to="/ponuda"
+                class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1"
+              >
+                <span class="relative">
+                  Ponuda cvijeća
+                  <span
+                    class="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"
+                  ></span>
+                </span>
+              </RouterLink>
+
+              <RouterLink
+                to="/ponuda-lijesovi"
+                class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
+              >
+                <span class="relative">
+                  Ponuda lijesova
+                  <span
+                    class="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"
+                  ></span>
+                </span>
+              </RouterLink>
+            </div>
+          </div>
+
           <RouterLink
             to="/cvjecarnica-melani"
             class="font-jacques uppercase text-primary"
           >
             Cvjećarnica
           </RouterLink>
+
           <RouterLink
             to="/pogrebne-usluge"
             class="font-jacques uppercase text-[#FBCA00]"
@@ -141,12 +205,54 @@
           >
             Naslovnica
           </RouterLink>
-          <RouterLink
-            to="/ponuda"
-            class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
-          >
-            Ponuda
-          </RouterLink>
+
+          <div class="usluge-ponuda flex flex-col gap-[20px]">
+            <div
+              @click="toggleSubmenuPonuda()"
+              class="main-usluga flex gap-[10px] color-primary justify-center align-center items-center"
+            >
+              <p
+                class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
+              >
+                Ponuda
+              </p>
+
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <div v-if="submenuPonuda" class="submenu flex flex-col gap-[20px]">
+              <RouterLink
+                to="/ponuda"
+                class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
+              >
+                Ponuda cvijeća
+              </RouterLink>
+              <RouterLink
+                to="/ponuda-pogrebno"
+                class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
+              >
+                Pogrebna ponuda
+              </RouterLink>
+              <RouterLink
+                to="/ponuda-lijesovi"
+                class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
+              >
+                Ponuda lijesova
+              </RouterLink>
+            </div>
+          </div>
+
           <RouterLink
             to="/cvjecarnica-melani"
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
@@ -350,7 +456,7 @@
       </div>
 
       <button
-        @click="$router.push('/ponuda-pogrebno?filter=lijesovi')"
+        @click="$router.push('/ponuda-lijesovi')"
         class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors mx-auto"
       >
         Pogledaj sve
@@ -440,6 +546,7 @@ export default {
     return {
       isSectionVisible: false,
       isMobileMenuOpen: false,
+      submenuPonuda: false,
       lijesovImages: [],
       owlOptions: {
         items: 1,
@@ -493,6 +600,9 @@ export default {
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
+    },
+    toggleSubmenuPonuda() {
+      this.submenuPonuda = !this.submenuPonuda;
     },
 
     redirectToContact() {

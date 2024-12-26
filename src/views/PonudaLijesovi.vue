@@ -279,211 +279,17 @@
     <!-- Hero Banner -->
     <div class="relative h-[500px] bg-gray-900">
       <img
-        src="../assets/images/telefon-banner.jpg"
+        src="../assets/images/banner-ponuda-lijesovi.jpg"
         alt="Vintage phone background"
         class="w-full h-full object-cover opacity-40"
       />
       <h1
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-normal"
       >
-        KONTAKTIRAJTE NAS
+        Ponuda lijesova
       </h1>
     </div>
-
-    <!-- Contact Content -->
-    <div class="relative isolate bg-white">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div
-          class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48"
-        >
-          <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <div
-              class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2"
-            >
-              <svg
-                class="absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-                aria-hidden="true"
-              >
-                <defs>
-                  <pattern
-                    id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
-                    width="200"
-                    height="200"
-                    x="100%"
-                    y="-1"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <path d="M130 200V.5M.5 .5H200" fill="none" />
-                  </pattern>
-                </defs>
-                <rect
-                  width="100%"
-                  height="100%"
-                  stroke-width="0"
-                  fill="white"
-                />
-                <svg x="100%" y="-1" class="overflow-visible fill-gray-50">
-                  <path d="M-470.5 0h201v201h-201Z" stroke-width="0" />
-                </svg>
-                <rect
-                  width="100%"
-                  height="100%"
-                  stroke-width="0"
-                  fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
-                />
-              </svg>
-            </div>
-            <!-- <h2
-              class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
-            >
-              Kontaktirajte nas
-            </h2> -->
-            <p class="mt-6 text-lg/8 text-gray-600">
-              Tu smo za vas u svakom trenutku - javite nam se s
-              povjerenjem.Kontaktirajte nas za sve informacije i narudžbe.
-              Brinemo o svakom detalju jer vaša pitanja i potrebe su nam
-              prioritet.
-            </p>
-            <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Adresa:</span>
-                  <BuildingOffice2Icon
-                    class="h-7 w-6 text-gray-400"
-                    aria-hidden="true"
-                  />
-                </dt>
-                <dd>Ulica Mladena Vodanovića 4b, 21400 Supetar</dd>
-              </div>
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Telefon: </span>
-                  <PhoneIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
-                </dt>
-                <dd>
-                  <a class="hover:text-gray-900" href="tel:+38521630996"
-                    >021/630 996</a
-                  >
-                </dd>
-              </div>
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Email</span>
-                  <EnvelopeIcon
-                    class="h-7 w-6 text-gray-400"
-                    aria-hidden="true"
-                  />
-                </dt>
-                <dd>
-                  <a
-                    class="hover:text-gray-900"
-                    href="mailto:cvjecarnica.melani@gmail.com"
-                    >cvjecarnica.melani@gmail.com</a
-                  >
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-        <form
-          action="#"
-          method="POST"
-          class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
-        >
-          <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div>
-                <label
-                  for="first-name"
-                  class="block text-sm/6 font-semibold text-gray-900"
-                  >Ime</label
-                >
-                <div class="mt-2.5">
-                  <input
-                    type="text"
-                    name="first-name"
-                    id="first-name"
-                    autocomplete="given-name"
-                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  for="last-name"
-                  class="block text-sm/6 font-semibold text-gray-900"
-                  >Prezime</label
-                >
-                <div class="mt-2.5">
-                  <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
-                    autocomplete="family-name"
-                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label
-                  for="email"
-                  class="block text-sm/6 font-semibold text-gray-900"
-                  >Email</label
-                >
-                <div class="mt-2.5">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autocomplete="email"
-                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label
-                  for="phone-number"
-                  class="block text-sm/6 font-semibold text-gray-900"
-                  >Broj telefona</label
-                >
-                <div class="mt-2.5">
-                  <input
-                    type="tel"
-                    name="phone-number"
-                    id="phone-number"
-                    autocomplete="tel"
-                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label
-                  for="message"
-                  class="block text-sm/6 font-semibold text-gray-900"
-                  >Poruka</label
-                >
-                <div class="mt-2.5">
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows="4"
-                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="mt-8 flex justify-end">
-              <button
-                type="submit"
-                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Pošalji poruku
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+    <ProductListComponent />
 
     <FooterComponent />
   </div>
@@ -491,56 +297,33 @@
 
 <script>
 import FooterComponent from "../components/FooterComponent.vue";
-import {
-  BuildingOffice2Icon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/vue/24/outline";
+import ProductListComponent from "@/components/ProductListComponent.vue";
 
 export default {
   name: "HomeView",
   components: {
     FooterComponent,
-    BuildingOffice2Icon,
-    EnvelopeIcon,
-    PhoneIcon,
+    ProductListComponent,
   },
+  props: {},
   data() {
     return {
       isSectionVisible: false,
       isMobileMenuOpen: false,
       submenuPonuda: false,
-      formData: {
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      },
-      owlOptions: {
-        items: 1,
-        nav: true,
-        dots: true,
-        loop: true,
-        margin: 20,
-        autoplay: true,
-        autoplayTimeout: 1000,
-        navText: [
-          '<i class="custom-prev-icon">←</i>',
-          '<i class="custom-next-icon">→</i>',
-        ],
-        responsive: {
-          0: { items: 2 },
-          600: { items: 3 },
-          1000: { items: 5 },
-        },
-      },
     };
   },
+
   mounted() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    this.initIntersectionObserver();
+    if (this.filter) {
+      this.applyFilter(this.filter);
+    }
   },
+  created() {},
+
   beforeUnmount() {
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "auto"; // Reset overflow
   },
   methods: {
     initIntersectionObserver() {
@@ -550,8 +333,13 @@ export default {
         });
       });
 
-      observer.observe(this.$refs.section1);
+      if (this.$refs.section1) {
+        observer.observe(this.$refs.section1);
+      } else {
+        console.warn("No section1 ref found");
+      }
     },
+
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
@@ -559,15 +347,29 @@ export default {
     toggleSubmenuPonuda() {
       this.submenuPonuda = !this.submenuPonuda;
     },
-
     redirectToContact() {
-      // Use this.$router to navigate
       this.$router.push("/contact-melani");
     },
   },
 };
 </script>
+
 <style scoped>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation class */
+.animate-fade-in {
+  animation: fadeIn 2s ease-out;
+}
 /* Optional: Custom styling for navigation */
 .owl-prev,
 .owl-next {

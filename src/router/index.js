@@ -41,6 +41,13 @@ const routes = [
     component: () => import("../views/PonudaPogrebnoView.vue"),
     props: (route) => ({ filter: route.query.filter }),
   },
+  {
+    path: "/ponuda-lijesovi",
+    name: "ponuda-lijesovi",
+
+    component: () => import("../views/PonudaLijesovi.vue"),
+    props: (route) => ({ filter: route.query.filter }),
+  },
 ];
 
 const router = createRouter({

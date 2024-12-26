@@ -100,7 +100,7 @@ const navigation = {
     { name: "Telefon: 021/630 996", href: "#" },
   ],
   company: [
-    { name: "Ponuda lijesova", href: "/ponuda-pogrebno?filter=lijesovi" },
+    { name: "Ponuda lijesova", href: "/ponuda-lijesovi" },
     { name: "Ponuda urni", href: "/ponuda-pogrebno?filter=urne" },
     { name: "Ponuda lampiona", href: "/ponuda-pogrebno?filter=lampioni" },
   ],
