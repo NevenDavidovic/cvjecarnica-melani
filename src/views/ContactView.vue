@@ -286,7 +286,7 @@
       <h1
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white font-normal"
       >
-        KONTAKTIRAJTE NAS
+        Kontaktirajte nas
       </h1>
     </div>
 
