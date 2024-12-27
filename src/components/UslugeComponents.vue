@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white pb-6">
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-      <div class="container mx-auto px-6 p-6 bg-white">
+      <div class="container mx-auto sm:px-6 sm:p-6 bg-white">
         <div class="mb-16 text-center">
           <h4
             class="text-base text-indigo-600 font-semibold tracking-wide uppercase"

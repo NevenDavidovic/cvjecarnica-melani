@@ -48,6 +48,13 @@ const routes = [
     component: () => import("../views/PonudaLijesovi.vue"),
     props: (route) => ({ filter: route.query.filter }),
   },
+  {
+    path: "/product-detail",
+    name: "product-detail",
+
+    component: () => import("../views/ProductPageLijesovi.vue"),
+    props: (route) => ({ filter: route.query.filter }),
+  },
 ];
 
 const router = createRouter({
