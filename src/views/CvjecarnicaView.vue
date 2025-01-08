@@ -722,11 +722,12 @@
               src="../assets/images/about-us-section.jpg"
               alt="Cvjećarna Melani"
               class="w-full h-full object-cover rounded-lg"
+              data-aos="fade-up"
             />
           </div>
 
           <!-- Text Column -->
-          <div class="flex flex-col justify-center max-w-xl">
+          <div class="flex flex-col justify-center max-w-xl" data-aos="fade-up">
             <div class="mb-8">
               <p
                 class="border-b text-gray-500 text-left uppercase tracking-wider mb-4"
@@ -740,6 +741,7 @@
               </h2>
               <p
                 class="text-gray-600 text-left text-[1.25rem] leading-relaxed mb-8"
+                data-aos="fade-up"
               >
                 Dobrodošli u našu cvjećarnu u Supetru! Smještena u srcu Supetra
                 na prekrasnom otoku Braču, naša cvjećarna je mjesto gdje
@@ -761,7 +763,7 @@
     <div
       class="Carousel px-[16px] py-[50px] lg:py-[150px] flex flex-col gap-14"
     >
-      <div class="carousel-container">
+      <div class="carousel-container" data-aos="fade-up">
         <OwlCarousel :options="owlOptions">
           <div
             class="item flex flex-col gap-4 cursor-pointer"
@@ -802,7 +804,10 @@
         </OwlCarousel>
       </div>
 
-      <div class="flex flex-col gap-8 justify-center align-center">
+      <div
+        class="flex flex-col gap-8 justify-center align-center"
+        data-aos="fade-up"
+      >
         <p class="text-[#6C6B71] max-w-[80%] mx-auto text-xl sm:text-[1.25rem]">
           Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
           aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.
@@ -819,10 +824,13 @@
       <div class="container mx-auto max-w-6xl">
         <!-- Header Section -->
         <div class="text-center mb-12">
-          <h2 class="text-white font-playfair text-4xl md:text-5xl mb-4">
+          <h2
+            class="text-white font-playfair text-4xl md:text-5xl mb-4"
+            data-aos="fade-up"
+          >
             Valentinovo
           </h2>
-          <p class="text-white italic text-lg md:text-xl">
+          <p class="text-white italic text-lg md:text-xl" data-aos="fade-up">
             "Love is like a flower, blooming with care and tenderness."
           </p>
         </div>
@@ -835,6 +843,7 @@
               src="../assets/images/buket-valentinovo.png"
               alt="Valentine's Day Roses"
               class="w-full h-full"
+              data-aos="fade-left"
             />
           </div>
           <!-- Large Image 2 -->
@@ -843,6 +852,7 @@
               src="../assets/images/izlog-valentinovo.png"
               alt="Valentine's Day Shop Display"
               class="w-full h-full"
+              data-aos="fade-right"
             />
           </div>
         </div>
@@ -854,6 +864,7 @@
               src="../assets/images/c-1-valentinovo.png"
               alt="Valentine's Arrangement 1"
               class="w-full h-full"
+              data-aos="fade-up"
             />
           </div>
           <div class="overflow-hidden aspect-square">
@@ -861,6 +872,7 @@
               src="../assets/images/c-2-valentinovo.png"
               alt="Valentine's Arrangement 2"
               class="w-full h-full"
+              data-aos="fade-up"
             />
           </div>
           <div class="overflow-hidden aspect-square">
@@ -868,6 +880,7 @@
               src="../assets/images/c-3-valentinovo.png"
               alt="Valentine's Arrangement 3"
               class="w-full h-full"
+              data-aos="fade-up"
             />
           </div>
           <div class="overflow-hidden aspect-square">
@@ -875,6 +888,7 @@
               src="../assets/images/c-4-valentinovo.png"
               alt="Valentine's Arrangement 4"
               class="w-full h-full object-cov"
+              data-aos="fade-up"
             />
           </div>
         </div>
@@ -886,12 +900,18 @@
     <div class="bg-bg_primary text-cyan-300 py-16 px-4">
       <div class="max-w-6xl mx-auto">
         <!-- Header -->
-        <h2 class="text-4xl md:text-5xl font-medium text-center mb-4">
+        <h2
+          class="text-4xl md:text-5xl font-medium text-center mb-4"
+          data-aos="fade-up"
+        >
           Kako doći do nas?
         </h2>
 
         <!-- Address Text -->
-        <div class="text-center text-[1.25rem] mb-8 text-gray-300">
+        <div
+          class="text-center text-[1.25rem] mb-8 text-gray-300"
+          data-aos="fade-up"
+        >
           <p>
             Cvjećarnica Melani - Ulica Mladena Vodanovića 4b, Supetar, Hrvatska.
           </p>
@@ -910,6 +930,7 @@
                 src="../assets/images/storefront-melani-1.png"
                 alt="Melanie Flower Shop Storefront"
                 class="w-full h-full object-cover"
+                data-aos="fade-up"
               />
             </div>
           </div>
@@ -921,6 +942,7 @@
                 src="../assets/images/storefront-melani-2.png"
                 alt="Melanie Flower Shop Window Display"
                 class="w-full h-full object-cover"
+                data-aos="fade-up"
               />
             </div>
           </div>

@@ -12,6 +12,7 @@
           v-for="product in products"
           :key="product.id"
           class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
+          data-aos="fade-up"
         >
           <img
             :src="product.imageSrc"

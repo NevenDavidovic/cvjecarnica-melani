@@ -2,7 +2,7 @@
   <div
     class="grid min-h-[500px] grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1"
   >
-    <div class="relative flex">
+    <div class="relative flex" data-aos="fade-up">
       <img
         src="../assets/images/cvjecarna-cat.jpg"
         alt=""
@@ -22,7 +22,7 @@
         >
       </div>
     </div>
-    <div class="relative flex">
+    <div class="relative flex" data-aos="fade-up">
       <img
         src="../assets/images/pogrebno-poduzece-cat.jpg"
         alt=""
