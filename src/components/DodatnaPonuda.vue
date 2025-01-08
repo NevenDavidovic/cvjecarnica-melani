@@ -1,15 +1,14 @@
 <template>
-  <div class="bg-white" data-aos="fade-up">
+  <div class="bg-white">
     <div
       class="mx-auto max-w-xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
     >
       <h2
         class="text-[28px] sm:text-[40px] font-normal tracking-tight text-gray-900"
-        data-aos="fade-up"
       >
         Dodatna ponuda
       </h2>
-      <p class="mt-4 text-base text-gray-500" data-aos="fade-up">
+      <p class="mt-4 text-base text-gray-500">
         Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
         aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.
       </p>
@@ -22,7 +21,6 @@
           :key="category.name"
           :href="category.href"
           class="group block"
-          data-aos="fade-left"
         >
           <img
             :src="category.imageSrc"

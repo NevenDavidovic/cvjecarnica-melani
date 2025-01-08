@@ -7,15 +7,14 @@
         <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
           <h2
             class="text-4xl font-normal tracking-tight text-gray-900 sm:text-5xl"
-            data-aos="fade-up"
           >
             Umjetno cvijeće
           </h2>
-          <p class="mt-6 text-xl/8 text-gray-600" data-aos="fade-up">
+          <p class="mt-6 text-xl/8 text-gray-600">
             Izaberite između kvalitetno izrađenog umjetnog cvijeća iz naše
             ponude koju možete pogledati.
           </p>
-          <p class="mt-6 text-base/7 text-gray-600" data-aos="fade-up">
+          <p class="mt-6 text-base/7 text-gray-600">
             Umjetno cvijeće je dekorativni element izrađen od različitih
             materijala poput plastike, svile, papira, metala ili čak 3D
             printanih materijala, dizajniran kako bi imitirao izgled pravog
@@ -24,7 +23,6 @@
           <div class="mt-10 flex">
             <a
               href="/ponuda?filteri=umjetno_cvijece"
-              data-aos="fade-up"
               class="rounded-md bg-primary text-xl px-[20px] text-black px-3.5 py-2.5 text-sm font-normal shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >Pogledaj <span aria-hidden="true">&rarr;</span></a
             >
@@ -35,7 +33,6 @@
         >
           <div
             class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end"
-            data-aos="fade-up"
           >
             <img
               src="../assets/images/umjetno-cvijece-section-1.jpg"
@@ -51,7 +48,6 @@
             >
               <img
                 src="../assets/images/umjetno-cvijece-section-2.png"
-                data-aos="fade-up"
                 alt=""
                 class="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
               />
@@ -61,18 +57,15 @@
                 src="../assets/images/umjetno-cvijece-section-4.jpg"
                 alt=""
                 class="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                data-aos="fade-up"
               />
             </div>
             <div
               class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none"
-              data-aos="fade-up"
             >
               <img
                 src="../assets/images/umjetno-cvijece-section-3.jpg"
                 alt=""
                 class="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                data-aos="fade-up"
               />
             </div>
           </div>

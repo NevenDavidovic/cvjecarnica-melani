@@ -292,10 +292,8 @@
 
     <div class="bg-gray-800 text-white py-8">
       <div class="container mx-auto px-4">
-        <h1 class="text-2xl font-normal mb-[50px]" data-aos="fade-up">
-          Kategorije
-        </h1>
-        <div class="flex flex-wrap justify-center mb-8" data-aos="fade-up">
+        <h1 class="text-2xl font-normal mb-[50px]">Kategorije</h1>
+        <div class="flex flex-wrap justify-center mb-8">
           <button
             @click="resetingAllFilters"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
@@ -338,18 +336,13 @@
           }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="image in lijesoviPonuda"
-            :key="image.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="image in lijesoviPonuda" :key="image.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-xl"
               :src="
                 require(`@/assets/ponuda_pogrebno/lijesovi/${image.filename}`)
               "
               alt=""
-              data-aos="fade-up"
             />
             <!-- <h3>{{ image.title }}</h3> -->
           </div>
@@ -360,11 +353,7 @@
           :class="{ 'animate-fade-in': filteri.lampioni }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="image in lampioniPonuda"
-            :key="image.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="image in lampioniPonuda" :key="image.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
               :src="
@@ -381,11 +370,7 @@
           :class="{ 'animate-fade-in': filteri.urne }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="image in urnePonuda"
-            :key="image.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="image in urnePonuda" :key="image.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto"
               :src="require(`@/assets/ponuda_pogrebno/urne/${image.filename}`)"

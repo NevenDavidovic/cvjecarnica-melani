@@ -341,11 +341,11 @@
       <div class="text-left pb-[50px] mb-0">
         <h2
           class="font-jacques text-[28px] sm:text-[40px] mb-6 text-gray-900"
-          data-aos="fade-up"
+          
         >
           Provjerite što se nudi u izlogu
         </h2>
-        <p class="font-jacques text-gray-600 mx-auto" data-aos="fade-up">
+        <p class="font-jacques text-gray-600 mx-auto" ">
           Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
           aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.
         </p>
@@ -358,18 +358,18 @@
           <div class="md:w-1/2">
             <h3
               class="text-xl mb-4 font-jacques text-left text-gray-900"
-              data-aos="fade-up"
+              
             >
               Vjenčani buketi i aranžmani
             </h3>
-            <p class="text-gray-600 font-jacques text-left" data-aos="fade-up">
+            <p class="text-gray-600 font-jacques text-left" >
               Uz vjenčane bukete i vjenčane aranžmane nudimo i aranžmane za
               vozila (auto aranžmani), stolne aranžmane za sale, crkve, domove
               te bukete i aranžmane po Vašim željama i zahtjevima.
             </p>
           </div>
           <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden" data-aos="fade-up">
+            <div class="rounded-xl overflow-hidden" >
               <img
                 src="../assets/images/vjencani_buketi.png"
                 alt="Wedding bouquet with pink and blue flowers"
@@ -384,11 +384,11 @@
           <div class="md:w-1/2">
             <h3
               class="text-xl mb-4 font-jacques text-left text-gray-900"
-              data-aos="fade-up"
+              
             >
               Grobni vijenci, buketi i aranžmani
             </h3>
-            <p class="text-gray-600 font-jacques text-left" data-aos="fade-up">
+            <p class="text-gray-600 font-jacques text-left" >
               Za tužne prigode nudimo grobne bukete i grobne vijence te
               aranžmane za lijes od svih vrsta cvijeća u svim kombinacijama.
               Mogućnost dostave na većinu zagrebačkih i okolnih groblja uz
@@ -396,7 +396,7 @@
             </p>
           </div>
           <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden" data-aos="fade-up">
+            <div class="rounded-xl overflow-hidden" >
               <img
                 src="../assets/images/grobni_vijenci.png"
                 alt="Red and white rose arrangement"
@@ -411,11 +411,11 @@
           <div class="md:w-1/2">
             <h3
               class="text-xl mb-4 font-jacques text-left text-gray-900"
-              data-aos="fade-up"
+              
             >
               Prigodno cvijeće za različite prigode
             </h3>
-            <p class="text-gray-600 font-jacques text-left" data-aos="fade-up">
+            <p class="text-gray-600 font-jacques text-left" >
               Za blagdanske i slavljeničke prigode imamo šaroliku ponudu buketa
               i aranžmana. Adventski ukrasi i vjenčići, vjenčići za vrata,
               uskršnji aranžmani, buketi za Valentinovo, rođendanski buketi,
@@ -424,7 +424,7 @@
             </p>
           </div>
           <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden" data-aos="fade-up">
+            <div class="rounded-xl overflow-hidden" >
               <img
                 src="../assets/images/prigodno_cvijece.png"
                 alt="Purple candle arrangement"
@@ -439,11 +439,11 @@
           <div class="md:w-1/2">
             <h3
               class="text-xl mb-4 font-jacques text-left text-gray-900"
-              data-aos="fade-up"
+              
             >
               Buketi po želji
             </h3>
-            <p class="text-gray-600 font-jacques text-left" data-aos="fade-up">
+            <p class="text-gray-600 font-jacques text-left" >
               Izrađujemo bukete po želji za urede, agencije, ordinacije i ostale
               poslovne prostore, restorane, kafiće, klubove, rođendane,
               promocije, proslave obljetnice i godišnjica, razne bukete za
@@ -451,7 +451,7 @@
             </p>
           </div>
           <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden" data-aos="fade-up">
+            <div class="rounded-xl overflow-hidden" >
               <img
                 src="../assets/images/ostalo_cvijece.png"
                 alt="Colorful mixed flower arrangement"
@@ -464,17 +464,17 @@
 
       <!-- Footer Text -->
       <div class="text-center mt-16 space-y-4">
-        <p class="text-gray-600 font-jacques" data-aos="fade-up">
+        <p class="text-gray-600 font-jacques" >
           Veći dio našeg asortimana (vjenčani buketi, aranžmani, grobni vijenci
           i prigodno cvijeće) možete pogledati u
           <a
             href="/ponuda"
             class="text-cyan-400 hover:text-cyan-500"
-            data-aos="fade-up"
+            
             >ponudi</a
           >
         </p>
-        <p class="text-gray-600 font-jacques" data-aos="fade-up">
+        <p class="text-gray-600 font-jacques" >
           Nudimo uslugu pakiranja i aranžiranja cvijeća uz poklone. Po dogovoru,
           vršimo i dostavu.
         </p>

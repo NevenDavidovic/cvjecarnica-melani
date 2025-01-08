@@ -347,10 +347,7 @@
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:p-8 bg-gray-800 rounded-lg"
         >
           <!-- Service 1: 24h Service -->
-          <div
-            class="bg-gray-900 text-center p-6 rounded-lg shadow-lg"
-            data-aos="fade-left"
-          >
+          <div class="bg-gray-900 text-center p-6 rounded-lg shadow-lg">
             <div class="flex justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -374,10 +371,7 @@
           </div>
 
           <!-- Service 2: Caskets -->
-          <div
-            class="bg-gray-900 text-center p-6 rounded-lg shadow-lg"
-            data-aos="fade-up"
-          >
+          <div class="bg-gray-900 text-center p-6 rounded-lg shadow-lg">
             <div class="flex justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -402,10 +396,7 @@
           </div>
 
           <!-- Service 3: Urns -->
-          <div
-            class="bg-gray-900 text-center p-6 rounded-lg shadow-lg"
-            data-aos="fade-right"
-          >
+          <div class="bg-gray-900 text-center p-6 rounded-lg shadow-lg">
             <div class="flex justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -435,15 +426,11 @@
     <div
       class="Carousel px-[16px] py-[50px] lg:py-[100px] flex flex-col gap-6 sm:gap-8"
     >
-      <h2
-        class="text-[28px] sm:text-[40px] text-bg_primary mb-0 font-jacques"
-        data-aos="fade-up"
-      >
+      <h2 class="text-[28px] sm:text-[40px] text-bg_primary mb-0 font-jacques">
         Ponuda lijesova
       </h2>
       <p
         class="text-gray-600 text-left text-[1rem] leading-relaxed mb-8 max-w-[90%] lg:max-w-[80%] mx-auto text-center"
-        data-aos="fade-up"
       >
         Naša ponuda obuhvaća širok izbor kvalitetno izrađenih lijesova,
         prilagođenih različitim financijskim mogućnostima naših klijenata.
@@ -462,7 +449,6 @@
             <img
               :src="require(`@/assets/images/lijesovi/${image.filename}`)"
               :alt="image.alt"
-              data-aos="fade-up"
             />
             <h3 class="text-xl">{{ image.title }}</h3>
           </div>
@@ -472,7 +458,6 @@
       <button
         @click="$router.push('/ponuda-lijesovi')"
         class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors mx-auto"
-        data-aos="fade-up"
       >
         Pogledaj sve
       </button>
@@ -484,13 +469,11 @@
           <div class="flex-1 flex flex-col gap-4 justify-center">
             <h2
               class="text-yellow-500 text-[28px] sm:text-[40px] font-normal text-left"
-              data-aos="fade-up"
             >
               Ponuda lampiona i svijeća
             </h2>
             <p
               class="text-gray-400 text-[1rem] text-white text-left max-w-[80%]"
-              data-aos="fade-up"
             >
               Široki izbor lampiona pronađite u našem asortimanu.
             </p>
@@ -506,13 +489,11 @@
               src="../assets/images/lampioni/lampion-1.png"
               alt="Placeholder"
               class="rounded-lg w-full"
-              data-aos="fade-right"
             />
             <img
               src="../assets/images/lampioni/lampion-2.png"
               alt="Placeholder"
               class="rounded-lg w-full"
-              data-aos="fade-right"
             />
           </div>
         </div>
@@ -521,25 +502,21 @@
             src="../assets/images/lampioni/lampion-3.png"
             alt="Placeholder"
             class="rounded-lg flex-1 w-full"
-            data-aos="fade-up"
           />
           <img
             src="../assets/images/lampioni/lampion-4.png"
             alt="Placeholder"
             class="rounded-lg flex-1 w-full"
-            data-aos="fade-up"
           />
           <img
             src="../assets/images/lampioni/lampion-5.png"
             alt="Placeholder"
             class="rounded-lg flex-1 w-full"
-            data-aos="fade-up"
           />
           <img
             src="../assets/images/lampioni/lampion-6.png"
             alt="Placeholder"
             class="rounded-lg flex-1 w-full"
-            data-aos="fade-up"
           />
         </div>
       </div>

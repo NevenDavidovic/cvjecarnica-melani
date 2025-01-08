@@ -292,10 +292,8 @@
 
     <div class="bg-gray-800 text-white py-8">
       <div class="container mx-auto px-4">
-        <h1 class="text-2xl font-normal mb-[50px]" data-aos="fade-up">
-          Kategorije cvijeća
-        </h1>
-        <div class="flex flex-wrap justify-center mb-8" data-aos="fade-up">
+        <h1 class="text-2xl font-normal mb-[50px]">Kategorije cvijeća</h1>
+        <div class="flex flex-wrap justify-center mb-8">
           <button
             @click="resetingAllFilters"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
@@ -356,11 +354,7 @@
           }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="image in rezanoCvijece"
-            :key="image.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="image in rezanoCvijece" :key="image.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="
@@ -377,11 +371,7 @@
           :class="{ 'animate-fade-in': filteri.bozic }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="bozic in bozicCvijece"
-            :key="bozic.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="bozic in bozicCvijece" :key="bozic.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="require(`@/assets/ponuda_cvijeca/bozic/${bozic.filename}`)"
@@ -399,7 +389,6 @@
           <div
             v-for="valentinovo in valentinovoCvijece"
             :key="valentinovo.filename"
-            data-aos="fade-up"
           >
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
@@ -417,11 +406,7 @@
           :class="{ 'animate-fade-in': filteri.umjetno_cvijece }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="umjetno in umjetnoCvijece"
-            :key="umjetno.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="umjetno in umjetnoCvijece" :key="umjetno.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="
@@ -438,11 +423,7 @@
           :class="{ 'animate-fade-in': filteri.buketi }"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
         >
-          <div
-            v-for="buketi in buketiAranzmani"
-            :key="buketi.filename"
-            data-aos="fade-up"
-          >
+          <div v-for="buketi in buketiAranzmani" :key="buketi.filename">
             <img
               class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
               :src="

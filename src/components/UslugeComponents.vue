@@ -5,23 +5,18 @@
         <div class="mb-16 text-center">
           <h4
             class="text-base text-primary font-semibold tracking-wide uppercase"
-            data-aos="fade-up"
           >
             Usluge
           </h4>
           <p
             class="mt-2 text-5xl lg:text-4xl font-normal tracking-tight text-gray-900"
-            data-aos="fade-up"
           >
             Kompletna paleta usluga
           </p>
         </div>
 
         <div class="flex flex-wrap my-12">
-          <div
-            class="w-full border-b md:w-1/2 md:border-r lg:w-1/3 p-8"
-            data-aos="fade-up"
-          >
+          <div class="w-full border-b md:w-1/2 md:border-r lg:w-1/3 p-8">
             <div class="flex items-center mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,10 +38,7 @@
             </p>
           </div>
 
-          <div
-            class="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r p-8"
-            data-aos="fade-up"
-          >
+          <div class="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r p-8">
             <div class="flex items-center mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +62,6 @@
 
           <div
             class="w-full border-b md:w-1/2 md:border-r lg:w-1/3 lg:border-r-0 p-8"
-            data-aos="fade-up"
           >
             <div class="flex items-center mb-6">
               <svg
@@ -95,7 +86,6 @@
 
           <div
             class="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-8"
-            data-aos="fade-up"
           >
             <div class="flex items-center mb-6">
               <svg
@@ -121,7 +111,6 @@
 
           <div
             class="w-full border-b md:w-1/2 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-8"
-            data-aos="fade-up"
           >
             <div class="flex items-center mb-6">
               <svg
@@ -144,7 +133,7 @@
             </p>
           </div>
 
-          <div class="w-full md:w-1/2 lg:w-1/3 p-8" data-aos="fade-up">
+          <div class="w-full md:w-1/2 lg:w-1/3 p-8">
             <div class="flex items-center mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
