@@ -30,9 +30,11 @@
                   d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"
                 ></path>
               </svg>
-              <div class="ml-4 text-xl text-gray-900">Usluga 0 - 24</div>
+              <div class="ml-4 text-xl text-gray-900">
+                Usluga prijevoza 0 - 24
+              </div>
             </div>
-            <p class="leading-loose text-gray-500">
+            <p class="leading-loose text-gray-500 text-left">
               Međunarodni prijevoz umrlih iz svih zemalja EU i svijeta u
               Hrvatsku ili iz Hrvatske u bilo koju zemlju svijeta.
             </p>
@@ -52,9 +54,9 @@
                   d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"
                 ></path>
               </svg>
-              <div class="ml-4 text-xl">Izrada buketa</div>
+              <div class="ml-4 text-xl">Aranžmani</div>
             </div>
-            <p class="leading-loose text-gray-500">
+            <p class="leading-loose text-gray-500 text-left">
               Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
               dekoracija prilagođenih vašim potrebama.
             </p>
@@ -78,14 +80,14 @@
               </svg>
               <div class="ml-4 text-xl">Ponuda lijesova</div>
             </div>
-            <p class="leading-loose text-gray-500">
+            <p class="leading-loose text-gray-500 text-left">
               U našoj ponudi pronađite sve vrste lijesova, od klasičnih do
               ekskluzivnih, izrađenih isključivo prema Vašim željama
             </p>
           </div>
 
           <div
-            class="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-8"
+            class="w-full border-b md:w-1/2 lg:w-1/3 border-b md:w-1/2 md:border-r lg:w-1/3 p-8"
           >
             <div class="flex items-center mb-6">
               <svg
@@ -102,7 +104,7 @@
               </svg>
               <div class="ml-4 text-xl">Izrada vijenaca</div>
             </div>
-            <p class="leading-loose text-gray-500">
+            <p class="leading-loose text-gray-500 text-left">
               Naša sveobuhvatna ponuda uključuje izradu i dostavu vijenaca prema
               Vašim željama u dvoranu za ispraćaje na bilo koje groblje na
               području grada.
@@ -110,7 +112,7 @@
           </div>
 
           <div
-            class="w-full border-b md:w-1/2 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-8"
+            class="w-full border-b md:w-1/2 border-b md:w-1/2 md:border-r lg:w-1/3 p-8"
           >
             <div class="flex items-center mb-6">
               <svg
@@ -125,15 +127,15 @@
                   d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"
                 ></path>
               </svg>
-              <div class="ml-4 text-xl">Ponuda urni</div>
+              <div class="ml-4 text-xl">Pogrebna oprema</div>
             </div>
-            <p class="leading-loose text-gray-500">
+            <p class="leading-loose text-gray-500 text-left">
               Provjerite veliki izbor urni u našoj ponudi pogrebne opreme.
               Kontaktirajte nas s povjerenjem!
             </p>
           </div>
 
-          <div class="w-full md:w-1/2 lg:w-1/3 p-8">
+          <div class="w-full md:w-1/2 lg:w-1/3 p-8 border-b md:w-1/2 lg:w-1/3">
             <div class="flex items-center mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -147,11 +149,59 @@
                   d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"
                 ></path>
               </svg>
-              <div class="ml-4 text-xl">Dodatna ponuda</div>
+              <div class="ml-4 text-xl">Izrada buketa</div>
             </div>
-            <p class="leading-loose text-gray-500">
-              Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih
-              dekoracija prilagođenih vašim potrebama.
+            <p class="leading-loose text-gray-500 text-left">
+              Naša usluga uključuje izradu buketa i drugih cvjetnih dekoracija
+              prilagođenih vašim potrebama.
+            </p>
+          </div>
+
+          <div
+            class="w-full md:w-1/2 lg:w-1/3 p-8 border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0"
+          >
+            <div class="flex items-center mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="h-6 w-6 text-primary"
+              >
+                <path
+                  d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"
+                ></path>
+              </svg>
+              <div class="ml-4 text-xl">Cvijeće za lijes</div>
+            </div>
+            <p class="leading-loose text-gray-500 text-left">
+              Naša usluga uključuje cvijeće za lijes i druge cvjetne dekoracije
+              prilagođene vašim potrebama.
+            </p>
+          </div>
+
+          <div
+            class="w-full md:w-1/2 lg:w-1/3 p-8 w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0"
+          >
+            <div class="flex items-center mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="h-6 w-6 text-primary"
+              >
+                <path
+                  d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z"
+                ></path>
+              </svg>
+              <div class="ml-4 text-xl">Kremiranje</div>
+            </div>
+            <p class="leading-loose text-gray-500 text-left">
+              Naša usluga uključuje cvijeće za lijes i druge cvjetne dekoracije
+              prilagođene vašim potrebama.
             </p>
           </div>
         </div>

@@ -22,7 +22,9 @@
         <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 class="text-sm/6 font-semibold text-gray-900">Cvijeće</h3>
+              <h3 class="text-sm/6 font-semibold text-gray-900">
+                Cvijećarnica
+              </h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li v-for="item in navigation.solutions" :key="item.name">
                   <a
@@ -60,9 +62,7 @@
               </ul>
             </div>
             <div class="mt-10 md:mt-0">
-              <h3 class="text-sm/6 font-semibold text-gray-900">
-                Dodatna ponuda
-              </h3>
+              <h3 class="text-sm/6 font-semibold text-gray-900">Saznaj</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li v-for="item in navigation.legal" :key="item.name">
                   <a
@@ -77,7 +77,7 @@
         </div>
       </div>
       <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-        <p class="text-sm/6 text-gray-600">Copyright © 2024 Melani</p>
+        <p class="text-sm/6 text-gray-600">Copyright © 2025 Melani</p>
       </div>
     </div>
   </footer>
@@ -89,10 +89,9 @@ import { defineComponent, h } from "vue";
 const navigation = {
   solutions: [
     { name: "Buketi", href: "/ponuda?filter=buketi" },
-    { name: "Cvijeće za Valentinovo", href: "/ponuda?filter=valentinovo" },
-    { name: "Cvijeće za Božić", href: "/ponuda?filter=bozic" },
-    { name: "Umjetno Cvijeće", href: "/ponuda?filter=umjetno_cvijece" },
-    { name: "Rezano cvijeće", href: "/ponuda?filter=rezano_cvijece" },
+    { name: "Cvijeće za lijes", href: "/ponuda?filter=cvijece_za_lijes" },
+    { name: "Aranzmani", href: "/ponuda?filter=aranzmani" },
+    { name: "Vijenci", href: "/ponuda?filter=vijenci" },
   ],
   support: [
     { name: "Ul. Mladena Vodanovića 4b", href: "#" },
@@ -105,9 +104,9 @@ const navigation = {
     { name: "Ponuda lampiona", href: "/ponuda-pogrebno?filter=lampioni" },
   ],
   legal: [
-    { name: "Pitanje prijevoza", href: "#" },
+    { name: "Pitanje prijevoza", href: "/prijevoz-pokojnika" },
     { name: "Organiziranje glazbe", href: "#" },
-    { name: "Cvijeće za Evente", href: "/ponuda" },
+    { name: "Postupak kod smrtnog slučaja", href: "/postupak-kod-smrti" },
   ],
   social: [
     {

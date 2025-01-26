@@ -49,11 +49,18 @@ const routes = [
     props: (route) => ({ filter: route.query.filter }),
   },
   {
-    path: "/product-detail",
-    name: "product-detail",
+    path: "/prijevoz-pokojnika",
+    name: "/prijevoz-pokojnika",
 
-    component: () => import("../views/ProductPageLijesovi.vue"),
+    component: () => import("../views/PrijevozPokojnika.vue"),
     props: (route) => ({ filter: route.query.filter }),
+  },
+
+  {
+    path: "/postupak-kod-smrti",
+    name: "/postupak-kod-smrti",
+
+    component: () => import("../views/FaqView.vue"),
   },
 ];
 

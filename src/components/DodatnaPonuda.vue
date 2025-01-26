@@ -50,8 +50,8 @@ const categories = [
     description: "Usluga od organiziranja glazbe za potrebe priredba.",
   },
   {
-    name: "Cvijeće za evente",
-    href: "ponuda?filter=valentinovo",
+    name: "Buketi",
+    href: "ponuda?filter=buketi",
     imageSrc: cvijeceZaEvente,
     imageAlt:
       "Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih dekoracija prilagođenih vašim potrebama.",
