@@ -37,7 +37,7 @@
         </p>
         <div class="flex space-x-4">
           <a
-            href="/sto-uciniti-u-slucaju-smrtnog-slucaja"
+            href="/postupak-kod-smrti"
             class="px-6 py-3 bg-primary text-whitesmoke rounded-lg"
           >
             Što učiniti u slučaju smrtnog slučaja
