@@ -6,9 +6,9 @@
     <!-- Hero Banner -->
 
     <HeroBanner
-      title="Ponuda lijesova"
+      :title="t('coffins_offer')"
       imageSrc="banner-ponuda-lijesovi.jpg"
-      imageAlt="Ponuda lijesova"
+      :imageAlt="t('coffins_offer')"
     />
 
     <ProductListComponent />
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 import FooterComponent from "../components/FooterComponent.vue";
 import ProductListComponent from "@/components/ProductListComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
@@ -31,20 +32,22 @@ export default {
     NavbarComponent,
     HeroBanner,
   },
-  props: {},
   data() {
     return {
       isSectionVisible: false,
+      isMobileMenuOpen: false,
+      submenuPonuda: false,
     };
   },
-
+  setup() {
+    const { t } = useI18n(); // Get translation function
+    return { t }; // Return t() so it can be used in the template
+  },
   mounted() {
     if (this.filter) {
       this.applyFilter(this.filter);
     }
   },
-  created() {},
-
   beforeUnmount() {
     document.body.style.overflow = "auto"; // Reset overflow
   },

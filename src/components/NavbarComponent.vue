@@ -10,19 +10,20 @@
   >
     <div class="container mx-auto px-4 flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center">
+      <div class="flex items-center gap-[20px]">
         <img
           src="../assets/images/logo_melani.png"
           alt="Logo"
           :class="{ resize: !isSectionVisible }"
           class="h-24 w-24 transition-all duration-1000 ease-in-out"
         />
+        <LanguageSelectorComponent />
       </div>
 
       <!-- Desktop Navigation Links -->
       <div class="hidden lg:flex space-x-8 text-gray-700 items-center">
         <RouterLink to="/" class="font-jacques uppercase text-white">
-          Naslovnica
+          {{ $t("naslovnica") }}
         </RouterLink>
 
         <div class="relative group">
@@ -30,7 +31,7 @@
             to="#"
             class="font-jacques uppercase text-secundary hover:text-[#42E2EC] transition-colors duration-300 flex items-center gap-2"
           >
-            Pogrebne usluge
+            {{ $t("funeral_services") }}
             <svg
               class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
               fill="none"
@@ -57,7 +58,7 @@
               class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
             >
               <span class="relative">
-                Pogrebna ponuda
+                {{ $t("pogrebna_ponuda") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -69,7 +70,7 @@
               class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
             >
               <span class="relative">
-                Prijevoz pokojnika
+                {{ $t("prijevoz_pokojnika") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -81,7 +82,7 @@
               class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
-                Ponuda lijesova
+                {{ $t("coffins_offer") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -92,7 +93,7 @@
               class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
-                Kremiranje
+                {{ $t("cremation") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -106,7 +107,7 @@
             to="#"
             class="font-jacques uppercase text-primary hover:text-[#42E2EC] transition-colors duration-300 flex items-center gap-2"
           >
-            Cvjećarnica
+            {{ $t("flower_shop") }}
             <svg
               class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
               fill="none"
@@ -133,7 +134,7 @@
               class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
             >
               <span class="relative">
-                Aranžmani
+                {{ $t("arrangements") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -145,7 +146,7 @@
               class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
             >
               <span class="relative">
-                Buketi
+                {{ $t("bouquet") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -157,7 +158,7 @@
               class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
-                Cvijeće za lijes
+                {{ $t("coffin_flowers") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -168,7 +169,7 @@
               class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
-                Vijenci
+                {{ $t("vijenci") }}
                 <span
                   class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
                 ></span>
@@ -181,7 +182,7 @@
           @click="redirectToContact"
           class="font-jacques uppercase w-[200px] px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
         >
-          Kontakt
+          {{ $t("kontakt") }}
         </button>
       </div>
 
@@ -275,7 +276,7 @@
           to="/"
           class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
         >
-          Naslovnica
+          {{ $t("naslovnica") }}
         </RouterLink>
 
         <div class="usluge-ponuda flex flex-col gap-[20px]">
@@ -286,7 +287,7 @@
             <p
               class="font-jacques uppercase text-secundary text-lg transition-colors"
             >
-              Pogrebne usluge
+              {{ $t("funeral_services") }}
             </p>
 
             <svg
@@ -309,26 +310,26 @@
               to="/prijevoz-pokojnika"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
-              Prijevoz pokojnika
+              {{ $t("prijevoz_pokojnika") }}
             </RouterLink>
             <RouterLink
               to="/ponuda-pogrebno"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
-              Pogrebna ponuda
+              {{ $t("pogrebna_ponuda") }}
             </RouterLink>
             <RouterLink
               to="/ponuda-lijesovi"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
-              Ponuda lijesova
+              {{ $t("coffins_offer") }}
             </RouterLink>
 
             <RouterLink
               to="#"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
-              Kremiranje
+              {{ $t("cremation") }}
             </RouterLink>
           </div>
         </div>
@@ -340,7 +341,7 @@
           <p
             class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
           >
-            Cvjećarnica
+            {{ $t("flower_shop") }}
           </p>
 
           <svg
@@ -367,26 +368,26 @@
             to="/ponuda?filter=aranzmani"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
-            Aranzmani
+            {{ $t("arrangements") }}
           </RouterLink>
           <RouterLink
             to="/ponuda?filter=buketi"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
-            Buketi
+            {{ $t("bouquet") }}
           </RouterLink>
           <RouterLink
             to="/ponuda?filter=cvijece_za_lijes"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
-            Cvijeće za lijes
+            {{ $t("coffin_flowers") }}
           </RouterLink>
 
           <RouterLink
             to="/ponuda?filter=vijenci"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
-            Vijenci
+            {{ $t("vijenci") }}
           </RouterLink>
         </div>
 
@@ -394,7 +395,7 @@
           @click="redirectToContact"
           class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
         >
-          Kontakt
+          {{ $t("kontakt") }}
         </button>
       </div>
     </div>
@@ -402,8 +403,13 @@
 </template>
 
 <script>
+import LanguageSelectorComponent from "./LanguageSelectorComponent.vue";
+
 export default {
   name: "NavbarComponent",
+  components: {
+    LanguageSelectorComponent,
+  },
   props: {
     isSectionVisible: {
       type: Boolean,

@@ -4,20 +4,20 @@
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <HeroBanner
-      title="Pogrebne usluge - ponuda"
+      :title="t('pogrebna_ponuda')"
       imageSrc="banner-ponuda-pogrebno.jpg"
       imageAlt="Pogrebne usluge - ponuda"
     />
 
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
-        <h1 class="text-2xl font-normal mb-[50px]">Kategorije</h1>
+        <h1 class="text-2xl font-normal mb-[50px]">{{ t("categories") }}</h1>
         <div class="flex flex-wrap justify-center mb-8">
           <button
             @click="resetingAllFilters"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Sve
+            {{ t("all") }}
           </button>
           <button
             @click="filteringTheProducts('lijesovi')"
@@ -26,7 +26,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Lijesovi
+            {{ t("coffins_offer") }}
           </button>
           <button
             @click="filteringTheProducts('lampioni')"
@@ -35,7 +35,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Pogrebna oprema
+            {{ t("funeral_equipment") }}
           </button>
           <button
             @click="filteringTheProducts('prijevoz_pokojnika')"
@@ -44,7 +44,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Prijevoz pokojnika
+            {{ t("prijevoz_pokojnika") }}
           </button>
         </div>
 
@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 import ProductListComponent from "@/components/ProductListComponent.vue";
 import FooterComponent from "../components/FooterComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
@@ -123,6 +124,10 @@ export default {
         kremiranje: true,
       },
     };
+  },
+  setup() {
+    const { t } = useI18n(); // Get translation function
+    return { t }; // Return t() so it can be used in the template
   },
 
   mounted() {

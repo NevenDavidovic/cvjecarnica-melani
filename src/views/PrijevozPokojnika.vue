@@ -3,50 +3,40 @@
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <HeroBanner
-      title="Prijevoz pokojnika"
-      description="0-24 na brojeve telefona: 
-            +385 92 199 2352 / +385 91 630 9966"
+      :title="t('prijevoz_pokojnika')"
+      :description="t('phone_numbers')"
       imageSrc="prijevoz-pogrebno.jpg"
-      imageAlt="Prijevoz pokojnika"
+      :imageAlt="t('prijevoz_pokojnika')"
     />
-
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center my-[50px] lg:my-[100px]"
     >
       <!-- Left Column: Text -->
       <div>
         <h2 class="text-4xl font-bold text-gray-800 mb-4">
-          Prijevoz pokojnika
+          {{ t("prijevoz_pokojnika") }}
         </h2>
         <p class="text-lg text-gray-600 mb-6">
-          U trenucima kad gubimo voljenu osobu najvažnije je imati nekoga tko će
-          nas razumjeti, podržati i diskretno brinuti o svim detaljima
-          ispraćaja. Miraj je ovdje da Vam olakša te teške dane i pomogne Vam da
-          se s dužnom pažnjom, ljubavlju i pijetetom oprostite od onih koje
-          volite.
+          {{ t("transport_service_intro") }}
         </p>
         <p class="text-lg text-gray-600 mb-6">
-          Naše osoblje osigurava diskretan, siguran i profesionalan prijevoz
-          pokojnika iz bolnice, doma ili bilo kojeg mjesta s kojeg je potrebno
-          obaviti prijevoz, bez obzira na udaljenost i granice.
+          {{ t("transport_service_details") }}
         </p>
         <p class="text-lg text-gray-600 mb-6">
-          Brinemo do najsitnijih pojedinosti o svim pogrebnim formalnostima,
-          uključujući administrativne procese, pribavljanje dokumentacije i
-          dozvola koje je potrebno imati.
+          {{ t("transport_service_formalities") }}
         </p>
         <div class="flex space-x-4">
           <a
             href="/postupak-kod-smrti"
             class="px-6 py-3 bg-primary text-whitesmoke rounded-lg"
           >
-            Što učiniti u slučaju smrtnog slučaja
+            {{ t("death_case_procedure") }}
           </a>
           <a
             href="tel:+385 92 199 2352"
             class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary-100 flex items-center"
           >
-            Nazovi
+            {{ t("call_now") }}
           </a>
         </div>
       </div>
@@ -88,6 +78,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n"; // Import useI18n
 import FooterComponent from "../components/FooterComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
@@ -96,7 +87,6 @@ export default {
   name: "PonudaPogrebno",
   components: {
     FooterComponent,
-
     NavbarComponent,
     HeroBanner,
   },
@@ -109,28 +99,13 @@ export default {
   data() {
     return {
       isSectionVisible: false,
-
-      formData: {
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      },
-      lijesoviPonuda: [],
-      urnePonuda: [],
-      lampioniPonuda: [],
       prijevoz: [],
-
-      filteri: {
-        lijesovi: true,
-        pogrebna_oprema: true,
-        prijevoz_pokojnika: true,
-        kremiranje: true,
-      },
     };
   },
-
-  mounted() {},
+  setup() {
+    const { t } = useI18n(); // Get the translation function
+    return { t };
+  },
   created() {
     const prijevoz = require.context(
       "@/assets/ponuda_pogrebno/prijevoz_pokojnika",
@@ -143,11 +118,6 @@ export default {
       alt: filename.slice(2, -4),
     }));
   },
-
-  beforeUnmount() {
-    document.body.style.overflow = "auto"; // Reset overflow
-  },
-  methods: {},
 };
 </script>
 

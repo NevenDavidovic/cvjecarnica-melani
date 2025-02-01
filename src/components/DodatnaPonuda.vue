@@ -6,11 +6,10 @@
       <h2
         class="text-[28px] sm:text-[40px] font-normal tracking-tight text-gray-900"
       >
-        Dodatna ponuda
+        {{ $t("additional_offer") }}
       </h2>
       <p class="mt-4 text-base text-gray-500">
-        Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni
-        aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.
+        {{ $t("additional_offer_text") }}
       </p>
 
       <div
@@ -37,34 +36,46 @@
   </div>
 </template>
 
-<script setup>
+<script>
+import { useI18n } from "vue-i18n";
 import organiziranjeGlazbe from "@/assets/images/organiziranje-glazbe.jpg";
 import cvijeceZaEvente from "@/assets/images/cvijece-za-evente.jpg";
 import ponudaLijesova from "@/assets/images/ponuda-lijesova.jpg";
-const categories = [
-  {
-    name: "Organiziranje glazbe",
-    href: "",
-    imageSrc: organiziranjeGlazbe,
-    imageAlt: "Organiziranje glazbe za sve prilike",
-    description: "Usluga od organiziranja glazbe za potrebe priredba.",
+
+export default {
+  setup() {
+    const { t } = useI18n();
+
+    return {
+      t,
+    };
   },
-  {
-    name: "Buketi",
-    href: "ponuda?filter=buketi",
-    imageSrc: cvijeceZaEvente,
-    imageAlt:
-      "Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih dekoracija prilagođenih vašim potrebama.",
-    description:
-      "Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih dekoracija prilagođenih vašim potrebama.",
+  data() {
+    return {
+      categories: [
+        {
+          name: this.t("music_organization"),
+          href: "",
+          imageSrc: organiziranjeGlazbe,
+          imageAlt: this.t("music_organization_text"),
+          description: this.t("music_organization_text"),
+        },
+        {
+          name: this.t("bouquet"),
+          href: "ponuda?filter=buketi",
+          imageSrc: cvijeceZaEvente,
+          imageAlt: this.t("flower_service"),
+          description: this.t("flower_service"),
+        },
+        {
+          name: this.t("coffin_offer"),
+          href: "/ponuda-pogrebno?filter=lijesovi",
+          imageSrc: ponudaLijesova,
+          imageAlt: this.t("coffin_offer"),
+          description: this.t("funeral_services"),
+        },
+      ],
+    };
   },
-  {
-    name: "Ponuda lijesova",
-    href: "/ponuda-pogrebno?filter=lijesovi",
-    imageSrc: ponudaLijesova,
-    imageAlt: "Ponuda lijesova",
-    description:
-      "Želite samo odrediti proizvod ili neku od naših pogrebnih usluga? Stojimo Vam na raspolaganju za sve Vaše upite.",
-  },
-];
+};
 </script>

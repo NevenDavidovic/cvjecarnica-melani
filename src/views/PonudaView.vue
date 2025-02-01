@@ -3,20 +3,20 @@
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <HeroBanner
-      title="Ponuda cvijeća"
+      :title="t('ponuda_cvijeća')"
       imageSrc="ponuda-hero.png"
       imageAlt="Ponuda cvijeća"
     />
 
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
-        <h1 class="text-2xl font-normal mb-[50px]">Odaberi</h1>
+        <h1 class="text-2xl font-normal mb-[50px]">{{ t("categories") }}</h1>
         <div class="flex flex-wrap justify-center mb-8">
           <button
             @click="resetingAllFilters"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Sve
+            {{ t("all") }}
           </button>
           <button
             @click="filteringTheProducts('aranzmani')"
@@ -25,7 +25,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Aranžmani
+            {{ t("arrangements") }}
           </button>
 
           <button
@@ -35,7 +35,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Vijenci
+            {{ t("vijenci") }}
           </button>
 
           <button
@@ -45,7 +45,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Cvijeće za lijes
+            {{ t("coffin_flowers") }}
           </button>
 
           <button
@@ -55,7 +55,7 @@
             }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            Buketi
+            {{ t("bouquet") }}
           </button>
           <!-- <button
             @click="filteringTheProducts('valentinovo')"
@@ -266,6 +266,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 import FooterComponent from "../components/FooterComponent.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
@@ -316,6 +317,10 @@ export default {
         cvijece_za_lijes: true,
       },
     };
+  },
+  setup() {
+    const { t } = useI18n(); // Get translation function
+    return { t }; // Return t() so it can be used in the template
   },
 
   mounted() {

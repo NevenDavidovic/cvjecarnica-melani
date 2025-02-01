@@ -20,7 +20,7 @@
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
         <h1 class="px-4 text-[20px] uppercase text-left w-full mb-4">
-          Pogrebne usluge
+          {{ t("funeral_services") }}
         </h1>
 
         <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
@@ -90,10 +90,10 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-yellow-400 mb-2">
-              Usluga 0 - 24
+              {{ t("funeral_services_24h") }}
             </h3>
             <p class="text-gray-300">
-              Usluga od 24h dnevno za uslugu prijevoza pokojnika.
+              {{ t("funeral_services_24h_description") }}
             </p>
           </div>
 
@@ -114,11 +114,10 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-yellow-400 mb-2">
-              Ponuda lijesova
+              {{ t("coffins_offer") }}
             </h3>
             <p class="text-gray-300">
-              Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
-              Stojimo Vam na raspolaganju za sve Vaše upite.
+              {{ t("urn_offer_description") }}
             </p>
           </div>
 
@@ -139,11 +138,10 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-yellow-400 mb-2">
-              Ponuda urni
+              {{ t("urn_offer") }}
             </h3>
             <p class="text-gray-300">
-              Želite samo određeni proizvod ili neku od naših pogrebnih usluga?
-              Stojimo Vam na raspolaganju za sve Vaše upite.
+              {{ t("urn_offer_description") }}
             </p>
           </div>
         </div>
@@ -154,16 +152,12 @@
       class="Carousel px-[16px] py-[50px] lg:py-[100px] flex flex-col gap-6 sm:gap-8"
     >
       <h2 class="text-[28px] sm:text-[40px] text-bg_primary mb-0 font-jacques">
-        Ponuda lijesova
+        {{ t("coffin_offer") }}
       </h2>
       <p
         class="text-gray-600 text-left text-[1rem] leading-relaxed mb-8 max-w-[90%] lg:max-w-[80%] mx-auto text-center"
       >
-        Naša ponuda obuhvaća širok izbor kvalitetno izrađenih lijesova,
-        prilagođenih različitim financijskim mogućnostima naših klijenata.
-        Cijene variraju od 200,00 € do 1000,00 €, uz mogućnost dogovora
-        povoljnih uvjeta plaćanja za sve naše usluge. Uz prodaju cvijeća i
-        opgrebnog asortimana nudimo usluge prijevoza pokojnika.
+        {{ t("coffin_offer_detailed") }}
       </p>
 
       <div class="carousel-container">
@@ -186,7 +180,7 @@
         @click="$router.push('/ponuda-lijesovi')"
         class="w-[200px] font-jacques bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-500 transition-colors mx-auto"
       >
-        Pogledaj sve
+        {{ t("view_more") }}
       </button>
     </div>
 
@@ -197,18 +191,18 @@
             <h2
               class="text-yellow-500 text-[28px] sm:text-[40px] font-normal text-left"
             >
-              Ponuda lampiona i svijeća
+              {{ t("candles_and_lanterns_offer") }}
             </h2>
             <p
               class="text-gray-400 text-[1rem] text-white text-left max-w-[80%]"
             >
-              Široki izbor lampiona pronađite u našem asortimanu.
+              {{ t("candles_and_lanterns_offer") }}
             </p>
             <button
               @click="$router.push('/ponuda-pogrebno?filter=lampioni')"
               class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-normal py-2 px-4 rounded mt-4 max-w-[200px]"
             >
-              Pogledaj sve
+              {{ t("view_more") }}
             </button>
           </div>
           <div class="flex-1 grid grid-cols-2 gap-4">
@@ -261,6 +255,7 @@ import OwlCarousel from "../components/CarouselComponent.vue";
 import DodatnaPonuda from "../components/DodatnaPonuda.vue";
 import PrijevozComponent from "../components/PrijevozComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
   name: "HomeView",
@@ -293,6 +288,13 @@ export default {
           1000: { items: 5 },
         },
       },
+    };
+  },
+  setup() {
+    const { t } = useI18n();
+
+    return {
+      t,
     };
   },
   created() {

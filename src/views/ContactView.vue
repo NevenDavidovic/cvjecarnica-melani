@@ -5,7 +5,7 @@
 
     <!-- Hero Banner -->
     <HeroBanner
-      title="Kontaktirajte nas"
+      :title="t('contact_us')"
       imageSrc="telefon-banner.jpg"
       imageAlt="Kontaktirajte nas"
     />
@@ -58,9 +58,7 @@
               Kontaktirajte nas
             </h2> -->
             <p class="mt-6 text-lg/8 text-gray-600 text-left">
-              Tu smo za vas u svakom trenutku - javite nam se s povjerenjem.
-              Kontaktirajte nas za sve informacije i narudžbe. Brinemo o svakom
-              detalju jer vaša pitanja i potrebe su nam prioritet.
+              {{ t("contact_us_description") }}
             </p>
             <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
               <div class="flex gap-x-4">
@@ -74,7 +72,7 @@
                 <dd>Ulica Mladena Vodanovića 4b, 21400 Supetar</dd>
               </div>
               <div class="flex gap-x-4">
-                <h2 class="font-semibold">Pogrebne Usluge</h2>
+                <h2 class="font-semibold">{{ t("funeral_services") }}</h2>
               </div>
               <div class="flex gap-x-4">
                 <dt class="flex-none">
@@ -99,11 +97,11 @@
                 </dd>
               </div>
               <div class="flex gap-x-4">
-                <h2 class="font-semibold">Cvjećarnica</h2>
+                <h2 class="font-semibold">{{ t("flower_shop") }}</h2>
               </div>
               <div class="flex gap-x-4">
                 <dt class="flex-none">
-                  <span class="sr-only">Telefon: </span>
+                  <span class="sr-only">{{ t("phone") }}: </span>
                   <PhoneIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
 
@@ -115,7 +113,7 @@
               </div>
               <div class="flex gap-x-4">
                 <dt class="flex-none">
-                  <span class="sr-only">Telefon: </span>
+                  <span class="sr-only">{{ t("phone") }} </span>
                   <PhoneIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
                 <dd>
@@ -164,6 +162,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 import FooterComponent from "../components/FooterComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
@@ -214,6 +213,11 @@ export default {
       },
     };
   },
+  setup() {
+    const { t } = useI18n(); // Get translation function
+    return { t }; // Return t() so it can be used in the template
+  },
+
   mounted() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   },

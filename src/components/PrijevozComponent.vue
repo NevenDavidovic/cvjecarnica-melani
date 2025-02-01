@@ -5,7 +5,7 @@
         <div class="absolute inset-0">
           <img
             src="../assets/images/kombi-pogrebno-2.jpg"
-            alt=""
+            :alt="t('transport_service_image_alt')"
             class="size-full object-cover"
           />
         </div>
@@ -16,21 +16,32 @@
         >
           <div>
             <h2 class="text-xl font-normal text-secundary mb-[25px]">
-              Usluga prijevoza
+              {{ t("transport_service") }}
             </h2>
             <p class="mt-1 text-sm text-gray-300">
-              Preuzimanje i transport pokojnika vršimo svakodnevno, 24 sata
-              dnevno, iz kuće, stana, bolnice, zavoda za sudsku medicinu te
-              domova za starije i nemoćne.
+              {{ t("transport_service_description") }}
             </p>
           </div>
           <a
             href="/prijevoz-pokojnika"
             class="mt-6 flex shrink-0 items-center justify-center rounded-md border border-secundary/25 px-4 py-3 text-base font-medium text-white hover:bg-white/10 sm:ml-8 sm:mt-0 lg:ml-0 lg:w-full"
-            >Pogledaj</a
           >
+            {{ t("view_more") }}
+          </a>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { useI18n } from "vue-i18n";
+
+export default {
+  name: "TransportServiceSection",
+  setup() {
+    const { t } = useI18n();
+    return { t };
+  },
+};
+</script>
