@@ -3,7 +3,7 @@
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <HeroBanner
-      :title="t('ponuda_cvijeća')"
+      :title="t('ponuda_cvijeca')"
       imageSrc="ponuda-hero.png"
       imageAlt="Ponuda cvijeća"
     />
