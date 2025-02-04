@@ -381,6 +381,7 @@
             {{ $t("coffin_flowers") }}
           </RouterLink>
           <RouterLink
+            @click="toggleMobileMenu()"
             to="/ponuda?filter=vijenci"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
