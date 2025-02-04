@@ -172,6 +172,11 @@
             :class="{ 'animate-fade-in': filteri.cvijece_za_lijes }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
+            <h1
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+            >
+              {{ t("coffin_flowers") }}
+            </h1>
             <div
               v-for="cvijece in cvijece_za_lijes"
               :key="cvijece.filename"
@@ -179,7 +184,7 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/cvijece_za_lijes/${cvijece.filename}`)})`,
               }"
-              class="h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
@@ -189,6 +194,11 @@
             :class="{ 'animate-fade-in': filteri.vijenci }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
+            <h1
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+            >
+              {{ t("vijenci") }}
+            </h1>
             <div
               v-for="vijenac in vijenci"
               :key="vijenac.filename"
@@ -196,7 +206,7 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/vijenci/${vijenac.filename}`)})`,
               }"
-              class="h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
@@ -206,6 +216,11 @@
             :class="{ 'animate-fade-in': filteri.aranzmani }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
+            <h1
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+            >
+              {{ t("arrangements") }}
+            </h1>
             <div
               v-for="aranzman in aranzmani"
               :key="aranzman.filename"
@@ -213,7 +228,7 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/aranzmani/${aranzman.filename}`)})`,
               }"
-              class="h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
@@ -223,19 +238,20 @@
             :class="{ 'animate-fade-in': filteri.buketi }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
+            <h1
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+            >
+              {{ t("bouquet") }}
+            </h1>
             <div
               v-for="buketi in buketiAranzmani"
               :key="buketi.filename"
               @click="openModal('buketi', buketi)"
-            >
-              <img
-                class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg cursor-pointer"
-                :src="
-                  require(`@/assets/ponuda_cvijeca/buketi_i_aranzmani/${buketi.filename}`)
-                "
-                alt=""
-              />
-            </div>
+              :style="{
+                backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/buketi_i_aranzmani/${buketi.filename}`)})`,
+              }"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+            ></div>
           </div>
 
           <!-- Modal -->
@@ -439,31 +455,11 @@ export default {
         this.filteri[key] = key === filterArgument;
       });
     },
-    openModal(category, item) {
-      const basePaths = {
-        cvijece_za_lijes: "@/assets/ponuda_cvijeca/cvijece_za_lijes/",
-        vijenci: "@/assets/ponuda_cvijeca/vijenci/",
-        aranzmani: "@/assets/ponuda_cvijeca/aranzmani/",
-        buketi: "@/assets/ponuda_cvijeca/buketi_i_aranzmani/",
-      };
-
-      try {
-        // Dynamically resolve the image path
-        this.currentImage = require(`${basePaths[category]}${item.filename}`);
-        this.isModalOpen = true;
-      } catch (error) {
-        console.error(
-          `Error loading image: ${basePaths[category]}${item.filename}`,
-          error
-        );
-        this.currentImage = ""; // Fallback to empty string if image not found
-        this.isModalOpen = false;
-      }
+    openModal(type, aranzman) {
+      this.selectedAranzman = aranzman;
     },
-
     closeModal() {
-      this.isModalOpen = false;
-      this.currentImage = null;
+      this.selectedAranzman = null;
     },
 
     resetingAllFilters() {
@@ -523,14 +519,5 @@ export default {
 }
 .owl-next {
   right: -20px;
-}
-
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 0.3s;
-}
-.modal-enter,
-.modal-leave-to {
-  opacity: 0;
 }
 </style>
