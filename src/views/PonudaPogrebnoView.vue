@@ -5,6 +5,7 @@
 
     <HeroBanner
       :title="t('pogrebna_ponuda')"
+      :description="t('funeral_services_description')"
       imageSrc="banner-ponuda-pogrebno.jpg"
       imageAlt="Pogrebne usluge - ponuda"
     />

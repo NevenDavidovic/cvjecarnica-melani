@@ -271,6 +271,7 @@
       <!-- Mobile Menu Links -->
       <div
         class="flex flex-col p-6 space-y-6 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
+        @touchstart.passive="onTouchStart"
       >
         <RouterLink
           to="/"
@@ -289,7 +290,6 @@
             >
               {{ $t("funeral_services") }}
             </p>
-
             <svg
               :class="{ 'rotate-180': submenuPonuda }"
               class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
@@ -298,9 +298,9 @@
               viewBox="0 0 24 24"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 d="M19 9l-7 7-7-7"
               />
             </svg>
@@ -324,7 +324,6 @@
             >
               {{ $t("coffins_offer") }}
             </RouterLink>
-
             <RouterLink
               to="#"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
@@ -343,7 +342,6 @@
           >
             {{ $t("flower_shop") }}
           </p>
-
           <svg
             :class="{ 'rotate-180': submenuCvijece }"
             class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
@@ -352,9 +350,9 @@
             viewBox="0 0 24 24"
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
               d="M19 9l-7 7-7-7"
             />
           </svg>
@@ -382,7 +380,6 @@
           >
             {{ $t("coffin_flowers") }}
           </RouterLink>
-
           <RouterLink
             to="/ponuda?filter=vijenci"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
@@ -421,12 +418,16 @@ export default {
       isMobileMenuOpen: false,
       submenuPonuda: false,
       submenuCvijece: false,
+      eventPassive: "",
     };
   },
   methods: {
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
+    },
+    onTouchStart(event) {
+      this.eventPassive = event;
     },
     toggleSubmenuCvijece() {
       this.submenuCvijece = !this.submenuCvijece;
