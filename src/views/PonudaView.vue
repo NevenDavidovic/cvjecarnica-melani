@@ -20,160 +20,43 @@
           </button>
           <button
             @click="filteringTheProducts('aranzmani')"
-            :class="{
-              'border border-white ': filteri.aranzmani,
-            }"
+            :class="{ 'border border-white': filteri.aranzmani }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             {{ t("arrangements") }}
           </button>
-
           <button
             @click="filteringTheProducts('vijenci')"
-            :class="{
-              'border border-white ': filteri.vijenci,
-            }"
+            :class="{ 'border border-white': filteri.vijenci }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             {{ t("vijenci") }}
           </button>
-
           <button
             @click="filteringTheProducts('cvijece_za_lijes')"
-            :class="{
-              'border border-white ': filteri.cvijece_za_lijes,
-            }"
+            :class="{ 'border border-white': filteri.cvijece_za_lijes }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             {{ t("coffin_flowers") }}
           </button>
-
           <button
             @click="filteringTheProducts('buketi')"
-            :class="{
-              'border border-white ': filteri.buketi,
-            }"
+            :class="{ 'border border-white': filteri.buketi }"
             class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
             {{ t("bouquet") }}
           </button>
-          <!-- <button
-            @click="filteringTheProducts('valentinovo')"
-            :class="{
-              'border border-white ': filteri.valentinovo,
-            }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            Valentinovo
-          </button> -->
-          <!-- <button
-            @click="filteringTheProducts('umjetno_cvijece')"
-            :class="{
-              'border border-white ': filteri.umjetno_cvijece,
-            }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            Umjetno cvijeće
-          </button> -->
-          <!-- <button
-            @click="filteringTheProducts('bozic')"
-            :class="{
-              'border border-white ': filteri.bozic,
-            }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            Božić
-          </button> -->
-          <!-- <button
-            @click="filteringTheProducts('rezano_cvijece')"
-            :class="{
-              'border border-white ': filteri.rezano_cvijece,
-            }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            Rezano cvijeće
-          </button> -->
         </div>
 
-        <!-- <div
-          v-if="filteri.rezano_cvijece"
-          :class="{
-            'animate-fade-in': filteri.rezano_cvijece,
-          }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
-        >
-          <div v-for="image in rezanoCvijece" :key="image.filename">
-            <img
-              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
-              :src="
-                require(`@/assets/ponuda_cvijeca/rezano_cvijece/${image.filename}`)
-              "
-              alt=""
-            />
-          </div>
-        </div> -->
-
-        <!-- <div
-          v-if="filteri.bozic"
-          :class="{ 'animate-fade-in': filteri.bozic }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
-        >
-          <div v-for="bozic in bozicCvijece" :key="bozic.filename">
-            <img
-              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
-              :src="require(`@/assets/ponuda_cvijeca/bozic/${bozic.filename}`)"
-              alt=""
-            />
-            
-          </div>
-        </div> -->
-
-        <!-- <div
-          v-if="filteri.valentinovo"
-          :class="{ 'animate-fade-in': filteri.valentinovo }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
-        >
-          <div
-            v-for="valentinovo in valentinovoCvijece"
-            :key="valentinovo.filename"
-          >
-            <img
-              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
-              :src="
-                require(`@/assets/ponuda_cvijeca/valentinovo/${valentinovo.filename}`)
-              "
-              alt=""
-            />
-            
-          </div>
-        </div> -->
-
-        <!-- <div
-          v-if="filteri.umjetno_cvijece"
-          :class="{ 'animate-fade-in': filteri.umjetno_cvijece }"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
-        >
-          <div v-for="umjetno in umjetnoCvijece" :key="umjetno.filename">
-            <img
-              class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg"
-              :src="
-                require(`@/assets/ponuda_cvijeca/umjetno_cvijece/${umjetno.filename}`)
-              "
-              alt=""
-            />
-           
-          </div>
-        </div> -->
-
         <div>
-          <!-- Cvijece za lijes -->
+          <!-- Coffin Flowers -->
           <div
             v-if="filteri.cvijece_za_lijes"
             :class="{ 'animate-fade-in': filteri.cvijece_za_lijes }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("coffin_flowers") }}
             </h1>
@@ -184,18 +67,18 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/cvijece_za_lijes/${cvijece.filename}`)})`,
               }"
-              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
-          <!-- Vijenci -->
+          <!-- Wreaths -->
           <div
             v-if="filteri.vijenci"
             :class="{ 'animate-fade-in': filteri.vijenci }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("vijenci") }}
             </h1>
@@ -206,18 +89,18 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/vijenci/${vijenac.filename}`)})`,
               }"
-              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
-          <!-- Aranzmani -->
+          <!-- Arrangements -->
           <div
             v-if="filteri.aranzmani"
             :class="{ 'animate-fade-in': filteri.aranzmani }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("arrangements") }}
             </h1>
@@ -228,18 +111,18 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/aranzmani/${aranzman.filename}`)})`,
               }"
-              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
-          <!-- Buketi -->
+          <!-- Bouquets -->
           <div
             v-if="filteri.buketi"
             :class="{ 'animate-fade-in': filteri.buketi }"
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center align-center text-center text-2xl border rounded-xl justify-center"
+              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("bouquet") }}
             </h1>
@@ -250,27 +133,32 @@
               :style="{
                 backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/buketi_i_aranzmani/${buketi.filename}`)})`,
               }"
-              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
 
-          <!-- Modal -->
+          <!-- Responsive Modal -->
           <div
             v-if="isModalOpen"
-            class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+            @click.self="closeModal"
           >
-            <div class="relative w-[90%] max-w-4xl">
+            <div class="relative">
+              <img
+                :src="currentImageSrc"
+                alt="Full-screen image"
+                class="object-contain"
+                style="
+                  max-width: calc(100vw - 2rem);
+                  max-height: calc(100vh - 2rem);
+                "
+              />
               <button
                 @click="closeModal"
                 class="absolute top-4 right-4 text-white text-2xl font-bold"
               >
                 ✕
               </button>
-              <img
-                :src="currentImage"
-                alt="Full-screen image"
-                class="w-full h-auto rounded-lg"
-              />
             </div>
           </div>
         </div>
@@ -306,27 +194,21 @@ export default {
       isMobileMenuOpen: false,
       submenuPonuda: false,
       isModalOpen: false,
-      currentImage: null,
+      // Instead of using a "currentImage" property, we use these two to know which image to display.
+      modalType: null,
+      modalImage: null,
       formData: {
         name: "",
         email: "",
         phone: "",
         message: "",
       },
-      //rezanoCvijeće: [],
-      //bozicCvijece: [],
-      //valentinovoCvijece: [],
-      //umjetnoCvijece: [],
       buketiAranzmani: [],
       aranzmani: [],
       vijenci: [],
       cvijece_za_lijes: [],
 
       filteri: {
-        //bozic: true,
-        //rezano_cvijece: true,
-        //valentinovo: true,
-        //umjetno_cvijece: true,
         buketi: true,
         aranzmani: true,
         vijenci: true,
@@ -335,10 +217,9 @@ export default {
     };
   },
   setup() {
-    const { t } = useI18n(); // Get translation function
-    return { t }; // Return t() so it can be used in the template
+    const { t } = useI18n();
+    return { t };
   },
-
   mounted() {
     if (this.filter) {
       this.applyFilter(this.filter);
@@ -348,6 +229,23 @@ export default {
     currentFilter() {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get("filter");
+    },
+    currentImageSrc() {
+      if (!this.modalImage || !this.modalType) return "";
+      // Map the type to the corresponding folder name.
+      const folderMapping = {
+        cvijece_za_lijes: "cvijece_za_lijes",
+        vijenci: "vijenci",
+        aranzmani: "aranzmani",
+        buketi: "buketi_i_aranzmani",
+      };
+      const folder = folderMapping[this.modalType];
+      try {
+        return require(`@/assets/ponuda_cvijeca/${folder}/${this.modalImage.filename}`);
+      } catch (error) {
+        console.error("Error loading image:", error);
+        return "";
+      }
     },
   },
   watch: {
@@ -399,55 +297,9 @@ export default {
       title: filename.slice(2, -4),
       alt: filename.slice(2, -4),
     }));
-
-    // const umjetnoCvijece = require.context(
-    //   "@/assets/ponuda_cvijeca/umjetno_cvijece",
-    //   false,
-    //   /\.(png|jpe?g|svg)$/
-    // );
-    // this.umjetnoCvijece = umjetnoCvijece.keys().map((filename) => ({
-    //   filename: filename.slice(2),
-    //   title: filename.slice(2, -4),
-    //   alt: filename.slice(2, -4),
-    // }));
-
-    // const valentinovoCvijece = require.context(
-    //   "@/assets/ponuda_cvijeca/valentinovo",
-    //   false,
-    //   /\.(png|jpe?g|svg)$/
-    // );
-    // this.valentinovoCvijece = valentinovoCvijece.keys().map((filename) => ({
-    //   filename: filename.slice(2),
-    //   title: filename.slice(2, -4),
-    //   alt: filename.slice(2, -4),
-    // }));
-
-    // const rezanoCvijece = require.context(
-    //   "@/assets/ponuda_cvijeca/rezano_cvijece",
-    //   false,
-    //   /\.(png|jpe?g|svg)$/
-    // );
-    // this.rezanoCvijece = rezanoCvijece.keys().map((filename) => ({
-    //   filename: filename.slice(2),
-    //   title: filename.slice(2, -4),
-    //   alt: filename.slice(2, -4),
-    // }));
-
-    // const bozicCvijece = require.context(
-    //   "@/assets/ponuda_cvijeca/bozic",
-    //   false,
-    //   /\.(png|jpe?g|svg)$/
-    // );
-
-    // this.bozicCvijece = bozicCvijece.keys().map((filename) => ({
-    //   filename: filename.slice(2),
-    //   title: filename.slice(2, -4),
-    //   alt: filename.slice(2, -4),
-    // }));
   },
-
   beforeUnmount() {
-    document.body.style.overflow = "auto"; // Reset overflow
+    document.body.style.overflow = "auto";
   },
   methods: {
     applyFilter(filterArgument) {
@@ -455,13 +307,18 @@ export default {
         this.filteri[key] = key === filterArgument;
       });
     },
-    openModal(type, aranzman) {
-      this.selectedAranzman = aranzman;
+    openModal(type, image) {
+      this.modalType = type;
+      this.modalImage = image;
+      this.isModalOpen = true;
+      document.body.style.overflow = "hidden";
     },
     closeModal() {
-      this.selectedAranzman = null;
+      this.modalType = null;
+      this.modalImage = null;
+      this.isModalOpen = false;
+      document.body.style.overflow = "auto";
     },
-
     resetingAllFilters() {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = true;
@@ -471,12 +328,10 @@ export default {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = key === filterArgument;
       });
-      // Optionally update the URL to reflect the new filter
       const url = new URL(window.location);
       url.searchParams.set("filter", filterArgument);
       window.history.pushState({}, "", url);
     },
-
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
@@ -503,11 +358,10 @@ export default {
   }
 }
 
-/* Animation class */
 .animate-fade-in {
   animation: fadeIn 2s ease-out;
 }
-/* Optional: Custom styling for navigation */
+
 .owl-prev,
 .owl-next {
   position: absolute;

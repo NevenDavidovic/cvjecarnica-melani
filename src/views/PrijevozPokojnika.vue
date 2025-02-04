@@ -58,19 +58,17 @@
       </div>
     </div>
 
-    <div class="bg-gray-800">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px] mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 bg-white"
+    >
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px] mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 bg-gray-800 rounded-xl"
-      >
-        <div v-for="image in prijevoz" :key="image.filename">
-          <img
-            class="w-[100%] lg:w-full xl:h-full lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-xl"
-            :src="
-              require(`@/assets/ponuda_pogrebno/prijevoz_pokojnika/${image.filename}`)
-            "
-          />
-        </div>
-      </div>
+        v-for="image in prijevoz"
+        :key="image.filename"
+        :style="{
+          backgroundImage: `url(${require(`@/assets/ponuda_pogrebno/prijevoz_pokojnika/${image.filename}`)})`,
+        }"
+        class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-[100%] lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+      ></div>
     </div>
 
     <FooterComponent />
