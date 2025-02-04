@@ -350,7 +350,7 @@
             :class="{ 'rotate-180': submenuCvijece }"
             class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
             fill="none"
-            stroke="#FBCA00"
+            stroke="#6FDCF6"
             viewBox="0 0 24 24"
           >
             <path
