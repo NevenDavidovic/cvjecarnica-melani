@@ -221,6 +221,9 @@ export default {
     const { t } = useI18n();
     return { t };
   },
+  beforeUnmount() {
+    document.body.style.overflow = ""; // Reset overflow on component destroy
+  },
   mounted() {
     if (this.filter) {
       this.applyFilter(this.filter);

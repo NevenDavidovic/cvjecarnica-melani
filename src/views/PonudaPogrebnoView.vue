@@ -215,7 +215,7 @@ export default {
     }));
   },
   beforeUnmount() {
-    document.body.style.overflow = "auto"; // Reset overflow on component destroy
+    document.body.style.overflow = "";
   },
   computed: {
     selectedImageSrc() {

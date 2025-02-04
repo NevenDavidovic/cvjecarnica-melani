@@ -116,6 +116,9 @@ export default {
     const { t } = useI18n();
     return { t };
   },
+  beforeUnmount() {
+    document.body.style.overflow = "";
+  },
   methods: {
     toggle(index) {
       this.openIndex = this.openIndex === index ? null : index;

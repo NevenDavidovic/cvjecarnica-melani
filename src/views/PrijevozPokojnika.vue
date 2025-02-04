@@ -128,11 +128,13 @@ export default {
     };
   },
   setup() {
-    const { t } = useI18n(); // Get the translation function
+    const { t } = useI18n();
     return { t };
   },
+  beforeUnmount() {
+    document.body.style.overflow = "";
+  },
   created() {
-    // Load all images from the prijevoz_pokojnika folder
     const prijevoz = require.context(
       "@/assets/ponuda_pogrebno/prijevoz_pokojnika",
       false,
