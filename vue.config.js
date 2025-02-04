@@ -9,7 +9,6 @@ module.exports = defineConfig({
         $: "jquery",
         jQuery: "jquery",
         "window.jQuery": "jquery",
-        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false),
       }),
     ],
   },

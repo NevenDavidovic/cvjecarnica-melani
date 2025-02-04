@@ -12,40 +12,51 @@
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
         <h1 class="text-2xl font-normal mb-[50px]">{{ t("categories") }}</h1>
-        <div class="flex flex-wrap justify-center mb-8">
+        <div
+          class="flex flex-wrap justify-center mb-8 gap-2 group/btnContainer"
+        >
           <button
-            @click="resetingAllFilters"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
+            v-for="btn in [
+              { id: 'all', label: t('all') },
+              { id: 'aranzmani', label: t('arrangements') },
+              { id: 'vijenci', label: t('vijenci') },
+              { id: 'cvijece_za_lijes', label: t('coffin_flowers') },
+              { id: 'buketi', label: t('bouquet') },
+            ]"
+            :key="btn.id"
+            @click="
+              btn.id === 'all'
+                ? resetingAllFilters()
+                : filteringTheProducts(btn.id)
+            "
+            class="relative overflow-hidden px-6 py-2.5 text-sm font-medium transition-all duration-400 rounded-xl"
+            :class="{
+              'text-white bg-gradient-to-r from-indigo-500 to-purple-500 shadow-lg shadow-indigo-100':
+                (btn.id === 'all' && Object.values(filteri).every((v) => !v)) ||
+                filteri[btn.id],
+              'text-gray-600 bg-gray-100 hover:bg-gray-50': !(
+                (btn.id === 'all' && Object.values(filteri).every((v) => !v)) ||
+                filteri[btn.id]
+              ),
+            }"
           >
-            {{ t("all") }}
-          </button>
-          <button
-            @click="filteringTheProducts('aranzmani')"
-            :class="{ 'border border-white': filteri.aranzmani }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            {{ t("arrangements") }}
-          </button>
-          <button
-            @click="filteringTheProducts('vijenci')"
-            :class="{ 'border border-white': filteri.vijenci }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            {{ t("vijenci") }}
-          </button>
-          <button
-            @click="filteringTheProducts('cvijece_za_lijes')"
-            :class="{ 'border border-white': filteri.cvijece_za_lijes }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            {{ t("coffin_flowers") }}
-          </button>
-          <button
-            @click="filteringTheProducts('buketi')"
-            :class="{ 'border border-white': filteri.buketi }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            {{ t("bouquet") }}
+            <span class="relative z-10">
+              {{ btn.label }}
+            </span>
+
+            <!-- Hover effect layer -->
+            <div
+              class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-100/30 to-purple-100/30 hover:opacity-100"
+            ></div>
+
+            <!-- Active state border animation -->
+            <div
+              v-if="
+                (btn.id === 'all' && Object.values(filteri).every((v) => !v)) ||
+                filteri[btn.id]
+              "
+              class="absolute inset-0 border-2 border-white/20 rounded-xl animate-border-pulse"
+            ></div>
           </button>
         </div>
 
@@ -57,7 +68,7 @@
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
+              class="min-h-[100px] shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("coffin_flowers") }}
             </h1>
@@ -79,7 +90,7 @@
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
+              class="min-h-[100px] shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("vijenci") }}
             </h1>
@@ -101,7 +112,7 @@
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
+              class="min-h-[100px] shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("arrangements") }}
             </h1>
@@ -123,7 +134,7 @@
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
           >
             <h1
-              class="shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
+              class="min-h-[100px] shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
             >
               {{ t("bouquet") }}
             </h1>
@@ -221,9 +232,7 @@ export default {
     const { t } = useI18n();
     return { t };
   },
-  beforeUnmount() {
-    document.body.style.overflow = ""; // Reset overflow on component destroy
-  },
+
   mounted() {
     if (this.filter) {
       this.applyFilter(this.filter);

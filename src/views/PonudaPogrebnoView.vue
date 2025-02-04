@@ -13,33 +13,41 @@
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
         <h1 class="text-2xl font-normal mb-[50px]">{{ t("categories") }}</h1>
-        <div class="flex flex-wrap justify-center mb-8">
+        <div class="flex flex-wrap justify-center mb-8 gap-3 group/buttons">
           <button
+            class="relative p-px overflow-hidden text-sm font-medium transition-all duration-500 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:shadow-lg hover:shadow-blue-100"
             @click="resetingAllFilters"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
           >
-            {{ t("all") }}
+            <div
+              class="relative text-blue-900 px-6 py-2.5 bg-white rounded-[15px] transition-all duration-300 group-hover/buttons:opacity-90 hover:bg-opacity-0 hover:text-white"
+              :class="{
+                'bg-gradient-to-r from-blue-500 to-purple-500 text-white':
+                  Object.values(filteri).every((v) => !v),
+              }"
+            >
+              {{ t("all") }}
+            </div>
           </button>
+
           <button
-            @click="filteringTheProducts('lijesovi')"
-            :class="{ 'border border-white': filteri.lijesovi }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
+            v-for="(filter, key) in {
+              lijesovi: t('coffins_offer'),
+              lampioni: t('funeral_equipment'),
+              prijevoz_pokojnika: t('prijevoz_pokojnika'),
+            }"
+            :key="key"
+            class="text-blue-900 text-blue-900 relative p-px overflow-hidden text-sm font-medium transition-all duration-500 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:shadow-lg hover:shadow-blue-100"
+            @click="filteringTheProducts(key)"
           >
-            {{ t("coffins_offer") }}
-          </button>
-          <button
-            @click="filteringTheProducts('lampioni')"
-            :class="{ 'border border-white': filteri.lampioni }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            {{ t("funeral_equipment") }}
-          </button>
-          <button
-            @click="filteringTheProducts('prijevoz_pokojnika')"
-            :class="{ 'border border-white': filteri.prijevoz_pokojnika }"
-            class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded mr-2 mb-2"
-          >
-            {{ t("prijevoz_pokojnika") }}
+            <div
+              class="relative px-6 py-2.5 bg-white rounded-[15px] transition-all duration-300 group-hover/buttons:opacity-90 hover:bg-opacity-0 hover:text-white"
+              :class="{
+                'bg-gradient-to-r from-blue-500 to-purple-500 text-white':
+                  filteri[key],
+              }"
+            >
+              {{ filter }}
+            </div>
           </button>
         </div>
 
@@ -226,6 +234,18 @@ export default {
         console.error("Error loading image:", error);
         return "";
       }
+    },
+  },
+  watch: {
+    "$route.query.filter": {
+      handler(newFilter) {
+        if (newFilter) {
+          this.applyFilter(newFilter);
+        } else {
+          this.resetingAllFilters();
+        }
+      },
+      immediate: true,
     },
   },
   methods: {
