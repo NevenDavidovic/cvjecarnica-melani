@@ -307,24 +307,28 @@
           </div>
           <div v-if="submenuPonuda" class="submenu flex flex-col gap-[20px]">
             <RouterLink
+              @click="toggleMobileMenu()"
               to="/prijevoz-pokojnika"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
               {{ $t("prijevoz_pokojnika") }}
             </RouterLink>
             <RouterLink
+              @click="toggleMobileMenu()"
               to="/ponuda-pogrebno"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
               {{ $t("pogrebna_ponuda") }}
             </RouterLink>
             <RouterLink
+              @click="toggleMobileMenu()"
               to="/ponuda-lijesovi"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
               {{ $t("coffins_offer") }}
             </RouterLink>
             <RouterLink
+              @click="toggleMobileMenu()"
               to="#"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
@@ -363,18 +367,21 @@
           class="submenu flex flex-col gap-[20px] ml-[25px]"
         >
           <RouterLink
+            @click="toggleMobileMenu()"
             to="/ponuda?filter=aranzmani"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("arrangements") }}
           </RouterLink>
           <RouterLink
+            @click="toggleMobileMenu()"
             to="/ponuda?filter=buketi"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("bouquet") }}
           </RouterLink>
           <RouterLink
+            @click="toggleMobileMenu()"
             to="/ponuda?filter=cvijece_za_lijes"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
