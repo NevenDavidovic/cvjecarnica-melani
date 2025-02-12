@@ -16,6 +16,7 @@
           alt="Logo"
           :class="{ resize: !isSectionVisible }"
           class="h-24 w-24 transition-all duration-1000 ease-in-out"
+          @click="$router.push('/')"
         />
         <LanguageSelectorComponent />
       </div>
@@ -211,8 +212,12 @@
 
     <!-- Mobile Menu -->
     <div
-      :class="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'"
-      class="fixed top-0 right-0 h-full w-full bg-[#353638]/95 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
+      :class="[
+        isMobileMenuOpen
+          ? 'translate-x-0 h-screen overflow-auto'
+          : 'translate-x-full h-0 overflow-hidden',
+      ]"
+      class="fixed top-0 right-0 w-full bg-[#353638]/95 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
     >
       <!-- Mobile Menu Header -->
       <div

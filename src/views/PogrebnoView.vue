@@ -205,7 +205,7 @@
               {{ t("candles_desc") }}
             </p>
             <button
-              @click="$router.push('/ponuda-pogrebno?filter=lampioni')"
+              @click="$router.push('/ponuda?filter=cvijece_za_lijes')"
               class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-normal py-2 px-4 rounded mt-4 max-w-[200px]"
             >
               {{ t("view_more") }}
