@@ -11,7 +11,6 @@
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center my-[50px] lg:my-[100px]"
     >
-      <!-- Left Column: Text -->
       <div>
         <h2 class="text-4xl font-bold text-gray-800 mb-4">
           {{ t("prijevoz_pokojnika") }}
@@ -40,8 +39,6 @@
           </a>
         </div>
       </div>
-
-      <!-- Right Column: Image -->
       <div>
         <div
           class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg"
@@ -58,8 +55,6 @@
         </p>
       </div>
     </div>
-
-    <!-- Image Grid (Transport Images) -->
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px] mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 bg-white"
     >
@@ -73,8 +68,6 @@
         @click="openModal(image)"
       ></div>
     </div>
-
-    <!-- Responsive Modal for Transport Images -->
     <div
       v-if="isModalOpen"
       class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"

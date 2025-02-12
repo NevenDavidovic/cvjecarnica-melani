@@ -2,17 +2,14 @@
   <div
     class="relative h-[500px] bg-gray-900 overflow-hidden flex items-center justify-center text-center"
   >
-    <!-- Background Image with Smooth Fade-In & Zoom Effect -->
     <img
       :src="resolvedImageSrc"
       :alt="imageAlt"
       class="absolute inset-0 w-full h-full object-cover opacity-0 scale-110 animate-fadeZoom"
     />
 
-    <!-- Dark Overlay to Enhance Text Visibility -->
     <div class="absolute inset-0 bg-black/60"></div>
 
-    <!-- Title & Description (Centered) -->
     <div class="relative z-10 px-4">
       <h1 class="text-5xl text-white font-semibold opacity-0 animate-slideUp">
         {{ title }}
@@ -61,7 +58,6 @@ export default {
 </script>
 
 <style scoped>
-/* Fade In */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -74,7 +70,6 @@ export default {
   animation: fadeIn 1.5s ease-out forwards;
 }
 
-/* Zoom Effect on Image */
 @keyframes fadeZoom {
   0% {
     opacity: 0;
@@ -89,7 +84,6 @@ export default {
   animation: fadeZoom 2s ease-out forwards;
 }
 
-/* Slide Up Animation */
 @keyframes slideUp {
   0% {
     opacity: 0;
@@ -104,7 +98,6 @@ export default {
   animation: slideUp 1.2s ease-out forwards;
 }
 
-/* Delay for Description */
 .delay-500 {
   animation-delay: 0.5s;
 }

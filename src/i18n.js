@@ -1,7 +1,5 @@
 import { createI18n } from "vue-i18n";
 import { watch } from "vue";
-
-// Static imports for initial translations
 import enMessages from "@/locales/en.json";
 import hrMessages from "@/locales/hr.json";
 
@@ -19,7 +17,6 @@ const i18n = createI18n({
   },
 });
 
-// Dynamic loading for additional languages
 async function loadLocaleMessages(locale) {
   try {
     const messages = await import(`@/locales/${locale}.json`);

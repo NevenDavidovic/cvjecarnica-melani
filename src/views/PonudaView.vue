@@ -43,13 +43,9 @@
             <span class="relative z-10">
               {{ btn.label }}
             </span>
-
-            <!-- Hover effect layer -->
             <div
               class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-100/30 to-purple-100/30 hover:opacity-100"
             ></div>
-
-            <!-- Active state border animation -->
             <div
               v-if="
                 (btn.id === 'all' && Object.values(filteri).every((v) => !v)) ||
@@ -61,7 +57,6 @@
         </div>
 
         <div>
-          <!-- Coffin Flowers -->
           <div
             v-if="filteri.cvijece_za_lijes"
             :class="{ 'animate-fade-in': filteri.cvijece_za_lijes }"
@@ -82,8 +77,6 @@
               class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
-
-          <!-- Wreaths -->
           <div
             v-if="filteri.vijenci"
             :class="{ 'animate-fade-in': filteri.vijenci }"
@@ -104,8 +97,6 @@
               class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
-
-          <!-- Arrangements -->
           <div
             v-if="filteri.aranzmani"
             :class="{ 'animate-fade-in': filteri.aranzmani }"
@@ -126,8 +117,6 @@
               class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
-
-          <!-- Bouquets -->
           <div
             v-if="filteri.buketi"
             :class="{ 'animate-fade-in': filteri.buketi }"
@@ -148,8 +137,6 @@
               class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
-
-          <!-- Responsive Modal -->
           <div
             v-if="isModalOpen"
             class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
@@ -206,7 +193,6 @@ export default {
       isMobileMenuOpen: false,
       submenuPonuda: false,
       isModalOpen: false,
-      // Instead of using a "currentImage" property, we use these two to know which image to display.
       modalType: null,
       modalImage: null,
       formData: {
@@ -245,7 +231,6 @@ export default {
     },
     currentImageSrc() {
       if (!this.modalImage || !this.modalType) return "";
-      // Map the type to the corresponding folder name.
       const folderMapping = {
         cvijece_za_lijes: "cvijece_za_lijes",
         vijenci: "vijenci",

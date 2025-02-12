@@ -1,5 +1,4 @@
 <template>
-  <!-- Navigation -->
   <div
     :class="{ hidden: !isMobileMenuOpen }"
     class="fixed inset-0 bg-[#353638]/80 backdrop-blur-md z-40 h-screen w-screen"
@@ -9,7 +8,6 @@
     class="py-[8px] navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50"
   >
     <div class="container mx-auto px-4 flex items-center justify-between">
-      <!-- Logo -->
       <div class="flex items-center gap-[20px]">
         <img
           src="../assets/images/logo_melani.png"
@@ -20,8 +18,6 @@
         />
         <LanguageSelectorComponent />
       </div>
-
-      <!-- Desktop Navigation Links -->
       <div class="hidden lg:flex space-x-8 text-gray-700 items-center">
         <RouterLink to="/" class="font-jacques uppercase text-white">
           {{ $t("naslovnica") }}
@@ -48,7 +44,6 @@
             </svg>
           </RouterLink>
 
-          <!-- Added invisible padding to ensure no gap between trigger and menu -->
           <div class="absolute w-full h-2 -bottom-2"></div>
 
           <div
@@ -124,7 +119,6 @@
             </svg>
           </RouterLink>
 
-          <!-- Added invisible padding to ensure no gap between trigger and menu -->
           <div class="absolute w-full h-2 -bottom-2"></div>
 
           <div
@@ -187,7 +181,6 @@
         </button>
       </div>
 
-      <!-- Mobile Menu Button -->
       <button @click="toggleMobileMenu" class="lg:hidden p-2">
         <svg
           width="43"
@@ -203,14 +196,12 @@
       </button>
     </div>
 
-    <!-- Blurred Overlay -->
     <div
       v-if="isMobileMenuOpen"
       class="fixed inset-0 z-40 backdrop-blur-md bg-black/30"
       @click="toggleMobileMenu"
     ></div>
 
-    <!-- Mobile Menu -->
     <div
       :class="[
         isMobileMenuOpen
@@ -219,7 +210,6 @@
       ]"
       class="fixed top-0 right-0 w-full bg-[#353638]/95 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
     >
-      <!-- Mobile Menu Header -->
       <div
         class="nav-background-mobile flex h-[137px] justify-between items-center p-6 border-b border-gray-700/50"
       >
@@ -273,7 +263,6 @@
         </button>
       </div>
 
-      <!-- Mobile Menu Links -->
       <div
         class="flex flex-col p-6 space-y-6 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-50"
         @touchstart.passive="onTouchStart"

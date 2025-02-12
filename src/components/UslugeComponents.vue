@@ -2,7 +2,6 @@
   <section class="bg-white pb-6 pt-6">
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
       <div class="container mx-auto sm:px-6 sm:p-6 bg-white">
-        <!-- Header -->
         <div
           ref="headerRef"
           class="mb-16 text-center transition-all duration-1000 opacity-0 translate-y-10"
@@ -20,7 +19,6 @@
           </p>
         </div>
 
-        <!-- Services Grid -->
         <div class="flex flex-wrap my-12">
           <div
             v-for="(service, index) in services"
@@ -70,14 +68,12 @@ export default {
     const headerRef = ref(null);
     const serviceRefs = ref([]);
 
-    // Observe the header section
     useIntersectionObserver(headerRef, ([{ isIntersecting }]) => {
       if (isIntersecting) {
         isHeaderVisible.value = true;
       }
     });
 
-    // Observe each service item
     onMounted(() => {
       visibleServices.value = new Array(serviceRefs.value.length).fill(false);
       serviceRefs.value.forEach((el, index) => {

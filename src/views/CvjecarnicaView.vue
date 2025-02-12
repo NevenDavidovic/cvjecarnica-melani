@@ -1,11 +1,8 @@
 <template>
   <div class="min-h-screen">
-    <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
-    <!-- Hero Section -->
     <div class="section__1 relative h-screen" ref="section1">
-      <!-- Background Image -->
       <div class="absolute inset-0">
         <img
           src="../assets/images/hero-image-cvjecarna.jpg"
@@ -16,11 +13,9 @@
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <!-- Content -->
       <div
         class="gap-[50px] container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
-        <!-- Letter Animation for Heading -->
         <h1
           class="max-w-[70%] mx-auto w-full text-5xl font-medium text-left flex flex-wrap"
         >
@@ -35,7 +30,6 @@
           </span>
         </h1>
 
-        <!-- Animated Paragraph -->
         <p
           class="max-w-[70%] mx-auto sm:text-xl sm:text-sm font-normal text-left opacity-0 translate-y-6 transition-all duration-[2000ms] ease-out delay-500"
           :class="{ 'opacity-100 translate-y-0': isHeroVisible }"
@@ -44,7 +38,6 @@
         </p>
       </div>
     </div>
-    <!--USLUGE-->
 
     <div
       class="usluge-cvjecarnica w-full px-[16px] bg-bg_primary py-[130px] flex flex-col gap-[80px]"
@@ -372,7 +365,6 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-16 justify-items-center"
         >
-          <!-- Image Column -->
           <div
             class="max-w-[591px] max-h-[954px] w-full relative overflow-hidden opacity-0 translate-x-[-100px] scale-95 transition-all duration-1000"
             :class="{ 'opacity-100 translate-x-0 scale-100': isAboutVisible }"
@@ -383,7 +375,6 @@
             />
           </div>
 
-          <!-- Text Column -->
           <div
             class="flex flex-col justify-center max-w-xl opacity-0 translate-x-[100px] scale-95 transition-all duration-2000 delay-1200"
             :class="{ 'opacity-100 translate-x-0 scale-100': isAboutVisible }"
@@ -428,21 +419,18 @@
             @click="$router.push('/ponuda?filter=buketi')"
           >
             <img src="../assets/images/buketi-i-aranzmani.jpg" alt="Slide 1" />
-            <!-- <h3 class="text-xl">{{ t("bouquet") }}</h3> -->
           </div>
           <div
             class="item flex flex-col gap-4 cursor-pointer"
             @click="$router.push('/ponuda?filter=rezano_cvijece')"
           >
             <img src="../assets/images/vjencani-buketi.jpg" alt="Slide 2" />
-            <!-- <h3 class="text-xl">{{ t("rezano_cvijece") }}</h3> -->
           </div>
           <div
             class="item flex flex-col gap-4 cursor-pointer"
             @click="$router.push('/ponuda?filter=bozic')"
           >
             <img src="../assets/images/prigoodni-aranzmani.jpg" alt="Slide 3" />
-            <!-- <h3 class="text-xl">{{ t("vijenci") }}</h3> -->
           </div>
 
           <div
@@ -450,14 +438,12 @@
             @click="$router.push('/ponuda?filter=umjetno_cvijece')"
           >
             <img src="../assets/images/grobni-vijenci.jpg" alt="Slide 3" />
-            <!-- <h3 class="text-xl">{{ t("artificial_flowers") }}</h3> -->
           </div>
           <div
             class="item flex flex-col gap-4 cursor-pointer"
             @click="$router.push('/ponuda?filter=valentinovo')"
           >
             <img src="../assets/images/kutije.jpg" alt="Slide 3" />
-            <!-- <h3 class="text-xl">{{ t("coffin_flowers") }}</h3> -->
           </div>
         </OwlCarousel>
       </div>
@@ -481,12 +467,10 @@
 
     <div class="bg-bg_primary text-cyan-300 py-16 px-4">
       <div class="max-w-6xl mx-auto">
-        <!-- Header -->
         <h2 class="text-4xl md:text-5xl font-medium text-center mb-4">
           {{ t("kako_doci_do_nas") }}
         </h2>
 
-        <!-- Address Text -->
         <div class="text-center text-[1.25rem] mb-8 text-gray-300">
           <p>
             {{ t("flower_shop") }} Melani - Ulica Mladena Vodanovića 4b,
@@ -497,9 +481,7 @@
           </p>
         </div>
 
-        <!-- Images Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Store Front Image -->
           <div class="md:col-span-2">
             <div class="rounded-lg overflow-hidden shadow-xl">
               <img
@@ -510,7 +492,6 @@
             </div>
           </div>
 
-          <!-- Store Window Image -->
           <div>
             <div class="rounded-lg overflow-hidden shadow-xl">
               <img
@@ -574,7 +555,6 @@ export default {
   setup() {
     const { t, locale } = useI18n();
 
-    // Function to return correct image paths
     const getImagePath = (hrPath, enPath) =>
       computed(() =>
         locale.value === "hr"
@@ -585,12 +565,10 @@ export default {
     const isAboutVisible = ref(false);
     const aboutUsSection = ref(null);
 
-    // Observe the about section
     useIntersectionObserver(aboutUsSection, ([{ isIntersecting }]) => {
       if (isIntersecting) isAboutVisible.value = true;
     });
 
-    // Dynamic SVG sources
     const flowerIcon = getImagePath("svjeze-cvijce.svg", "Fresh-flowers.svg");
     const giftIcon = getImagePath("poklon-artikli.svg", "Gifts.svg");
     const eventsIcon = getImagePath("Dogadanja.svg", "Events.svg");
@@ -606,12 +584,10 @@ export default {
     const isHeroVisible = ref(false);
     const section1 = ref(null);
 
-    // Observe the hero section
     useIntersectionObserver(section1, ([{ isIntersecting }]) => {
       if (isIntersecting) isHeroVisible.value = true;
     });
 
-    // Split text into an array of characters
     const welcomeText = computed(() => t("welcome").split(""));
 
     return {
@@ -636,7 +612,7 @@ export default {
     document.body.style.overflow = "auto"; // Reset overflow
   },
   beforeUnmount() {
-    document.body.style.overflow = "auto"; // Reset overflow
+    document.body.style.overflow = "auto";
   },
   methods: {
     initIntersectionObserver() {
@@ -656,7 +632,6 @@ export default {
       observer.observe(section);
     },
     redirectToContact() {
-      // Use this.$router to navigate
       this.$router.push("/contact-melani");
     },
     toggleSubmenuPonuda() {
@@ -665,7 +640,6 @@ export default {
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
-      // Use a more robust method to control body overflow
       if (this.isMobileMenuOpen) {
         document.body.classList.add("overflow-hidden");
       } else {
@@ -676,7 +650,6 @@ export default {
 };
 </script>
 <style scoped>
-/* Optional: Custom styling for navigation */
 .owl-prev,
 .owl-next {
   position: absolute;
@@ -689,7 +662,6 @@ export default {
 .owl-next {
   right: -20px;
 }
-
 .opacity-0 {
   opacity: 0;
 }
@@ -703,7 +675,6 @@ export default {
   transform: translateY(0);
 }
 
-/* Background zoom effect */
 .scale-110 {
   transform: scale(1.1);
 }

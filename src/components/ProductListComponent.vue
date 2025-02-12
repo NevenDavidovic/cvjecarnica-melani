@@ -4,7 +4,6 @@
       class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
     >
       <h2 class="sr-only">Products</h2>
-
       <div
         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
       >
@@ -108,7 +107,6 @@ export default {
           price: "$32",
           description: "",
           options: "Black",
-          // Umjesto stringa 'organiziranjeGlazbe', koristimo uvozenu sliku
           imageSrc: lijes6,
           imageAlt: "",
         },
@@ -119,7 +117,6 @@ export default {
           price: "$32",
           description: "",
           options: "Black",
-          // Umjesto stringa 'organiziranjeGlazbe', koristimo uvozenu sliku
           imageSrc: lijes7,
           imageAlt: "",
         },
@@ -130,7 +127,6 @@ export default {
           price: "$32",
           description: "",
           options: "Black",
-          // Umjesto stringa 'organiziranjeGlazbe', koristimo uvozenu sliku
           imageSrc: lijes8,
           imageAlt: "",
         },

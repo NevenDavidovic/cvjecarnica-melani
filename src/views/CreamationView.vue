@@ -1,12 +1,9 @@
 <template>
   <div class="min-h-screen">
-    <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <div class="min-h-screen bg-white">
-      <!-- Main Grid Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-2">
-        <!-- Left Column - Fixed Image -->
         <div class="relative lg:h-screen lg:sticky top-0">
           <div class="h-[50vh] lg:h-full relative">
             <div
@@ -17,21 +14,13 @@
               alt="Funeral Services"
               class="h-full w-full object-cover"
             />
-            <!-- Overlay Title -->
-            <div class="absolute bottom-12 left-12 right-12">
-              <!-- <h1
-                class="text-white text-5xl lg:text-7xl font-normal tracking-wide"
-              >
-                {{ t("cremation") }}
-              </h1> -->
-            </div>
+
+            <div class="absolute bottom-12 left-12 right-12"></div>
           </div>
         </div>
 
-        <!-- Right Column - Scrolling Content -->
         <div class="bg-white min-h-screen">
           <div class="max-w-xl mx-auto px-8 py-24 space-y-24">
-            <!-- Description Section -->
             <div class="group">
               <div class="flex items-center gap-4 mb-8">
                 <span
@@ -46,7 +35,6 @@
               </p>
             </div>
 
-            <!-- Documentation Section -->
             <div class="group">
               <div class="flex items-center gap-4 mb-12">
                 <span
@@ -87,7 +75,6 @@
               </div>
             </div>
 
-            <!-- Final Message -->
             <div class="group">
               <div class="flex items-center gap-4 mb-8">
                 <span
@@ -153,8 +140,8 @@ export default {
     };
   },
   setup() {
-    const { t } = useI18n(); // Get translation function
-    return { t }; // Return t() so it can be used in the template
+    const { t } = useI18n();
+    return { t };
   },
 
   mounted() {
@@ -182,24 +169,8 @@ export default {
     },
 
     redirectToContact() {
-      // Use this.$router to navigate
       this.$router.push("/contact-melani");
     },
   },
 };
 </script>
-<style scoped>
-/* Optional: Custom styling for navigation */
-.owl-prev,
-.owl-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.owl-prev {
-  left: -20px;
-}
-.owl-next {
-  right: -20px;
-}
-</style>

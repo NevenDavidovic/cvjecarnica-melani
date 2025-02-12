@@ -1,10 +1,6 @@
 <template>
   <div class="min-h-screen">
-    <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
-
-    <!-- Hero Banner -->
-
     <HeroBanner
       :title="t('coffins_offer')"
       imageSrc="banner-ponuda-lijesovi.jpg"
@@ -40,8 +36,8 @@ export default {
     };
   },
   setup() {
-    const { t } = useI18n(); // Get translation function
-    return { t }; // Return t() so it can be used in the template
+    const { t } = useI18n();
+    return { t };
   },
   mounted() {
     if (this.filter) {
@@ -49,7 +45,7 @@ export default {
     }
   },
   beforeUnmount() {
-    document.body.style.overflow = "auto"; // Reset overflow
+    document.body.style.overflow = "auto";
   },
   methods: {
     toggleMobileMenu() {
@@ -77,12 +73,9 @@ export default {
     transform: translateY(0);
   }
 }
-
-/* Animation class */
 .animate-fade-in {
   animation: fadeIn 2s ease-out;
 }
-/* Optional: Custom styling for navigation */
 .owl-prev,
 .owl-next {
   position: absolute;

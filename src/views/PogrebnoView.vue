@@ -1,10 +1,8 @@
 <template>
   <div class="min-h-screen">
-    <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <div class="section_1 relative h-screen" ref="section2">
-      <!-- Background Image -->
       <div class="absolute inset-0">
         <img
           src="../assets/images/pogrebno-hero.jpg"
@@ -15,11 +13,9 @@
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <!-- Content -->
       <div
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
-        <!-- Letter Animation for Heading -->
         <h1
           class="px-4 text-[20px] uppercase text-left w-full mb-4 flex flex-wrap"
         >
@@ -34,7 +30,6 @@
           </span>
         </h1>
 
-        <!-- Animated SVG Title -->
         <h3
           class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out delay-500"
           :class="{ 'opacity-100 translate-y-0 scale-105': isHeroVisible }"
@@ -103,7 +98,6 @@
             </p>
           </div>
 
-          <!-- Service 2: Caskets -->
           <div class="bg-gray-900 text-center p-6 rounded-lg shadow-lg">
             <div class="flex justify-center mb-4">
               <svg
@@ -127,7 +121,6 @@
             </p>
           </div>
 
-          <!-- Service 3: Urns -->
           <div class="bg-gray-900 text-center p-6 rounded-lg shadow-lg">
             <div class="flex justify-center mb-4">
               <svg
@@ -250,7 +243,6 @@
     </div>
     <PrijevozComponent />
     <DodatnaPonuda />
-
     <FooterComponent />
   </div>
 </template>
@@ -304,12 +296,10 @@ export default {
     const isHeroVisible = ref(false);
     const section2 = ref(null);
 
-    // Observe the hero section
     useIntersectionObserver(section2, ([{ isIntersecting }]) => {
       if (isIntersecting) isHeroVisible.value = true;
     });
 
-    // Split funeral_services text into an array of characters
     const funeralText = computed(() => t("funeral_services").split(""));
 
     return {
@@ -364,7 +354,6 @@ export default {
     },
 
     redirectToContact() {
-      // Use this.$router to navigate
       this.$router.push("/contact-melani");
     },
   },

@@ -22,12 +22,6 @@
           <h5 class="text-lg font-semibold text-primary uppercase mb-2">
             {{ t("funeral_services_melani") }}
           </h5>
-          <!-- <h2 class="text-4xl font-bold text-white mb-6">
-            {{ t("death_case_procedure") }}
-          </h2> -->
-          <!-- <p class="text-lg text-white mb-6">
-            {{ t("death_procedure_step_1") }}
-          </p> -->
           <p class="text-lg text-white mb-6">
             {{ t("death_procedure_step_2") }}
           </p>

@@ -1,4 +1,3 @@
-// CarouselComponent.vue
 <template>
   <div class="owl-carousel owl-theme" ref="owlCarouselRef">
     <slot></slot>
@@ -38,7 +37,6 @@ export default {
     console.log(owl);
     onMounted(() => {
       try {
-        // Initialize Owl Carousel using ref
         if (owlCarouselRef.value) {
           $(owlCarouselRef.value).owlCarousel(props.options);
         }

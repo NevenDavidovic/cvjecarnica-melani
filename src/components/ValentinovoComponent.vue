@@ -4,7 +4,6 @@
     class="bg-red-600 py-16 px-4 opacity-0 transform scale-95 transition-all duration-1000 ease-out"
   >
     <div class="container mx-auto max-w-6xl">
-      <!-- Header Section -->
       <div class="text-center mb-12">
         <h2 class="text-white font-playfair text-4xl md:text-5xl mb-4">
           {{ t("valentinovo") }}
@@ -13,8 +12,6 @@
           "Love is like a flower, blooming with care and tenderness."
         </p>
       </div>
-
-      <!-- Main Gallery Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div class="overflow-hidden fade-in">
           <img
@@ -32,7 +29,6 @@
         </div>
       </div>
 
-      <!-- Small Images Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="overflow-hidden aspect-square fade-in">
           <img
@@ -104,23 +100,18 @@ export default {
 </script>
 
 <style scoped>
-/* Initial state for animations */
 .opacity-0 {
   opacity: 0;
 }
 .scale-95 {
   transform: scale(0.95);
 }
-
-/* Animate when visible */
 .opacity-100 {
   opacity: 1;
 }
 .scale-100 {
   transform: scale(1);
 }
-
-/* Individual image fade-in */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);

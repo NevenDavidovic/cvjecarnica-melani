@@ -1,6 +1,5 @@
 <template>
   <div class="container mx-auto px-4 pt-20">
-    <!-- Header -->
     <div class="text-left pb-[50px] mb-0">
       <h2 class="font-jacques text-[28px] sm:text-[40px] mb-6 text-gray-900">
         {{ $t("showcase") }}
@@ -10,9 +9,7 @@
       </p>
     </div>
 
-    <!-- Products Grid -->
     <div class="space-b-[60px] flex flex-col gap-[50px]">
-      <!-- Wedding Bouquets -->
       <div class="flex flex-col md:flex-row items-center gap-8">
         <div class="md:w-1/2">
           <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
@@ -33,7 +30,6 @@
         </div>
       </div>
 
-      <!-- Grave Arrangements -->
       <div class="flex flex-col md:flex-row-reverse items-center gap-8">
         <div class="md:w-1/2">
           <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
@@ -54,7 +50,6 @@
         </div>
       </div>
 
-      <!-- Special Occasions -->
       <div class="flex flex-col md:flex-row items-center gap-8">
         <div class="md:w-1/2">
           <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
@@ -75,7 +70,6 @@
         </div>
       </div>
 
-      <!-- Other Occasions -->
       <div class="flex flex-col md:flex-row-reverse items-center gap-8">
         <div class="md:w-1/2">
           <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
@@ -97,7 +91,6 @@
       </div>
     </div>
 
-    <!-- Footer Text -->
     <div class="text-center mt-16 space-y-4">
       <p class="text-gray-600 font-jacques">
         {{ $t("offer_intro") }}

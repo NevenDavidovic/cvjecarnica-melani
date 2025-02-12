@@ -2,9 +2,7 @@
   <div class="min-h-screen">
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
-    <!-- Hero Section -->
     <div class="section__1 relative h-screen overflow-hidden" ref="section1">
-      <!-- Background Image -->
       <div class="absolute inset-0">
         <img
           src="../assets/images/hero_image_homepage.jpg"
@@ -14,7 +12,6 @@
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <!-- Content -->
       <div
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center"
       >
@@ -63,11 +60,7 @@
     </div>
 
     <UslugeComponents />
-
     <TwoComponent />
-
-    <!-- Additional Services Section -->
-
     <FooterComponent />
   </div>
 </template>
@@ -152,7 +145,6 @@ export default {
   animation: fadeZoom 2s ease-out forwards;
 }
 
-/* Slide Up Effect for Text */
 @keyframes slideUp {
   0% {
     opacity: 0;
@@ -167,7 +159,6 @@ export default {
   animation: slideUp 1.5s ease-out forwards;
 }
 
-/* Delay for SVG Animation */
 .delay-300 {
   animation-delay: 0.3s;
 }

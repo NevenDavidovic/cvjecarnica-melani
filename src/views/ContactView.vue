@@ -1,15 +1,13 @@
 <template>
   <div class="min-h-screen">
-    <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
-    <!-- Hero Banner -->
     <HeroBanner
       :title="t('contact_us')"
       imageSrc="telefon-banner.jpg"
       imageAlt="Kontaktirajte nas"
     />
-    <!-- Contact Content -->
+
     <div class="relative isolate bg-white">
       <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div
@@ -52,11 +50,7 @@
                 />
               </svg>
             </div>
-            <!-- <h2
-              class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
-            >
-              Kontaktirajte nas
-            </h2> -->
+
             <p class="mt-6 text-lg/8 text-gray-600 text-left">
               {{ t("contact_us_description") }}
             </p>
@@ -214,8 +208,8 @@ export default {
     };
   },
   setup() {
-    const { t } = useI18n(); // Get translation function
-    return { t }; // Return t() so it can be used in the template
+    const { t } = useI18n();
+    return { t };
   },
 
   mounted() {
@@ -243,24 +237,8 @@ export default {
     },
 
     redirectToContact() {
-      // Use this.$router to navigate
       this.$router.push("/contact-melani");
     },
   },
 };
 </script>
-<style scoped>
-/* Optional: Custom styling for navigation */
-.owl-prev,
-.owl-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.owl-prev {
-  left: -20px;
-}
-.owl-next {
-  right: -20px;
-}
-</style>

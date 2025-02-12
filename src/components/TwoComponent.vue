@@ -2,7 +2,6 @@
   <div
     class="grid min-h-[500px] grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1"
   >
-    <!-- Flower Shop -->
     <div
       ref="flowerShopRef"
       class="relative flex transition-all duration-2000 opacity-0 scale-95"
@@ -31,7 +30,6 @@
       </div>
     </div>
 
-    <!-- Funeral Services -->
     <div
       ref="funeralRef"
       class="relative flex transition-all duration-2000 opacity-0 scale-95 delay-300"
@@ -74,12 +72,10 @@ export default {
     const flowerShopRef = ref(null);
     const funeralRef = ref(null);
 
-    // Observe Flower Shop Section
     useIntersectionObserver(flowerShopRef, ([{ isIntersecting }]) => {
       if (isIntersecting) isFlowerShopVisible.value = true;
     });
 
-    // Observe Funeral Services Section
     useIntersectionObserver(funeralRef, ([{ isIntersecting }]) => {
       if (isIntersecting) isFuneralVisible.value = true;
     });
@@ -90,7 +86,6 @@ export default {
 </script>
 
 <style scoped>
-/* Initial states */
 .opacity-0 {
   opacity: 0;
 }

@@ -1,6 +1,5 @@
 <template>
   <div class="relative" v-click-outside="closeDropdown">
-    <!-- Language Switcher Button -->
     <button
       @click="toggleDropdown"
       class="flex items-center gap-2 px-4 py-2 bg-transparent rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
@@ -13,11 +12,8 @@
         width="30"
         alt="Flag"
       />
-      <!-- <span class="hidden sm:block">{{ $t("current_language") }}</span>
-      <ChevronDownIcon class="w-4 h-4 ml-1" /> -->
     </button>
 
-    <!-- Dropdown with Flags & Text -->
     <div
       v-show="isOpen"
       class="absolute left-0 z-10 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
@@ -44,8 +40,7 @@
 </template>
 
 <script>
-// import { ChevronDownIcon } from "@heroicons/vue/24/outline";
-import { loadLocaleMessages } from "../i18n"; // Ensure correct path
+import { loadLocaleMessages } from "../i18n";
 
 export default {
   name: "LanguageSwitcher",
@@ -64,10 +59,6 @@ export default {
         document.removeEventListener("click", el.clickOutsideEvent);
       },
     },
-  },
-
-  components: {
-    // ChevronDownIcon,
   },
 
   data() {

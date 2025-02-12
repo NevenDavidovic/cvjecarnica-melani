@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen">
-    <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <HeroBanner
@@ -52,15 +51,12 @@
         </div>
 
         <div class="bg-white rounded-xl">
-          <!-- Lijesovi Section -->
           <div
             v-if="filteri.lijesovi"
             :class="{ 'animate-fade-in': filteri.lijesovi }"
           >
             <ProductListComponent />
           </div>
-
-          <!-- Prijevoz Pokojnika Section -->
           <div
             v-if="filteri.prijevoz_pokojnika"
             :class="{ 'animate-fade-in': filteri.prijevoz_pokojnika }"
@@ -74,10 +70,7 @@
                 backgroundImage: `url(${require(`@/assets/ponuda_pogrebno/prijevoz_pokojnika/${image.filename}`)})`,
               }"
               class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
-            >
-              <!-- Optionally display title or other content -->
-              <!-- <h3 v-if="image.title">{{ image.title }}</h3> -->
-            </div>
+            ></div>
           </div>
         </div>
       </div>
@@ -85,7 +78,6 @@
 
     <FooterComponent />
 
-    <!-- Fullscreen Modal -->
     <div
       v-if="isModalOpen"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
@@ -144,15 +136,12 @@ export default {
       urnePonuda: [],
       lampioniPonuda: [],
       prijevoz: [],
-
       filteri: {
         lijesovi: true,
         pogrebna_oprema: true,
         prijevoz_pokojnika: true,
         kremiranje: true,
       },
-
-      // Modal state
       isModalOpen: false,
       selectedImage: null,
     };
@@ -299,23 +288,7 @@ export default {
     transform: translateY(0);
   }
 }
-
-/* Animation class */
 .animate-fade-in {
   animation: fadeIn 2s ease-out;
-}
-
-/* Optional: Custom styling for navigation arrows */
-.owl-prev,
-.owl-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.owl-prev {
-  left: -20px;
-}
-.owl-next {
-  right: -20px;
 }
 </style>
