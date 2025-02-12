@@ -6,7 +6,7 @@
   "croatian": "Hrvatski",
   "title": "Cvjećarnica i pogrebne usluge",
   "services": "Usluge",
-  "full_service_range": "Kompletna paleta usluga",
+  "full_service_range": "Kompletna ponuda usluga",
   "prijevoz_pokojnika": "Prijevoz pokojnika",
   "all": "Sve",
   "categories": "Kategorije",
@@ -107,8 +107,8 @@
 
   "view_all": "Pogledaj sve",
 
-  "candles_and_lanterns_offer": "Ponuda lampiona i svijeća",
-  "candles_desc": "Široki izbor lampiona pronađite u našem asortimanu.",
+  "candles_and_lanterns_offer": "Ponuda cvijeća za lijes",
+  "candles_desc": "Široki izbor cvijeća za lijes možete pronaći u našem asortimanu.",
 
   "transport_service": "Usluga prijevoza",
   "transport_service_description": "Preuzimanje i transport pokojnika vršimo svakodnevno, 24 sata dnevno, iz kuće, stana, bolnice, zavoda za sudsku medicinu te domova za starije i nemoćne.",
@@ -167,5 +167,20 @@
   "icons.accessories": "Cvjećarnice nude niz vaza u raznim veličinama za pohranu cvijeća i aranžmane. Omogućite cvijeće prezentirati dodatcima poput korpi, omota i čestitki, pružajući kupcima raznolike opcije za elegantne prikaze.",
   "delivery.alt": "Nudimo praktične usluge dostave cvijeća istog dana ili prema rasporedu, osiguravajući svježinu i personalizirane poklone. Kupci mogu garantirati vrijeme svojim cvjetovima, dodajući slatku ljepotu svakoj prigodi.",
 
-  "melaniIntro": "U cvjećarnicu Melani, gdje svaki cvijet priča svoju priču.\nNaša cvjećarnica nudi predivan izbor svježih, ručno izrađenih cvjetnih aranžmana koji donose utjehu, ljepotu i značaj za svaku priliku. Bilo da tražite elegantne bukete, cvijeće za izražavanje sućuti ili poseban aranžman za nezaboravan događaj, tu smo da vam pružimo jednostavnost i toplinu."
+  "melaniIntro": "U cvjećarnicu Melani, gdje svaki cvijet priča svoju priču.\nNaša cvjećarnica nudi predivan izbor svježih, ručno izrađenih cvjetnih aranžmana koji donose utjehu, ljepotu i značaj za svaku priliku. Bilo da tražite elegantne bukete, cvijeće za izražavanje sućuti ili poseban aranžman za nezaboravan događaj, tu smo da vam pružimo jednostavnost i toplinu.",
+
+  "cremation_description_2": "U našoj ponudi imamo i kremiranje. Sa kompletnom uslugom i prijevozom do krematorija.",
+
+  "required_documents": "Potrebna dokumentacija",
+  "required_documents_info": "Za rezerviranje termina kremiranja potrebni su nam:",
+
+  "death_certificate": "Potvrda o smrti",
+  "burial_permit": "Dozvola za ukop",
+  "personal_id": "Osobni dokument pokojnika",
+
+  "post_cremation": "Nakon kremiranja i povratka urne organiziramo kompletan pogreb po želji obitelji.",
+
+  "uvod_usluga_kremiranja": "USLUGA KREMIRANJA",
+  "dokumenti": "DOKUMENTI",
+  "closing_note": "NAKON KREMIRANJA"
 }

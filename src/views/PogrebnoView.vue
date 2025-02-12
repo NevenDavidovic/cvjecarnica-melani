@@ -3,14 +3,14 @@
     <!-- Navigation -->
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
-    <!-- Hero Section -->
-    <div class="section__1 relative h-screen" ref="section1">
+    <div class="section_1 relative h-screen" ref="section2">
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img
           src="../assets/images/pogrebno-hero.jpg"
           alt="Background"
-          class="w-full h-full object-cover bg-cover"
+          class="w-full h-full object-cover scale-110 transition-transform duration-[3000ms] ease-out"
+          :class="{ 'scale-100': isHeroVisible }"
         />
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
@@ -19,11 +19,26 @@
       <div
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
-        <h1 class="px-4 text-[20px] uppercase text-left w-full mb-4">
-          {{ t("funeral_services") }}
+        <!-- Letter Animation for Heading -->
+        <h1
+          class="px-4 text-[20px] uppercase text-left w-full mb-4 flex flex-wrap"
+        >
+          <span
+            v-for="(char, index) in funeralText"
+            :key="index"
+            class="inline-block opacity-0 translate-y-6 transition-all duration-500 ease-out"
+            :style="{ transitionDelay: `${index * 80}ms` }"
+            :class="{ 'opacity-100 translate-y-0': isHeroVisible }"
+          >
+            {{ char === " " ? "\u00A0" : char }}
+          </span>
         </h1>
 
-        <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
+        <!-- Animated SVG Title -->
+        <h3
+          class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out delay-500"
+          :class="{ 'opacity-100 translate-y-0 scale-105': isHeroVisible }"
+        >
           <svg
             class="w-full md:w-[350px]"
             viewBox="0 0 600 153"
@@ -61,15 +76,6 @@
 
     <div class="nase-usluge bg-gray-800">
       <div class="container mx-auto px-4 py-20 xl:pt-[100px]">
-        <!-- Section Header -->
-        <!-- <div class="text-center mb-20">
-          <h2
-            class="text-[28px] sm:text-[40px] text-secundary font-normal mb-4 font-jacques"
-          >
-            Pogrebne usluge
-          </h2>
-        </div> -->
-
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:p-8 bg-gray-800 rounded-lg"
         >
@@ -196,7 +202,7 @@
             <p
               class="text-gray-400 text-[1rem] text-white text-left max-w-[80%]"
             >
-              {{ t("candles_and_lanterns_offer") }}
+              {{ t("candles_desc") }}
             </p>
             <button
               @click="$router.push('/ponuda-pogrebno?filter=lampioni')"
@@ -256,6 +262,8 @@ import DodatnaPonuda from "../components/DodatnaPonuda.vue";
 import PrijevozComponent from "../components/PrijevozComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import { useI18n } from "vue-i18n";
+import { ref, computed } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
 
 export default {
   name: "HomeView",
@@ -293,8 +301,22 @@ export default {
   setup() {
     const { t } = useI18n();
 
+    const isHeroVisible = ref(false);
+    const section2 = ref(null);
+
+    // Observe the hero section
+    useIntersectionObserver(section2, ([{ isIntersecting }]) => {
+      if (isIntersecting) isHeroVisible.value = true;
+    });
+
+    // Split funeral_services text into an array of characters
+    const funeralText = computed(() => t("funeral_services").split(""));
+
     return {
       t,
+      isHeroVisible,
+      section2,
+      funeralText,
     };
   },
   created() {
@@ -348,3 +370,27 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.translate-y-6 {
+  transform: translateY(24px);
+}
+.translate-y-0 {
+  transform: translateY(0);
+}
+.scale-110 {
+  transform: scale(1.1);
+}
+.scale-100 {
+  transform: scale(1);
+}
+.scale-105 {
+  transform: scale(1.05);
+}
+</style>

@@ -111,7 +111,6 @@ export default {
 
       this.$i18n.locale = lang;
       this.closeDropdown();
-      window.location.reload();
     },
   },
 };

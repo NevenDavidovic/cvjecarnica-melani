@@ -7,11 +7,13 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
       >
         <div class="relative">
-          <div class="rounded-full border-4 border-gray-300 overflow-hidden">
+          <div
+            class="rounded-full border-4 border-gray-300 overflow-hidden max-w-[300px] max-h-[300px] mx-auto"
+          >
             <img
               src="../assets/images/postupak-kod-smrti.jpg"
               :alt="t('angel_statue_alt')"
-              class="w-full h-auto object-cover"
+              class="w-full h-auto object-cover max-w-[300px] max-h-[300px]"
             />
           </div>
         </div>
@@ -20,12 +22,12 @@
           <h5 class="text-lg font-semibold text-primary uppercase mb-2">
             {{ t("funeral_services_melani") }}
           </h5>
-          <h2 class="text-4xl font-bold text-white mb-6">
+          <!-- <h2 class="text-4xl font-bold text-white mb-6">
             {{ t("death_case_procedure") }}
-          </h2>
-          <p class="text-lg text-white mb-6">
+          </h2> -->
+          <!-- <p class="text-lg text-white mb-6">
             {{ t("death_procedure_step_1") }}
-          </p>
+          </p> -->
           <p class="text-lg text-white mb-6">
             {{ t("death_procedure_step_2") }}
           </p>

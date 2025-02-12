@@ -3,26 +3,30 @@
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
     <!-- Hero Section -->
-    <div class="section__1 relative h-screen" ref="section1">
+    <div class="section__1 relative h-screen overflow-hidden" ref="section1">
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img
           src="../assets/images/hero_image_homepage.jpg"
           alt="Background"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover opacity-0 scale-110 animate-fadeZoom"
         />
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
 
       <!-- Content -->
       <div
-        class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
+        class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center"
       >
-        <h1 class="px-4 text-[20px] text-left uppercase w-full mb-4">
+        <h1
+          class="px-4 text-[20px] text-left uppercase w-full mb-4 opacity-0 animate-slideUp"
+        >
           {{ $t("title") }}
         </h1>
 
-        <h3 class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300">
+        <h3
+          class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300 opacity-0 animate-slideUp delay-300"
+        >
           <svg
             class="w-full md:w-[350px]"
             viewBox="0 0 600 153"
@@ -62,129 +66,14 @@
 
     <TwoComponent />
 
-    <div class="container mx-auto px-4 pt-20">
-      <!-- Header -->
-      <div class="text-left pb-[50px] mb-0">
-        <h2 class="font-jacques text-[28px] sm:text-[40px] mb-6 text-gray-900">
-          {{ $t("showcase") }}
-        </h2>
-        <p class="font-jacques text-gray-600 mx-auto">
-          {{ $t("showcase_description") }}
-        </p>
-      </div>
-
-      <!-- Products Grid -->
-      <div class="space-b-[60px] flex flex-col gap-[50px]">
-        <!-- Wedding Bouquets -->
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="md:w-1/2">
-            <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
-              {{ $t("wedding_bouquets") }}
-            </h3>
-            <p class="text-gray-600 font-jacques text-left">
-              {{ $t("showcase_description") }}
-            </p>
-          </div>
-          <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden">
-              <img
-                src="../assets/images/vjencani_buketi.png"
-                alt="Wedding bouquet with pink and blue flowers"
-                class="w-full h-48 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Grave Arrangements -->
-        <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-          <div class="md:w-1/2">
-            <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
-              {{ $t("grave_wreaths") }}
-            </h3>
-            <p class="text-gray-600 font-jacques text-left">
-              {{ $t("grobni_vijenci_desc") }}
-            </p>
-          </div>
-          <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden">
-              <img
-                src="../assets/images/grobni_vijenci.png"
-                alt="Red and white rose arrangement"
-                class="w-full h-48 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Special Occasions -->
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="md:w-1/2">
-            <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
-              {{ $t("special_occasion_flowers") }}
-            </h3>
-            <p class="text-gray-600 font-jacques text-left">
-              {{ $t("special-ocassion-desc") }}
-            </p>
-          </div>
-          <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden">
-              <img
-                src="../assets/images/prigodno_cvijece.png"
-                alt="Purple candle arrangement"
-                class="w-full h-48 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Other Occasions -->
-        <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-          <div class="md:w-1/2">
-            <h3 class="text-xl mb-4 font-jacques text-left text-gray-900">
-              {{ $t("custom_bouquets") }}
-            </h3>
-            <p class="text-gray-600 font-jacques text-left">
-              {{ $t("custom_bouquets_desc") }}
-            </p>
-          </div>
-          <div class="md:w-1/2">
-            <div class="rounded-xl overflow-hidden">
-              <img
-                src="../assets/images/ostalo_cvijece.png"
-                alt="Colorful mixed flower arrangement"
-                class="w-full h-48 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Text -->
-      <div class="text-center mt-16 space-y-4">
-        <p class="text-gray-600 font-jacques">
-          {{ $t("offer_intro") }}
-
-          <a href="/ponuda" class="text-cyan-400 hover:text-cyan-500">{{
-            $t("offer")
-          }}</a
-          >.
-        </p>
-        <p class="text-gray-600 font-jacques">
-          {{ $t("services_") }}
-        </p>
-      </div>
-    </div>
-
     <!-- Additional Services Section -->
-    <DodatnaPonuda />
+
     <FooterComponent />
   </div>
 </template>
 
 <script>
 import FooterComponent from "../components/FooterComponent.vue";
-import DodatnaPonuda from "../components/DodatnaPonuda.vue";
 import TwoComponent from "@/components/TwoComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import UslugeComponents from "@/components/UslugeComponents.vue";
@@ -193,7 +82,6 @@ export default {
   name: "HomeView",
   components: {
     FooterComponent,
-    DodatnaPonuda,
     TwoComponent,
     UslugeComponents,
     NavbarComponent,
@@ -248,3 +136,39 @@ export default {
   },
 };
 </script>
+
+<style>
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-fadeZoom {
+  animation: fadeZoom 2s ease-out forwards;
+}
+
+/* Slide Up Effect for Text */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slideUp {
+  animation: slideUp 1.5s ease-out forwards;
+}
+
+/* Delay for SVG Animation */
+.delay-300 {
+  animation-delay: 0.3s;
+}
+</style>

@@ -200,5 +200,19 @@
   "icons.arrangements": "We offer customized arrangements according to customer preferences and seasonal availability/time of day. Centerpiece arrangements, designed for events and venues, highlight decorative floral compositions, encompassing the ambiance and aesthetics for every occasion.",
   "icons.accessories": "Florists offer a range of vases in various sizes for storing flowers and arrangements. You can showcase flowers with extras such as baskets, wrapping, and greeting cards, giving customers a variety of options for elegant displays.",
   "delivery.alt": "We offer convenient same-day or scheduled flower delivery services, ensuring freshness and personalized gifts. Customers can guarantee the timing of their flowers, adding a sweet touch of beauty to every occasion.",
-  "melaniIntro": "Welcome to the Melani flower shop, where every flower tells its story.\nOur shop offers a wonderful selection of fresh, hand-crafted floral arrangements that bring comfort, beauty, and meaning to any occasion. Whether you’re looking for elegant bouquets, sympathy flowers, or a special arrangement for an unforgettable event, we’re here to provide you with simplicity and warmth."
+  "melaniIntro": "Welcome to the Melani flower shop, where every flower tells its story.\nOur shop offers a wonderful selection of fresh, hand-crafted floral arrangements that bring comfort, beauty, and meaning to any occasion. Whether you’re looking for elegant bouquets, sympathy flowers, or a special arrangement for an unforgettable event, we’re here to provide you with simplicity and warmth.",
+
+  "cremation_description_2": "We offer cremation services, including full service and transportation to the crematorium.",
+
+  "required_documents": "Required Documentation",
+  "required_documents_info": "To book a cremation appointment, we require:",
+
+  "death_certificate": "Death Certificate",
+  "burial_permit": "Burial Permit",
+  "personal_id": "Personal ID of the deceased",
+  "uvod_usluga_kremiranja": "SERVICE",
+  "dokumenti": "DOCUMENTS",
+  "closing_note": "AFTER CREMATION",
+
+  "post_cremation": "After cremation and return of the urn, we organize a complete funeral according to the family's wishes."
 }

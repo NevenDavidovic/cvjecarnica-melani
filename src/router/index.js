@@ -62,6 +62,12 @@ const routes = [
 
     component: () => import("../views/FaqView.vue"),
   },
+  {
+    path: "/kremiranje",
+    name: "/kremiranje",
+
+    component: () => import("../views/CreamationView.vue"),
+  },
 ];
 
 const router = createRouter({

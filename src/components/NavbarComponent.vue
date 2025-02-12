@@ -89,7 +89,7 @@
               </span>
             </RouterLink>
             <RouterLink
-              to="#"
+              to="/kremiranje"
               class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
@@ -329,7 +329,7 @@
             </RouterLink>
             <RouterLink
               @click="toggleMobileMenu()"
-              to="#"
+              to="/kremiranje"
               class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
             >
               {{ $t("cremation") }}

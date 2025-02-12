@@ -3,6 +3,25 @@ module.exports = {
   variants: {
     extend: {
       display: ["group-hover"],
+      animation: {
+        fadeIn: "fadeIn 1.5s ease-in-out",
+        slideInDown: "slideInDown 1s ease-in-out",
+        zoomIn: "zoomIn 1s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        slideInDown: {
+          "0%": { transform: "translateY(-50px)", opacity: 0 },
+          "100%": { transform: "translateY(0)", opacity: 1 },
+        },
+        zoomIn: {
+          "0%": { transform: "scale(0.8)", opacity: 0 },
+          "100%": { transform: "scale(1)", opacity: 1 },
+        },
+      },
     },
   },
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],

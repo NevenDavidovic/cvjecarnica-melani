@@ -10,7 +10,8 @@
         <img
           src="../assets/images/hero-image-cvjecarna.jpg"
           alt="Background"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover scale-110 transition-transform duration-[2000ms] ease-out"
+          :class="{ 'scale-100': isHeroVisible }"
         />
         <div class="absolute inset-0 bg-black/50"></div>
       </div>
@@ -19,14 +20,25 @@
       <div
         class="gap-[50px] container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
+        <!-- Letter Animation for Heading -->
         <h1
-          class="max-w-[70%] mx-auto w-full text-5xl font-medium text-left flex align-left justify-left"
+          class="max-w-[70%] mx-auto w-full text-5xl font-medium text-left flex flex-wrap"
         >
-          {{ t("welcome") }}
+          <span
+            v-for="(char, index) in welcomeText"
+            :key="index"
+            class="inline-block opacity-0 translate-y-6 transition-all duration-500 ease-out"
+            :style="{ transitionDelay: `${index * 100}ms` }"
+            :class="{ 'opacity-100 translate-y-0': isHeroVisible }"
+          >
+            {{ char }}
+          </span>
         </h1>
 
+        <!-- Animated Paragraph -->
         <p
-          class="max-w-[70%] mx-auto sm:text-xl sm:text-sm font-normal text-left"
+          class="max-w-[70%] mx-auto sm:text-xl sm:text-sm font-normal text-left opacity-0 translate-y-6 transition-all duration-[2000ms] ease-out delay-500"
+          :class="{ 'opacity-100 translate-y-0': isHeroVisible }"
         >
           {{ $t("melaniIntro") }}.<br />
         </p>
@@ -355,14 +367,15 @@
         </div>
       </div>
     </div>
-    <div class="about-us">
+    <div class="about-us" ref="aboutUsSection">
       <div class="container mx-auto max-w-[1440px] px-4">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-16 justify-items-center"
         >
           <!-- Image Column -->
           <div
-            class="max-w-[591px] max-h-[954px] w-full relative overflow-hidden"
+            class="max-w-[591px] max-h-[954px] w-full relative overflow-hidden opacity-0 translate-x-[-100px] scale-95 transition-all duration-1000"
+            :class="{ 'opacity-100 translate-x-0 scale-100': isAboutVisible }"
           >
             <img
               src="../assets/images/about-us-section.jpg"
@@ -371,24 +384,33 @@
           </div>
 
           <!-- Text Column -->
-          <div class="flex flex-col justify-center max-w-xl">
+          <div
+            class="flex flex-col justify-center max-w-xl opacity-0 translate-x-[100px] scale-95 transition-all duration-2000 delay-1200"
+            :class="{ 'opacity-100 translate-x-0 scale-100': isAboutVisible }"
+          >
             <div class="mb-8">
               <p
-                class="border-b text-gray-500 text-left uppercase tracking-wider mb-4"
+                class="border-b text-gray-500 text-left uppercase tracking-wider mb-4 opacity-0 translate-y-6 transition-all duration-1200 delay-500"
+                :class="{ 'opacity-100 translate-y-0': isAboutVisible }"
               >
                 {{ t("location") }}
               </p>
               <h2
-                class="font-playfair text-left text-4xl md:text-5xl font-medium mb-8"
+                class="font-playfair text-left text-4xl md:text-5xl font-medium mb-8 opacity-0 translate-y-6 transition-all duration-2000 delay-700"
+                :class="{ 'opacity-100 translate-y-0': isAboutVisible }"
               >
                 {{ t("title") }}
               </h2>
               <p
-                class="text-gray-600 text-left text-[1.25rem] leading-relaxed mb-8"
+                class="text-gray-600 text-left text-[1.25rem] leading-relaxed mb-8 opacity-0 translate-y-6 transition-all duration-2000 delay-900"
+                :class="{ 'opacity-100 translate-y-0': isAboutVisible }"
               >
                 {{ t("description") }}
               </p>
-              <p class="italic text-left text-gray-800 text-2xl">
+              <p
+                class="italic text-left text-gray-800 text-2xl opacity-0 translate-y-6 transition-all duration-2000 delay-1200"
+                :class="{ 'opacity-100 translate-y-0': isAboutVisible }"
+              >
                 {{ t("quote") }}
               </p>
             </div>
@@ -396,7 +418,6 @@
         </div>
       </div>
     </div>
-
     <div
       class="Carousel px-[16px] py-[50px] lg:py-[150px] flex flex-col gap-14"
     >
@@ -454,71 +475,7 @@
       </div>
     </div>
 
-    <div class="bg-red-600 py-16 px-4">
-      <div class="container mx-auto max-w-6xl">
-        <!-- Header Section -->
-        <div class="text-center mb-12">
-          <h2 class="text-white font-playfair text-4xl md:text-5xl mb-4">
-            {{ t("valentinovo") }}
-          </h2>
-          <p class="text-white italic text-lg md:text-xl">
-            "Love is like a flower, blooming with care and tenderness."
-          </p>
-        </div>
-
-        <!-- Main Gallery Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <!-- Large Image 1 -->
-          <div class="overflow-hidden">
-            <img
-              src="../assets/images/buket-valentinovo.png"
-              alt="Valentine's Day Roses"
-              class="w-full h-full"
-            />
-          </div>
-          <!-- Large Image 2 -->
-          <div class="rounded-2xl overflow-hidden">
-            <img
-              src="../assets/images/izlog-valentinovo.png"
-              alt="Valentine's Day Shop Display"
-              class="w-full h-full"
-            />
-          </div>
-        </div>
-
-        <!-- Small Images Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="overflow-hidden aspect-square">
-            <img
-              src="../assets/images/c-1-valentinovo.png"
-              alt="Valentine's Arrangement 1"
-              class="w-full h-full"
-            />
-          </div>
-          <div class="overflow-hidden aspect-square">
-            <img
-              src="../assets/images/c-2-valentinovo.png"
-              alt="Valentine's Arrangement 2"
-              class="w-full h-full"
-            />
-          </div>
-          <div class="overflow-hidden aspect-square">
-            <img
-              src="../assets/images/c-3-valentinovo.png"
-              alt="Valentine's Arrangement 3"
-              class="w-full h-full"
-            />
-          </div>
-          <div class="overflow-hidden aspect-square">
-            <img
-              src="../assets/images/c-4-valentinovo.png"
-              alt="Valentine's Arrangement 4"
-              class="w-full h-full object-cov"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ValentinovoComponent />
 
     <UmjetnoComponent />
 
@@ -571,12 +528,15 @@
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
-import { computed } from "vue";
 import FooterComponent from "../components/FooterComponent.vue";
 import OwlCarousel from "../components/CarouselComponent.vue";
 import UmjetnoComponent from "@/components/UmjetnoComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
+import ValentinovoComponent from "@/components/ValentinovoComponent.vue";
+import { ref } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
 
 export default {
   name: "HomeView",
@@ -585,6 +545,7 @@ export default {
     OwlCarousel,
     UmjetnoComponent,
     NavbarComponent,
+    ValentinovoComponent,
   },
   data() {
     return {
@@ -621,6 +582,14 @@ export default {
           : require(`@/assets/svg/${enPath}`)
       );
 
+    const isAboutVisible = ref(false);
+    const aboutUsSection = ref(null);
+
+    // Observe the about section
+    useIntersectionObserver(aboutUsSection, ([{ isIntersecting }]) => {
+      if (isIntersecting) isAboutVisible.value = true;
+    });
+
     // Dynamic SVG sources
     const flowerIcon = getImagePath("svjeze-cvijce.svg", "Fresh-flowers.svg");
     const giftIcon = getImagePath("poklon-artikli.svg", "Gifts.svg");
@@ -634,6 +603,16 @@ export default {
       "cvjetni-dodaci.svg",
       "Flower-accessories.svg"
     );
+    const isHeroVisible = ref(false);
+    const section1 = ref(null);
+
+    // Observe the hero section
+    useIntersectionObserver(section1, ([{ isIntersecting }]) => {
+      if (isIntersecting) isHeroVisible.value = true;
+    });
+
+    // Split text into an array of characters
+    const welcomeText = computed(() => t("welcome").split(""));
 
     return {
       t,
@@ -643,6 +622,11 @@ export default {
       arrangementsIcon,
       accessoriesIcon,
       deliveryIcon,
+      isHeroVisible,
+      section1,
+      welcomeText,
+      isAboutVisible,
+      aboutUsSection,
     };
   },
 
@@ -704,5 +688,26 @@ export default {
 }
 .owl-next {
   right: -20px;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.translate-y-6 {
+  transform: translateY(24px);
+}
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+/* Background zoom effect */
+.scale-110 {
+  transform: scale(1.1);
+}
+.scale-100 {
+  transform: scale(1);
 }
 </style>
