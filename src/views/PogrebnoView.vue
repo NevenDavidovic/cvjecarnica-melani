@@ -185,7 +185,7 @@
 
     <div class="lampioni bg-gray-800 py-[50px] lg:py-[80px] xl:py-[100px]">
       <div class="container text-white py-8 mx-auto px-[16px]">
-        <div class="flex flex-col md:flex-row gap-4 mb-4">
+        <div class="flex flex-col md:flex-row gap-[50px] sm:gap-4 mb-4">
           <div class="flex-1 flex flex-col gap-4 justify-center">
             <h2
               class="text-yellow-500 text-[28px] sm:text-[40px] font-normal text-left"
@@ -330,7 +330,7 @@ export default {
   },
   methods: {
     initIntersectionObserver() {
-      const section = this.$refs.section1;
+      const section = this.$refs.section2;
 
       if (!section) {
         console.error("Section1 not found");

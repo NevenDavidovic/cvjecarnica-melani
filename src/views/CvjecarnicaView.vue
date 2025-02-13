@@ -17,7 +17,7 @@
         class="gap-[50px] container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
         <h1
-          class="max-w-[70%] mx-auto w-full text-5xl font-medium text-left flex flex-wrap"
+          class="max-w-[70%] mx-auto w-full text-[32px] sm:text-5xl font-medium text-left flex flex-wrap"
         >
           <span
             v-for="(char, index) in welcomeText"

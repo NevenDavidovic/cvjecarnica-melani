@@ -5,7 +5,7 @@
     <HeroBanner
       :title="t('ponuda_cvijeca')"
       :description="t('arrangements_description')"
-      imageSrc="ponuda-hero.png"
+      imageSrc="ponuda-hero.jpg"
       imageAlt="Ponuda cvijeća"
     />
 
