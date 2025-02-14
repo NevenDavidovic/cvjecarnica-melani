@@ -9,6 +9,7 @@
       imageAlt="Pogrebne usluge - ponuda"
     />
 
+    <div ref="section1"></div>
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
         <h1 class="text-2xl font-normal mb-[50px]">{{ t("categories") }}</h1>
@@ -20,7 +21,7 @@
             <div
               class="relative text-blue-900 px-6 py-2.5 bg-white rounded-[15px] transition-all duration-300 group-hover/buttons:opacity-90 hover:bg-opacity-0 hover:text-white"
               :class="{
-                'bg-gradient-to-r from-blue-500 to-purple-500 text-white':
+                'text-white bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-cyan-100 text-white':
                   Object.values(filteri).every((v) => !v),
               }"
             >
@@ -35,13 +36,13 @@
               prijevoz_pokojnika: t('prijevoz_pokojnika'),
             }"
             :key="key"
-            class="text-blue-900 text-blue-900 relative p-px overflow-hidden text-sm font-medium transition-all duration-500 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:shadow-lg hover:shadow-blue-100"
+            class="text-blue-900 text-blue-900 relative p-px overflow-hidden text-sm font-medium transition-all duration-500 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 hover:shadow-lg hover:shadow-blue-100"
             @click="filteringTheProducts(key)"
           >
             <div
               class="relative px-6 py-2.5 bg-white rounded-[15px] transition-all duration-300 group-hover/buttons:opacity-90 hover:bg-opacity-0 hover:text-white"
               :class="{
-                'bg-gradient-to-r from-blue-500 to-purple-500 text-white':
+                'text-white bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-cyan-100 text-white':
                   filteri[key],
               }"
             >
@@ -124,7 +125,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
 
       formData: {
         name: "",
@@ -151,6 +152,7 @@ export default {
     return { t };
   },
   mounted() {
+    this.initIntersectionObserver();
     if (this.filter) {
       this.applyFilter(this.filter);
     }
@@ -238,36 +240,60 @@ export default {
     },
   },
   methods: {
+    initIntersectionObserver() {
+      const section = this.$refs.section1;
+
+      if (!section) {
+        console.error("Section1 not found");
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.isSectionVisible = entry.isIntersecting;
+        });
+      });
+
+      observer.observe(section);
+    },
+
     applyFilter(filterArgument) {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = key === filterArgument;
       });
     },
+
     resetingAllFilters() {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = true;
       });
     },
+
     filteringTheProducts(filterArgument) {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = key === filterArgument;
       });
     },
+
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";
     },
+
     toggleSubmenuPonuda() {
       this.submenuPonuda = !this.submenuPonuda;
     },
+
     redirectToContact() {
       this.$router.push("/contact-melani");
     },
+
     openModal(image) {
       this.selectedImage = image;
       this.isModalOpen = true;
       document.body.style.overflow = "hidden"; // Prevent background scrolling
     },
+
     closeModal() {
       this.isModalOpen = false;
       this.selectedImage = null;

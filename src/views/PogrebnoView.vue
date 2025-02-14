@@ -17,7 +17,7 @@
         class="container px-4 relative h-full flex flex-col items-center justify-center mx-auto text-white text-center px-4"
       >
         <h1
-          class="px-4 text-[20px] uppercase text-left w-full mb-4 flex flex-wrap"
+          class="px-4 text-[20px] uppercase text-left w-full mb-4 flex flex-wrap max-w-[1280px] mx-auto"
         >
           <span
             v-for="(char, index) in funeralText"
@@ -31,7 +31,7 @@
         </h1>
 
         <h3
-          class="px-4 text-5xl w-full md:text-7xl font-script text-cyan-300 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out delay-500"
+          class="px-4 text-5xl w-full max-w-[1281px] mx-auto md:text-7xl font-script text-cyan-300 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out delay-500"
           :class="{ 'opacity-100 translate-y-0 scale-105': isHeroVisible }"
         >
           <svg
@@ -268,7 +268,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
       lijesovImages: [],
       owlOptions: {
         items: 1,

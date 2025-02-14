@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-screen">
     <NavbarComponent :isSectionVisible="isSectionVisible" />
-
-    <HeroBanner
-      :title="t('contact_us')"
-      imageSrc="telefon-banner.jpg"
-      imageAlt="Kontaktirajte nas"
-    />
-
+    <div ref="section1">
+      <HeroBanner
+        :title="t('contact_us')"
+        imageSrc="telefon-banner.jpg"
+        imageAlt="Kontaktirajte nas"
+      />
+    </div>
     <div class="relative isolate bg-white">
       <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div
@@ -179,7 +179,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
 
       formData: {
         name: "",
@@ -213,6 +213,7 @@ export default {
   },
 
   mounted() {
+    this.initIntersectionObserver();
     window.scrollTo({ top: 0, behavior: "smooth" });
   },
   beforeUnmount() {

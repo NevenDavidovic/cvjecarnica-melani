@@ -8,7 +8,7 @@
       class="absolute inset-0 w-full h-full object-cover opacity-0 scale-110 animate-fadeZoom"
     />
 
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-black/70"></div>
 
     <div class="relative z-10 px-4">
       <h1 class="text-5xl text-white font-semibold opacity-0 animate-slideUp">

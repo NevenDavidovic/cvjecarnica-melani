@@ -530,7 +530,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
 
       owlOptions: {
         items: 1,

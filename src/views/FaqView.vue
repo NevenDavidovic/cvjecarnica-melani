@@ -2,7 +2,7 @@
   <div class="min-h-screen">
     <NavbarComponent :isSectionVisible="isSectionVisible" />
 
-    <section class="py-24 bg-gray-800">
+    <section class="py-24 bg-gray-800" ref="section1">
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
       >
@@ -105,6 +105,7 @@ export default {
   },
   data() {
     return {
+      isSectionVisible: true,
       openIndex: null,
     };
   },
@@ -115,7 +116,27 @@ export default {
   beforeUnmount() {
     document.body.style.overflow = "";
   },
+  mounted() {
+    this.initIntersectionObserver();
+  },
   methods: {
+    initIntersectionObserver() {
+      const section = this.$refs.section1;
+
+      if (!section) {
+        console.error("Section1 not found");
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.isSectionVisible = entry.isIntersecting;
+        });
+      });
+
+      observer.observe(section);
+    },
+
     toggle(index) {
       this.openIndex = this.openIndex === index ? null : index;
     },

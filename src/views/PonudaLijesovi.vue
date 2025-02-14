@@ -6,7 +6,7 @@
       imageSrc="banner-ponuda-lijesovi.jpg"
       :imageAlt="t('coffins_offer')"
     />
-
+    <div ref="section1"></div>
     <ProductListComponent />
 
     <FooterComponent />
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
       isMobileMenuOpen: false,
       submenuPonuda: false,
     };
@@ -40,6 +40,7 @@ export default {
     return { t };
   },
   mounted() {
+    this.initIntersectionObserver();
     if (this.filter) {
       this.applyFilter(this.filter);
     }
@@ -48,6 +49,23 @@ export default {
     document.body.style.overflow = "auto";
   },
   methods: {
+    initIntersectionObserver() {
+      const section = this.$refs.section1;
+
+      if (!section) {
+        console.error("Section1 not found");
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.isSectionVisible = entry.isIntersecting;
+        });
+      });
+
+      observer.observe(section);
+    },
+
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
       document.body.style.overflow = this.isMobileMenuOpen ? "hidden" : "auto";

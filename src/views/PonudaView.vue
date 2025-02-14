@@ -8,6 +8,7 @@
       imageSrc="ponuda-hero.jpg"
       imageAlt="Ponuda cvijeća"
     />
+    <div ref="section1"></div>
 
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
@@ -31,7 +32,7 @@
             "
             class="relative overflow-hidden px-6 py-2.5 text-sm font-medium transition-all duration-400 rounded-xl"
             :class="{
-              'text-white bg-gradient-to-r from-indigo-500 to-purple-500 shadow-lg shadow-indigo-100':
+              'text-white bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-cyan-100':
                 (btn.id === 'all' && Object.values(filteri).every((v) => !v)) ||
                 filteri[btn.id],
               'text-gray-600 bg-gray-100 hover:bg-gray-50': !(
@@ -189,7 +190,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
       isMobileMenuOpen: false,
       submenuPonuda: false,
       isModalOpen: false,
@@ -220,6 +221,7 @@ export default {
   },
 
   mounted() {
+    this.initIntersectionObserver();
     if (this.filter) {
       this.applyFilter(this.filter);
     }
@@ -300,6 +302,22 @@ export default {
     document.body.style.overflow = "auto";
   },
   methods: {
+    initIntersectionObserver() {
+      const section = this.$refs.section1;
+
+      if (!section) {
+        console.error("Section1 not found");
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.isSectionVisible = entry.isIntersecting;
+        });
+      });
+
+      observer.observe(section);
+    },
     applyFilter(filterArgument) {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = key === filterArgument;

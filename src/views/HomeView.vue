@@ -81,7 +81,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
     };
   },
   mounted() {

@@ -2,16 +2,11 @@
   <div class="relative" v-click-outside="closeDropdown">
     <button
       @click="toggleDropdown"
-      class="flex items-center gap-2 px-4 py-2 bg-transparent rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
+      class="flex items-center gap-2 px-4 py-2 bg-transparent rounded-lg hover:text-cyan-400 transition-colors"
     >
-      <img
-        class="rounded-[4px] h-[20px]"
-        v-if="currentFlag"
-        :src="currentFlag.src"
-        :srcset="currentFlag.srcset"
-        width="30"
-        alt="Flag"
-      />
+      <span class="uppercase text-white" v-if="currentFlag">{{
+        $t(currentFlag.value)
+      }}</span>
     </button>
 
     <div
@@ -44,7 +39,6 @@ import { loadLocaleMessages } from "../i18n";
 
 export default {
   name: "LanguageSwitcher",
-
   directives: {
     "click-outside": {
       bind(el, binding) {

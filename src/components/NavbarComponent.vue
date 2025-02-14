@@ -5,9 +5,11 @@
   ></div>
   <nav
     :class="{ gray: isSectionVisible }"
-    class="py-[8px] navigation fixed w-full bg-[#353638d4] transition-all duration-500 ease-in-out backdrop-blur-sm z-50"
+    class="py-[8px] navigation fixed bg-cyan-500 w-full transition-all duration-1000 ease-in-out z-50"
   >
-    <div class="container mx-auto px-4 flex items-center justify-between">
+    <div
+      class="container mx-auto px-4 flex items-center justify-between transition-all duration-1000 ease-in-out"
+    >
       <div class="flex items-center gap-[20px]">
         <img
           src="../assets/images/logo_melani.png"
@@ -16,17 +18,28 @@
           class="h-24 w-24 transition-all duration-1000 ease-in-out"
           @click="$router.push('/')"
         />
-        <LanguageSelectorComponent />
+        <LanguageSelectorComponent :isSectionVisible="isSectionVisible" />
       </div>
       <div class="hidden lg:flex space-x-8 text-gray-700 items-center">
-        <RouterLink to="/" class="font-jacques uppercase text-white">
+        <RouterLink
+          to="/"
+          :class="{
+            'text-white hover:text-gray-900': !isSectionVisible,
+            'text-white': isSectionVisible,
+          }"
+          class="font-jacques uppercase hover:text-cyan-400"
+        >
           {{ $t("naslovnica") }}
         </RouterLink>
 
         <div class="relative group">
           <RouterLink
             to="#"
-            class="font-jacques uppercase text-secundary hover:text-[#42E2EC] transition-colors duration-300 flex items-center gap-2"
+            :class="{
+              'text-white hover:text-gray-900': !isSectionVisible,
+              'text-white': isSectionVisible,
+            }"
+            class="font-jacques uppercase hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2"
           >
             {{ $t("funeral_services") }}
             <svg
@@ -51,7 +64,7 @@
           >
             <RouterLink
               to="/ponuda-pogrebno"
-              class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
+              class="text-left no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
             >
               <span class="relative">
                 {{ $t("pogrebna_ponuda") }}
@@ -63,7 +76,7 @@
 
             <RouterLink
               to="/prijevoz-pokojnika"
-              class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
+              class="text-left no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
             >
               <span class="relative">
                 {{ $t("prijevoz_pokojnika") }}
@@ -75,7 +88,7 @@
 
             <RouterLink
               to="/ponuda-lijesovi"
-              class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
+              class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
                 {{ $t("coffins_offer") }}
@@ -86,7 +99,7 @@
             </RouterLink>
             <RouterLink
               to="/kremiranje"
-              class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
+              class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
                 {{ $t("cremation") }}
@@ -101,7 +114,11 @@
         <div class="relative group">
           <RouterLink
             to="#"
-            class="font-jacques uppercase text-primary hover:text-[#42E2EC] transition-colors duration-300 flex items-center gap-2"
+            class="font-jacques uppercase hover:text-[#42E2EC] transition-colors duration-300 flex items-center gap-2"
+            :class="{
+              'text-white hover:text-gray-900': !isSectionVisible,
+              'text-white': isSectionVisible,
+            }"
           >
             {{ $t("flower_shop") }}
             <svg
@@ -126,7 +143,7 @@
           >
             <RouterLink
               to="/ponuda?filter=aranzmani"
-              class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
+              class="text-left no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
             >
               <span class="relative">
                 {{ $t("arrangements") }}
@@ -138,7 +155,7 @@
 
             <RouterLink
               to="/ponuda?filter=buketi"
-              class="no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
+              class="text-left no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
             >
               <span class="relative">
                 {{ $t("bouquet") }}
@@ -150,7 +167,7 @@
 
             <RouterLink
               to="/ponuda?filter=cvijece_za_lijes"
-              class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
+              class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
                 {{ $t("coffin_flowers") }}
@@ -161,7 +178,7 @@
             </RouterLink>
             <RouterLink
               to="/ponuda?filter=vijenci"
-              class="font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
+              class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
                 {{ $t("vijenci") }}
@@ -175,7 +192,13 @@
 
         <button
           @click="redirectToContact"
-          class="font-jacques uppercase w-[200px] px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 ml-[60px]"
+          :class="{
+            'text-white border border-white hover:gray-900 hover:bg-gray-900':
+              !isSectionVisible,
+            'text-white border border-white hover:border-white':
+              isSectionVisible,
+          }"
+          class="hover:bg-cyan-500 hover:text-white hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 ease-in-out transform hover:scale-105 font-jacques uppercase w-[200px] px-4 py-2 bg-transparent rounded-md hover:text-cyan-400 hover:border-cyan-400 ml-[60px]"
         >
           {{ $t("kontakt") }}
         </button>
@@ -280,7 +303,7 @@
             class="main-usluga flex gap-[10px] color-primary justify-center align-center items-center ml-[25px]"
           >
             <p
-              class="font-jacques uppercase text-secundary text-lg transition-colors"
+              class="font-jacques uppercase text-white hover:text-primary text-lg transition-colors"
             >
               {{ $t("funeral_services") }}
             </p>
@@ -288,7 +311,7 @@
               :class="{ 'rotate-180': submenuPonuda }"
               class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
               fill="none"
-              stroke="#FBCA00"
+              stroke="white"
               viewBox="0 0 24 24"
             >
               <path
@@ -336,7 +359,7 @@
           class="main-usluga flex gap-[10px] color-primary justify-center align-center items-center ml-[25px]"
         >
           <p
-            class="font-jacques uppercase text-primary text-lg hover:text-cyan-400 transition-colors"
+            class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("flower_shop") }}
           </p>
@@ -344,7 +367,7 @@
             :class="{ 'rotate-180': submenuCvijece }"
             class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
             fill="none"
-            stroke="#6FDCF6"
+            stroke="white"
             viewBox="0 0 24 24"
           >
             <path
@@ -392,7 +415,7 @@
 
         <button
           @click="redirectToContact"
-          class="w-[200px] font-jacques uppercase px-4 py-2 bg-cyan-400 text-black rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
+          class="w-[200px] font-jacques uppercase px-4 py-2 bg-transparent border border-cyan-500 text-cyan-500 rounded-md hover:bg-cyan-500 text-lg w-full mt-4"
         >
           {{ $t("kontakt") }}
         </button>
@@ -412,7 +435,7 @@ export default {
   props: {
     isSectionVisible: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   data() {

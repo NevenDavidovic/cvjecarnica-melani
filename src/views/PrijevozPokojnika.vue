@@ -8,6 +8,7 @@
       imageSrc="prijevoz-pogrebno.jpg"
       :imageAlt="t('prijevoz_pokojnika')"
     />
+    <div ref="section1"></div>
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center my-[50px] lg:my-[100px]"
     >
@@ -114,7 +115,7 @@ export default {
   },
   data() {
     return {
-      isSectionVisible: false,
+      isSectionVisible: true,
       prijevoz: [],
       isModalOpen: false,
       currentImage: null,
@@ -139,6 +140,9 @@ export default {
       alt: filename.slice(2, -4),
     }));
   },
+  mounted() {
+    this.initIntersectionObserver();
+  },
   computed: {
     currentImageSrc() {
       if (!this.currentImage) return "";
@@ -151,6 +155,23 @@ export default {
     },
   },
   methods: {
+    initIntersectionObserver() {
+      const section = this.$refs.section1;
+
+      if (!section) {
+        console.error("Section1 not found");
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.isSectionVisible = entry.isIntersecting;
+        });
+      });
+
+      observer.observe(section);
+    },
+
     openModal(image) {
       this.currentImage = image;
       this.isModalOpen = true;
