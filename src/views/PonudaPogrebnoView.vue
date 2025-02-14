@@ -1,15 +1,14 @@
 <template>
   <div class="min-h-screen">
     <NavbarComponent :isSectionVisible="isSectionVisible" />
-
-    <HeroBanner
-      :title="t('pogrebna_ponuda')"
-      :description="t('funeral_services_description')"
-      imageSrc="banner-ponuda-pogrebno.jpg"
-      imageAlt="Pogrebne usluge - ponuda"
-    />
-
-    <div ref="section1"></div>
+    <div ref="section1">
+      <HeroBanner
+        :title="t('pogrebna_ponuda')"
+        :description="t('funeral_services_description')"
+        imageSrc="banner-ponuda-pogrebno.jpg"
+        imageAlt="Pogrebne usluge - ponuda"
+      />
+    </div>
     <div class="bg-gray-800 text-white pt-8">
       <div class="container mx-auto px-4">
         <h1 class="text-2xl font-normal mb-[50px]">{{ t("categories") }}</h1>

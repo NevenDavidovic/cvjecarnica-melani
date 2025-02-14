@@ -81,7 +81,7 @@ export default {
   }
 }
 .animate-fadeZoom {
-  animation: fadeZoom 2s ease-out forwards;
+  animation: fadeZoom 1s ease-out forwards;
 }
 
 @keyframes slideUp {

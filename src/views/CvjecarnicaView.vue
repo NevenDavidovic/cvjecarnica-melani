@@ -465,45 +465,7 @@
 
     <UmjetnoComponent />
 
-    <div class="bg-bg_primary text-cyan-300 py-16 px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-medium text-center mb-4">
-          {{ t("kako_doci_do_nas") }}
-        </h2>
-
-        <div class="text-center text-[1.25rem] mb-8 text-gray-300">
-          <p>
-            {{ t("flower_shop") }} Melani - Ulica Mladena Vodanovića 4b,
-            Supetar, Hrvatska.
-          </p>
-          <p class="mt-2">
-            {{ t("u_trenutku") }}
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="md:col-span-2">
-            <div class="rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="../assets/images/storefront-melani-1.png"
-                alt="Melanie Flower Shop Storefront"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div class="rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="../assets/images/storefront-melani-2.png"
-                alt="Melanie Flower Shop Window Display"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <LocationComponent />>
     <FooterComponent />
   </div>
 </template>
@@ -514,6 +476,7 @@ import OwlCarousel from "../components/CarouselComponent.vue";
 import UmjetnoComponent from "@/components/UmjetnoComponent.vue";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import ValentinovoComponent from "@/components/ValentinovoComponent.vue";
+import LocationComponent from "@/components/LocationComponent.vue";
 import { ref } from "vue";
 import { useIntersectionObserver } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
@@ -527,6 +490,7 @@ export default {
     UmjetnoComponent,
     NavbarComponent,
     ValentinovoComponent,
+    LocationComponent,
   },
   data() {
     return {

@@ -1,14 +1,14 @@
 <template>
   <div class="min-h-screen">
     <NavbarComponent :isSectionVisible="isSectionVisible" />
-
-    <HeroBanner
-      :title="t('prijevoz_pokojnika')"
-      :description="t('phone_numbers')"
-      imageSrc="prijevoz-pogrebno.jpg"
-      :imageAlt="t('prijevoz_pokojnika')"
-    />
-    <div ref="section1"></div>
+    <div ref="section1">
+      <HeroBanner
+        :title="t('prijevoz_pokojnika')"
+        :description="t('phone_numbers')"
+        imageSrc="prijevoz-pogrebno.jpg"
+        :imageAlt="t('prijevoz_pokojnika')"
+      />
+    </div>
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center my-[50px] lg:my-[100px]"
     >

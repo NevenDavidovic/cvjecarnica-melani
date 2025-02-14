@@ -1,12 +1,13 @@
 <template>
   <div class="min-h-screen">
     <NavbarComponent :isSectionVisible="isSectionVisible" />
-    <HeroBanner
-      :title="t('coffins_offer')"
-      imageSrc="banner-ponuda-lijesovi.jpg"
-      :imageAlt="t('coffins_offer')"
-    />
-    <div ref="section1"></div>
+    <div ref="section1">
+      <HeroBanner
+        :title="t('coffins_offer')"
+        imageSrc="banner-ponuda-lijesovi.jpg"
+        :imageAlt="t('coffins_offer')"
+      />
+    </div>
     <ProductListComponent />
 
     <FooterComponent />
