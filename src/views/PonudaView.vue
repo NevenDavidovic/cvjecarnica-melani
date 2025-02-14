@@ -225,12 +225,9 @@ export default {
     if (this.filter) {
       this.applyFilter(this.filter);
     }
+    this.applyFilter(this.$route.query.filter);
   },
   computed: {
-    currentFilter() {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get("filter");
-    },
     currentImageSrc() {
       if (!this.modalImage || !this.modalType) return "";
       const folderMapping = {
@@ -249,8 +246,11 @@ export default {
     },
   },
   watch: {
-    currentFilter(newFilter) {
-      this.applyFilter(newFilter);
+    "$route.query.filter": {
+      handler(newFilter) {
+        this.applyFilter(newFilter);
+      },
+      immediate: true,
     },
   },
   created() {

@@ -142,7 +142,7 @@
             class="hidden group-hover:block absolute top-[calc(100%+8px)] left-0 min-w-[280px] z-50 transform opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(66,226,236,0.15)]"
           >
             <RouterLink
-              to="/ponuda?filter=aranzmani"
+              :to="{ path: '/ponuda', query: { filter: 'aranzmani' } }"
               class="text-left no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 first:rounded-t-sm hover:translate-x-1"
             >
               <span class="relative">
@@ -154,7 +154,7 @@
             </RouterLink>
 
             <RouterLink
-              to="/ponuda?filter=buketi"
+              :to="{ path: '/ponuda', query: { filter: 'buketi' } }"
               class="text-left no-underline font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm border-b border-[#42E2EC]/10 hover:translate-x-1 no-underline"
             >
               <span class="relative">
@@ -166,7 +166,7 @@
             </RouterLink>
 
             <RouterLink
-              to="/ponuda?filter=cvijece_za_lijes"
+              :to="{ path: '/ponuda', query: { filter: 'cvijece_za_lijes' } }"
               class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
@@ -177,7 +177,7 @@
               </span>
             </RouterLink>
             <RouterLink
-              to="/ponuda?filter=vijenci"
+              :to="{ path: '/ponuda', query: { filter: 'vijenci' } }"
               class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
             >
               <span class="relative">
@@ -385,28 +385,28 @@
         >
           <RouterLink
             @click="toggleMobileMenu()"
-            to="/ponuda?filter=aranzmani"
+            :to="{ path: '/ponuda', query: { filter: 'aranzmani' } }"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("arrangements") }}
           </RouterLink>
           <RouterLink
             @click="toggleMobileMenu()"
-            to="/ponuda?filter=buketi"
+            :to="{ path: '/ponuda', query: { filter: 'buketi' } }"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("bouquet") }}
           </RouterLink>
           <RouterLink
             @click="toggleMobileMenu()"
-            to="/ponuda?filter=cvijece_za_lijes"
+            :to="{ path: '/ponuda', query: { filter: 'cvijece_za_lijes' } }"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("coffin_flowers") }}
           </RouterLink>
           <RouterLink
             @click="toggleMobileMenu()"
-            to="/ponuda?filter=vijenci"
+            :to="{ path: '/ponuda', query: { filter: 'vijenci' } }"
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("vijenci") }}
