@@ -153,7 +153,7 @@ export default {
         ],
         company: [
           { name: "coffin_offer", href: "/ponuda-lijesovi" },
-          { name: "urn_offer", href: "/ponuda-pogrebno?filter=urne" },
+          // { name: "urn_offer", href: "/ponuda-pogrebno?filter=urne" },
           {
             name: "candles_and_lanterns_offer",
             href: "/ponuda-pogrebno?filter=lampioni",
@@ -161,7 +161,7 @@ export default {
         ],
         legal: [
           { name: "transport_questions", href: "/prijevoz-pokojnika" },
-          { name: "music_arrangement", href: "#" },
+          // { name: "music_arrangement", href: "#" },
           { name: "death_procedure", href: "/postupak-kod-smrti" },
         ],
         social: [

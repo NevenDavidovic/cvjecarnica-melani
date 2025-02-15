@@ -11,7 +11,9 @@
     <div class="absolute inset-0 bg-black/70"></div>
 
     <div class="relative z-10 px-4">
-      <h1 class="text-5xl text-white font-semibold opacity-0 animate-slideUp">
+      <h1
+        class="text-5xl uppercase text-white font-normal opacity-0 animate-slideUp"
+      >
         {{ title }}
       </h1>
       <p
