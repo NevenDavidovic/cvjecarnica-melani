@@ -17,7 +17,7 @@
         {{ title }}
       </h1>
       <p
-        class="mt-3 text-xl text-white font-normal opacity-0 animate-fadeIn delay-500"
+        class="mt-3 text-xl max-w-[90%] sm:max-w-[500px] text-white font-normal opacity-0 animate-fadeIn delay-500"
       >
         {{ description }}
       </p>

@@ -187,6 +187,18 @@
                 ></span>
               </span>
             </RouterLink>
+
+            <RouterLink
+              :to="{ path: '/ponuda', query: { filter: 'loncanice' } }"
+              class="text-left font-jacques uppercase text-white px-8 py-4 block hover:bg-gradient-to-r hover:from-[#42E2EC]/90 hover:to-[#42E2EC]/70 hover:text-black transition-all duration-300 bg-black/80 backdrop-blur-sm last:rounded-b-sm hover:translate-x-1"
+            >
+              <span class="relative">
+                {{ $t("loncanice") }}
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full"
+                ></span>
+              </span>
+            </RouterLink>
           </div>
         </div>
 
@@ -410,6 +422,14 @@
             class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
           >
             {{ $t("vijenci") }}
+          </RouterLink>
+
+          <RouterLink
+            @click="toggleMobileMenu()"
+            :to="{ path: '/ponuda', query: { filter: 'loncanice' } }"
+            class="font-jacques uppercase text-white text-lg hover:text-cyan-400 transition-colors"
+          >
+            {{ $t("loncanice") }}
           </RouterLink>
         </div>
 

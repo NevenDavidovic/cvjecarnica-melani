@@ -36,7 +36,7 @@
   "additional_offer_text": "Whether you are looking for an elegant bouquet for a special occasion, a unique floral arrangement, or a small token of appreciation, you will find the perfect choice with us.",
   "music_organization": "Music Organization",
   "music_organization_text": "Service for organizing music for events.",
-  "flower_service": "Our service includes the creation of wreaths, bouquets, and other floral decorations tailored to your needs.",
+  "flower_service": "Our service includes the creation of arrangements, bouquets, and other floral decorations tailored to your needs.",
   "bouquets": "Bouquets",
   "funeral_services_add": "Do you only want to select a product or one of our funeral services? We are at your disposal for all your inquiries.",
 
@@ -50,7 +50,7 @@
   "wreath_making_description": "Our comprehensive offer includes making and delivering wreaths according to your wishes to the farewell hall at any cemetery in the city.",
 
   "funeral_equipment": "Funeral Equipment",
-  "funeral_equipment_description": "Check out our large selection of urns in our funeral equipment offer. Contact us with confidence!",
+  "funeral_equipment_description": "Check out our large selection of coffins in our funeral offer. Contact us with confidence!",
 
   "bouquet_making": "Bouquet Making",
   "bouquet_making_description": "Our service includes making bouquets and other floral decorations tailored to your needs.",
@@ -214,5 +214,8 @@
   "dokumenti": "DOCUMENTS",
   "closing_note": "AFTER CREMATION",
 
-  "post_cremation": "After cremation and return of the urn, we organize a complete funeral according to the family's wishes."
+  "post_cremation": "After cremation and return of the urn, we organize a complete funeral according to the family's wishes.",
+
+  "loncanice": "Potted plants",
+  "loncanice_desc": "In our selection of potted plants, you will find a wide variety of indoor and outdoor plants that bring freshness and natural beauty to your home, office, or garden. We offer different types of indoor plants that improve air quality and create a pleasant atmosphere in any space.For those who love greenery outdoors, we also have outdoor plants perfect for gardens, terraces, and balconies. "
 }

@@ -21,7 +21,7 @@
   "additional_offer_text": "Bilo da tražite elegantan buket za posebnu priliku, unikatni cvjetni aranžman ili mali znak pažnje, kod nas ćete pronaći savršen izbor.",
   "music_organization": "Organiziranje glazbe",
   "music_organization_text": "Usluga od organiziranja glazbe za potrebe priredba.",
-  "flower_service": "Naša usluga uključuje izradu vijenaca, buketa i drugih cvjetnih dekoracija prilagođenih vašim potrebama.",
+  "flower_service": "Naša usluga uključuje izradu aranžmana i drugih cvjetnih dekoracija prilagođenih vašim potrebama.",
 
   "funeral_services_additional": "Želite samo odrediti proizvod ili neku od naših pogrebnih usluga? Stojimo Vam na raspolaganju za sve Vaše upite.",
 
@@ -45,7 +45,7 @@
   "wreath_making_description": "Naša sveobuhvatna ponuda uključuje izradu i dostavu vijenaca prema Vašim željama u dvoranu za ispraćaje na bilo koje groblje na području grada.",
 
   "funeral_equipment": "Pogrebna oprema",
-  "funeral_equipment_description": "Provjerite veliki izbor urni u našoj ponudi pogrebne opreme. Kontaktirajte nas s povjerenjem!",
+  "funeral_equipment_description": "Provjerite veliki izbor lijesova i pogrebne opreme u našoj ponudi. Kontaktirajte nas s povjerenjem!",
 
   "bouquet_making": "Izrada buketa",
   "bouquet_making_description": "Naša usluga uključuje izradu buketa i drugih cvjetnih dekoracija prilagođenih vašim potrebama.",
@@ -162,8 +162,8 @@
 
   "flowersDescription": "Nudimo bukete, unaprijed složene cvjetne kolekcije za brzu kupovinu—i pojedinačne cvjetne stabljiike, omogućujući kupcima da kreiraju personalizirane bukete odlukom pojedinačnih cvjetova prema njihovim željama i prigodama.",
   "icons.gifts": "Cvjećarnice nude divne opcije poput kutija s cvijećem, lupinulih cvjetnih aranžmana i povezanih stvari. Poklon paketi kreativno kombiniraju cvijeće s dodacima poput čokolade, plišanih medvjedića ili vina, stvarajući promišljene i raznolike darove.",
-  "icons.events": "Pružamo usluge za vjenčanja koje obuhvaćaju buket cvijeća, ukrase za revir i dekoracije, prilagođujući cvijeće kako bismo savršeno uskladili atmosferu vjenčanja iz snova. Usluge dekoracije također su specijalizirane za razne vrtne/bih cvjetne aranžmane za razne posebne prilike.",
-  "icons.arrangements": "Nudimo prilagođene aranžmane prema željama kupaca, sezonskoj ponudi/doba dana. Središnji aranžmani, dizajnirani za događanja i sadržaje, ističu dekorativne cvjetne aranžmane, obuhvaćajući ambijent i estetiku za svaku priliku.",
+  "icons.events": "Pružamo usluge za vjenčanja koje obuhvaćaju buket cvijeća, ukrase za revir i dekoracije, prilagođujući cvijeće kako bismo savršeno uskladili atmosferu vjenčanja iz snova. Usluge dekoracije također su specijalizirane za razne vrtne cvjetne aranžmane za razne posebne prilike.",
+  "icons.arrangements": "Nudimo prilagođene aranžmane prema željama kupaca, sezonskoj ponudi. Središnji aranžmani, dizajnirani za događanja i sadržaje, ističu dekorativne cvjetne aranžmane, obuhvaćajući ambijent i estetiku za svaku priliku.",
   "icons.accessories": "Cvjećarnice nude niz vaza u raznim veličinama za pohranu cvijeća i aranžmane. Omogućite cvijeće prezentirati dodatcima poput korpi, omota i čestitki, pružajući kupcima raznolike opcije za elegantne prikaze.",
   "delivery.alt": "Nudimo praktične usluge dostave cvijeća istog dana ili prema rasporedu, osiguravajući svježinu i personalizirane poklone. Kupci mogu garantirati vrijeme svojim cvjetovima, dodajući slatku ljepotu svakoj prigodi.",
 
@@ -182,5 +182,8 @@
 
   "uvod_usluga_kremiranja": "USLUGA KREMIRANJA",
   "dokumenti": "DOKUMENTI",
-  "closing_note": "NAKON KREMIRANJA"
+  "closing_note": "NAKON KREMIRANJA",
+
+  "loncanice": "Lončanice",
+  "loncanice_desc": "U našoj ponudi lončanica pronaći ćete širok izbor sobnih i vanjskih biljaka koje će unijeti svježinu i prirodnu ljepotu u vaš dom, ured ili vrt"
 }

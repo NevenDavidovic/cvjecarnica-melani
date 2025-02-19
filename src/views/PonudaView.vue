@@ -3,9 +3,9 @@
     <NavbarComponent :isSectionVisible="isSectionVisible" />
     <div ref="section1">
       <HeroBanner
-        :title="t('ponuda_cvijeca')"
-        :description="t('arrangements_description')"
-        imageSrc="ponuda-hero.jpg"
+        :title="currentTitle"
+        :description="currentDescription"
+        :imageSrc="currentImageBannerSrc"
         imageAlt="Ponuda cvijeća"
       />
     </div>
@@ -23,6 +23,7 @@
               { id: 'vijenci', label: t('vijenci') },
               { id: 'cvijece_za_lijes', label: t('coffin_flowers') },
               { id: 'buketi', label: t('bouquet') },
+              { id: 'loncanice', label: t('loncanice') },
             ]"
             :key="btn.id"
             @click="
@@ -138,6 +139,28 @@
               class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
             ></div>
           </div>
+
+          <div
+            v-if="filteri.loncanice"
+            :class="{ 'animate-fade-in': filteri.loncanice }"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[50px]"
+          >
+            <h1
+              class="min-h-[100px] shadow-[0_0_20px_rgba(255,255,255,0.4)] bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 flex items-center text-center text-2xl border rounded-xl justify-center"
+            >
+              {{ t("loncanice") }}
+            </h1>
+            <div
+              v-for="loncanica in loncanice"
+              :key="loncanica.filename"
+              @click="openModal('loncanice', loncanica)"
+              :style="{
+                backgroundImage: `url(${require(`@/assets/ponuda_cvijeca/loncanice/${loncanica.filename}`)})`,
+              }"
+              class="hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-transform hover:scale-105 h-[200px] w-full lg:w-full xl:h-[300px] lg:max-w-full sm:max-w-[350px] sm:mx-auto rounded-lg bg-cover bg-center cursor-pointer"
+            ></div>
+          </div>
+
           <div
             v-if="isModalOpen"
             class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
@@ -206,12 +229,14 @@ export default {
       aranzmani: [],
       vijenci: [],
       cvijece_za_lijes: [],
+      loncanice: [],
 
       filteri: {
         buketi: true,
         aranzmani: true,
         vijenci: true,
         cvijece_za_lijes: true,
+        loncanice: true,
       },
     };
   },
@@ -228,6 +253,54 @@ export default {
     this.applyFilter(this.$route.query.filter);
   },
   computed: {
+    currentTitle() {
+      switch (this.filter) {
+        case "buketi":
+          return this.t("bouquet");
+        case "aranzmani":
+          return this.t("arrangements");
+        case "vijenci":
+          return this.t("vijenci");
+        case "cvijece_za_lijes":
+          return this.t("coffin_flowers");
+        case "loncanice":
+          return this.t("loncanice");
+        default:
+          return this.t("ponuda_cvijeca");
+      }
+    },
+    currentDescription() {
+      switch (this.filter) {
+        case "buketi":
+          return this.t("bouquet_making_description");
+        case "aranzmani":
+          return this.t("flower_service");
+        case "vijenci":
+          return this.t("wreath_making_description");
+        case "cvijece_za_lijes":
+          return this.t("coffin_flowers_description");
+        case "loncanice":
+          return this.t("loncanice_desc");
+        default:
+          return this.t("arrangements_description");
+      }
+    },
+    currentImageBannerSrc() {
+      switch (this.$route.query.filter) {
+        case "buketi":
+          return "buketi-banner.jpg";
+        case "aranzmani":
+          return "aranzmani-banner.jpg";
+        case "vijenci":
+          return "vijenci-banner.jpg";
+        case "cvijece_za_lijes":
+          return "cvijece-za-lijes-banner.jpg";
+        case "loncanice":
+          return "loncanice-banner.jpg";
+        default:
+          return "ponuda-hero.jpg";
+      }
+    },
     currentImageSrc() {
       if (!this.modalImage || !this.modalType) return "";
       const folderMapping = {
@@ -235,6 +308,7 @@ export default {
         vijenci: "vijenci",
         aranzmani: "aranzmani",
         buketi: "buketi_i_aranzmani",
+        loncanice: "loncanice",
       };
       const folder = folderMapping[this.modalType];
       try {
@@ -248,12 +322,23 @@ export default {
   watch: {
     "$route.query.filter": {
       handler(newFilter) {
-        this.applyFilter(newFilter);
+        this.applyFilter(newFilter || null); // Pass null if no filter is set
       },
       immediate: true,
     },
   },
   created() {
+    const loncanice = require.context(
+      "@/assets/ponuda_cvijeca/loncanice",
+      false,
+      /\.(png|jpe?g|svg)$/
+    );
+    this.loncanice = loncanice.keys().map((filename) => ({
+      filename: filename.slice(2),
+      title: filename.slice(2, -4),
+      alt: filename.slice(2, -4),
+    }));
+
     const buketiAranzmani = require.context(
       "@/assets/ponuda_cvijeca/buketi_i_aranzmani",
       false,
@@ -319,9 +404,17 @@ export default {
       observer.observe(section);
     },
     applyFilter(filterArgument) {
-      Object.entries(this.filteri).forEach(([key]) => {
-        this.filteri[key] = key === filterArgument;
-      });
+      if (!filterArgument) {
+        // If no filter is provided, reset all filters
+        Object.keys(this.filteri).forEach((key) => {
+          this.filteri[key] = true;
+        });
+      } else {
+        // Otherwise, apply the selected filter
+        Object.entries(this.filteri).forEach(([key]) => {
+          this.filteri[key] = key === filterArgument;
+        });
+      }
     },
     openModal(type, image) {
       this.modalType = type;
@@ -336,17 +429,33 @@ export default {
       document.body.style.overflow = "auto";
     },
     resetingAllFilters() {
-      Object.entries(this.filteri).forEach(([key]) => {
-        this.filteri[key] = true;
+      Object.keys(this.filteri).forEach((key) => {
+        this.filteri[key] = true; // Enable all filters
       });
+
+      // Remove filter from URL
+      const url = new URL(window.location);
+      url.searchParams.delete("filter");
+      window.history.pushState({}, "", url);
+
+      // Reset filter in Vue Router
+      this.$router.replace({ query: {} });
+
+      // Apply filter to show all products
+      this.applyFilter(null);
     },
     filteringTheProducts(filterArgument) {
       Object.entries(this.filteri).forEach(([key]) => {
         this.filteri[key] = key === filterArgument;
       });
+
+      // Update the filter in the URL
       const url = new URL(window.location);
       url.searchParams.set("filter", filterArgument);
       window.history.pushState({}, "", url);
+
+      // Update filter prop so HeroBanner updates dynamically
+      this.$router.replace({ query: { filter: filterArgument } });
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
